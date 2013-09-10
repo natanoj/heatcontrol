@@ -1,0 +1,49 @@
+v 20110115 2
+T 100 2000 5 8 0 0 0 0 1
+description=optocoupler with one receiver phototransistor
+T 100 1600 5 8 0 0 0 0 1
+documentation=http://www.fairchildsemi.com/ds/FO/FOD814A.pdf
+T 100 1400 5 8 0 0 0 0 1
+symversion=1.0
+T 100 1200 5 8 0 0 0 0 1
+author=Kai-Martin Knaak kmk@lilalaser.de, Jonatan Åkerlind jonatan@akerlind.nu
+T 100 1000 5 8 0 0 0 0 1
+dist-license=GPL 3, http://www.gnu.org/licenses/gpl-3.0.txt
+T 100 800 5 8 0 0 0 0 1
+use-license=free, no restrictions
+T 450 400 8 10 1 1 0 0 1
+refdes=U?
+T 100 1800 5 8 0 0 0 0 1
+comment=see optocoupler_FOD817DS_LED.sym for the sender LED
+L 400 200 250 300 3 10 2 0 -1 -1
+P 400 100 400 200 1 0 0
+{
+T 350 150 5 8 1 1 0 8 1
+pinnumber=3
+T 450 150 5 8 0 1 0 2 1
+pintype=pas
+T 350 150 5 8 0 1 0 8 1
+pinseq=1
+}
+P 400 600 400 500 1 0 0
+{
+T 350 550 5 8 1 1 0 6 1
+pinnumber=4
+T 450 550 5 8 0 1 0 0 1
+pintype=pas
+T 350 550 5 8 0 1 0 6 1
+pinseq=2
+}
+L 5 245 155 395 3 10 0 0 -1 -1
+L 75 175 225 325 3 10 0 0 -1 -1
+L 250 250 250 450 3 10 2 0 -1 -1
+L 400 500 250 400 3 10 2 0 -1 -1
+L 200 250 225 325 3 10 2 0 -1 -1
+L 225 325 150 300 3 10 2 0 -1 -1
+L 130 320 155 395 3 10 2 0 -1 -1
+L 155 395 80 370 3 10 2 0 -1 -1
+T 450 200 8 10 1 1 0 0 1
+device=FOD817DS
+L 350 225 350 275 3 10 2 0 -1 -1
+L 350 225 300 225 3 10 2 0 -1 -1
+L 300 225 350 275 3 10 2 0 -1 -1

@@ -1,0 +1,32 @@
+# djboxsym generator definition
+# sensors schematic box
+
+--hidenr
+
+[labels]
+Sensors
+refdes=S?
+! copyright=2011 Jonatan Åkerlind
+! author=Jonatan Åkerlind
+! use-license=unlimited
+! dist-license=GPL
+! device=none
+
+[left]
+
+1 PIRRXD in
+
+[right]
+
+2 VTEMPERATURE out
+3 VHUMIDITY out
+4 ! PIRMD out
+5 PIRTXD out
+
+[top]
+
+6 VDD3.3 pwr
+
+[bottom]
+
+7 GND pwr

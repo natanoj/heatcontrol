@@ -1,0 +1,106 @@
+v 20100214 2
+B 0 0 1800 2200 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
+T 1800 2300 9 10 0 0 0 0 1
+description=Atmel ATmega1284P uC Port A
+T 1800 2500 9 10 0 0 0 0 1
+device=ATmega1284P
+T 1800 2700 9 10 0 0 0 0 1
+distlicense=GPL
+T 1800 2900 9 10 0 0 0 0 1
+uselicense=unlimited
+T 1800 3100 9 10 0 0 0 0 1
+author=Jonatan Åkerlind
+T 1800 3300 9 10 0 0 0 0 1
+copryright=2011 Jonatan Åkerlind
+T 900 300 9 10 1 1 0 3 1
+ATmega1284P
+T 900 100 9 10 1 1 0 3 1
+refdes=U?
+P 1600 2500 1600 2200 1 0 0
+{
+T 1600 2150 9 10 1 1 90 7 1
+pinlabel=PA7/ADC7/PCINT7
+T 1650 2250 5 8 1 1 0 0 1
+pinnumber=30
+T 1650 2250 5 8 0 1 0 0 1
+pinseq=30
+T 1650 2250 5 8 0 1 0 0 1
+pintype=io
+}
+P 1400 2500 1400 2200 1 0 0
+{
+T 1400 2150 9 10 1 1 90 7 1
+pinlabel=PA6/ADC6/PCINT6
+T 1450 2250 5 8 1 1 0 0 1
+pinnumber=31
+T 1450 2250 5 8 0 1 0 0 1
+pinseq=31
+T 1450 2250 5 8 0 1 0 0 1
+pintype=io
+}
+P 1200 2500 1200 2200 1 0 0
+{
+T 1200 2150 9 10 1 1 90 7 1
+pinlabel=PA5/ADC5/PCINT5
+T 1250 2250 5 8 1 1 0 0 1
+pinnumber=32
+T 1250 2250 5 8 0 1 0 0 1
+pinseq=32
+T 1250 2250 5 8 0 1 0 0 1
+pintype=io
+}
+P 1000 2500 1000 2200 1 0 0
+{
+T 1000 2150 9 10 1 1 90 7 1
+pinlabel=PA4/ADC4/PCINT4
+T 1050 2250 5 8 1 1 0 0 1
+pinnumber=33
+T 1050 2250 5 8 0 1 0 0 1
+pinseq=33
+T 1050 2250 5 8 0 1 0 0 1
+pintype=io
+}
+P 800 2500 800 2200 1 0 0
+{
+T 800 2150 9 10 1 1 90 7 1
+pinlabel=PA3/ADC3/PCINT3
+T 850 2250 5 8 1 1 0 0 1
+pinnumber=34
+T 850 2250 5 8 0 1 0 0 1
+pinseq=34
+T 850 2250 5 8 0 1 0 0 1
+pintype=io
+}
+P 600 2500 600 2200 1 0 0
+{
+T 600 2150 9 10 1 1 90 7 1
+pinlabel=PA2/ADC2/PCINT2
+T 650 2250 5 8 1 1 0 0 1
+pinnumber=35
+T 650 2250 5 8 0 1 0 0 1
+pinseq=35
+T 650 2250 5 8 0 1 0 0 1
+pintype=io
+}
+P 400 2500 400 2200 1 0 0
+{
+T 400 2150 9 10 1 1 90 7 1
+pinlabel=PA1/ADC1/PCINT1
+T 450 2250 5 8 1 1 0 0 1
+pinnumber=36
+T 450 2250 5 8 0 1 0 0 1
+pinseq=36
+T 450 2250 5 8 0 1 0 0 1
+pintype=io
+}
+P 200 2500 200 2200 1 0 0
+{
+T 200 2150 9 10 1 1 90 7 1
+pinlabel=PA0/ADC0/PCINT0
+T 250 2250 5 8 1 1 0 0 1
+pinnumber=37
+T 250 2250 5 8 0 1 0 0 1
+pinseq=37
+T 250 2250 5 8 0 1 0 0 1
+pintype=io
+}

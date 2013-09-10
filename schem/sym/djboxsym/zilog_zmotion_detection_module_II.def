@@ -1,0 +1,37 @@
+# djboxsym generator definition
+# Zilog ZMOTION Detection Module II
+
+--vmode
+--compact
+
+[labels]
+
+ZDMII
+refdes=A?
+! copryright=2013 Jonatan Åkerlind
+! author=Jonatan Åkerlind
+! uselicense=unlimited
+! distlicense=GPL
+! device=ZDMII
+! description=Zilog ZMOTION Detection Module II
+! footprint=JUMPER8
+
+[left]
+
+3 RXD/DLY in
+6 LG in
+7 \_SLP\_/DBG io
+
+[right]
+
+4 TXD/SNS io
+5 \_MD\_/\_RST\_ io
+
+[top]
+
+2 VDD pwr
+
+[bottom]
+
+1 GND pwr
+8 GND pwr

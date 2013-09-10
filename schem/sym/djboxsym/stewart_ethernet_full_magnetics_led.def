@@ -1,0 +1,39 @@
+# djboxsym generator definition
+# Stewart Connector MagJack Ethernet jack with full magnetics and LEDs
+
+[labels]
+
+MagJack
+refdes=CONN?
+! copryright=2011 Jonatan Åkerlind
+! author=Jonatan Åkerlind
+! uselicense=unlimited
+! distlicense=GPL
+device=MagJack
+description=MagJack Ethernet connector full magnetics and LEDs
+footprint=MAGJACK
+
+[left]
+
+.bus
+1 P1
+2 P2
+3 P3
+4 P4
+5 P5
+6 P6
+7 P7
+8 P8
+
+[right]
+
+
+[top]
+
+9 GN_ANODE
+10 GN_CATHODE
+
+[bottom]
+
+11 Y_ANODE
+12 Y_ANODE

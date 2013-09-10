@@ -1,0 +1,17 @@
+central
+=======
+PSU 
+ethernet
+relay outputs
+sensor inputs
+display/buttons
+CPU
+
+roomunit
+========
+PSU (some kind of PoEish thingie)
+ethernet
+display/buttons
+sensor inputs
+(relay outputs)
+CPU

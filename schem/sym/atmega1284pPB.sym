@@ -1,0 +1,106 @@
+v 20100214 2
+B 0 0 1800 2800 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
+T 1800 2900 9 10 0 0 0 0 1
+description=Atmel ATmega1284P uC Port B
+T 1800 3100 9 10 0 0 0 0 1
+device=ATmega1284P
+T 1800 3300 9 10 0 0 0 0 1
+distlicense=GPL
+T 1800 3500 9 10 0 0 0 0 1
+uselicense=unlimited
+T 1800 3700 9 10 0 0 0 0 1
+author=Jonatan Åkerlind
+T 1800 3900 9 10 0 0 0 0 1
+copryright=2011 Jonatan Åkerlind
+T 900 300 9 10 1 1 0 3 1
+ATmega1284P
+T 900 100 9 10 1 1 0 3 1
+refdes=U?
+P 1200 3100 1200 2800 1 0 0
+{
+T 1200 2750 9 10 1 1 90 7 1
+pinlabel=PB5/MOSI/ICP3/PCINT13
+T 1250 2850 5 8 1 1 0 0 1
+pinnumber=1
+T 1250 2850 5 8 0 1 0 0 1
+pinseq=1
+T 1250 2850 5 8 0 1 0 0 1
+pintype=io
+}
+P 1400 3100 1400 2800 1 0 0
+{
+T 1400 2750 9 10 1 1 90 7 1
+pinlabel=PB6/MISO/OC3A/PCINT14
+T 1450 2850 5 8 1 1 0 0 1
+pinnumber=2
+T 1450 2850 5 8 0 1 0 0 1
+pinseq=2
+T 1450 2850 5 8 0 1 0 0 1
+pintype=io
+}
+P 1600 3100 1600 2800 1 0 0
+{
+T 1600 2750 9 10 1 1 90 7 1
+pinlabel=PB7/SCK/OC3B/PCINT15
+T 1650 2850 5 8 1 1 0 0 1
+pinnumber=3
+T 1650 2850 5 8 0 1 0 0 1
+pinseq=3
+T 1650 2850 5 8 0 1 0 0 1
+pintype=io
+}
+P 200 3100 200 2800 1 0 0
+{
+T 200 2750 9 10 1 1 90 7 1
+pinlabel=PB0/T0/XCK0/PCINT8
+T 250 2850 5 8 1 1 0 0 1
+pinnumber=40
+T 250 2850 5 8 0 1 0 0 1
+pinseq=40
+T 250 2850 5 8 0 1 0 0 1
+pintype=io
+}
+P 400 3100 400 2800 1 0 0
+{
+T 400 2750 9 10 1 1 90 7 1
+pinlabel=PB1/T1/CLK0/PCINT9
+T 450 2850 5 8 1 1 0 0 1
+pinnumber=41
+T 450 2850 5 8 0 1 0 0 1
+pinseq=41
+T 450 2850 5 8 0 1 0 0 1
+pintype=io
+}
+P 600 3100 600 2800 1 0 0
+{
+T 600 2750 9 10 1 1 90 7 1
+pinlabel=PB2/AIN0/INT2/PCINT10
+T 650 2850 5 8 1 1 0 0 1
+pinnumber=42
+T 650 2850 5 8 0 1 0 0 1
+pinseq=42
+T 650 2850 5 8 0 1 0 0 1
+pintype=io
+}
+P 800 3100 800 2800 1 0 0
+{
+T 800 2750 9 10 1 1 90 7 1
+pinlabel=PB3/AIN1/OC0A/PCINT11
+T 850 2850 5 8 1 1 0 0 1
+pinnumber=43
+T 850 2850 5 8 0 1 0 0 1
+pinseq=43
+T 850 2850 5 8 0 1 0 0 1
+pintype=io
+}
+P 1000 3100 1000 2800 1 0 0
+{
+T 1000 2750 9 10 1 1 90 7 1
+pinlabel=PB4/\_SS\_/OC0B/PCINT12
+T 1050 2850 5 8 1 1 0 0 1
+pinnumber=44
+T 1050 2850 5 8 0 1 0 0 1
+pinseq=44
+T 1050 2850 5 8 0 1 0 0 1
+pintype=io
+}

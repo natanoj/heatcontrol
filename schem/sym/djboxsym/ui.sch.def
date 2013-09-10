@@ -1,0 +1,35 @@
+# djboxsym generator definition
+# UI schematic box
+
+--hidenr
+#--vmode
+#--compact
+
+[labels]
+UI
+refdes=S?
+! copyright=2011 Jonatan Åkerlind
+! author=Jonatan Åkerlind
+! use-license=unlimited
+! dist-license=GPL
+! device=none
+
+[left]
+
+1 SDA in
+2 SCL in
+3 ! RESET in
+
+
+[right]
+
+4 MISO out
+5 ! INT out
+
+[top]
+
+6 VDD3.3 pwr
+
+[bottom]
+
+7 GND pwr

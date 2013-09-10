@@ -1,0 +1,21 @@
+# djboxsym generator definition
+# ATmega1284P TQFP44 package clock/reset
+
+--compact
+
+[labels]
+
+ATmega1284P
+refdes=U?
+! copryright=2011 Jonatan Åkerlind
+! author=Jonatan Åkerlind
+! uselicense=unlimited
+! distlicense=GPL
+! device=ATmega1284P
+! description=Atmel ATmega1284P uC Clock/Reset
+
+[left]
+8 XTAL1 in
+7 XTAL2 out
+
+4 ! RESET in

@@ -1,0 +1,29 @@
+# djboxsym generator definition
+# ATmega1284P TQFP44 package port C
+
+--compact
+--vmode
+
+[labels]
+
+ATmega1284P
+refdes=U?
+! copryright=2011 Jonatan Åkerlind
+! author=Jonatan Åkerlind
+! uselicense=unlimited
+! distlicense=GPL
+! device=ATmega1284P
+! description=Atmel ATmega1284P uC Port C
+
+[top]
+
+.bus
+19 PC0/SCL/PCINT16 io
+20 PC1/SDA/PCINT17 io
+21 PC2/TCK/PCINT18 io
+22 PC3/TMS/PCINT19 io
+23 PC4/TDO/PCINT20 io
+24 PC5/TDI/PCINT21 io
+25 PC6/TOSC1/PCINT22 io
+26 PC7/TOSC2/PCINT23 io
+

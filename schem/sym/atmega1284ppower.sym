@@ -1,0 +1,153 @@
+v 20060123 1
+B 300 300 2700 1900 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
+T 3000 2300 9 10 0 0 0 0 1
+footprint=TQFP44
+T 3000 2500 9 10 0 0 0 0 1
+description=Atmel ATmega1284P uC Power
+T 3000 2700 9 10 0 0 0 0 1
+device=ATmega1284P
+T 3000 2900 9 10 0 0 0 0 1
+distlicense=GPL
+T 3000 3100 9 10 0 0 0 0 1
+uselicense=unlimited
+T 3000 3300 9 10 0 0 0 0 1
+author=Jonatan Åkerlind
+T 3000 3500 9 10 0 0 0 0 1
+copryright=2011 Jonatan Åkerlind
+T 1700 1200 9 10 1 1 0 3 1
+ATmega1284P
+T 1700 1000 9 10 1 1 0 3 1
+refdes=U?
+V 250 800 50 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
+P 0 800 200 800 1 0 0
+{
+T 350 800 9 10 1 1 0 1 1
+pinlabel=RESET
+T 200 850 5 8 1 1 0 6 1
+pinnumber=4
+T 200 850 5 8 0 1 0 6 1
+pinseq=4
+T 200 850 5 8 0 1 0 6 1
+pintype=in
+}
+P 1100 2500 1100 2200 1 0 0
+{
+T 1100 2150 9 10 1 1 90 7 1
+pinlabel=VCC
+T 1150 2250 5 8 1 1 0 0 1
+pinnumber=5
+T 1150 2250 5 8 0 1 0 0 1
+pinseq=5
+T 1150 2250 5 8 0 1 0 0 1
+pintype=pwr
+}
+P 1400 0 1400 300 1 0 0
+{
+T 1400 350 9 10 1 1 90 1 1
+pinlabel=GND
+T 1450 250 5 8 1 1 0 2 1
+pinnumber=6
+T 1450 250 5 8 0 1 0 2 1
+pinseq=6
+T 1450 250 5 8 0 1 0 2 1
+pintype=pwr
+}
+P 0 1200 300 1200 1 0 0
+{
+T 350 1200 9 10 1 1 0 1 1
+pinlabel=XTAL2
+T 200 1250 5 8 1 1 0 6 1
+pinnumber=7
+T 200 1250 5 8 0 1 0 6 1
+pinseq=7
+T 200 1250 5 8 0 1 0 6 1
+pintype=out
+}
+P 0 1400 300 1400 1 0 0
+{
+T 350 1400 9 10 1 1 0 1 1
+pinlabel=XTAL1
+T 200 1450 5 8 1 1 0 6 1
+pinnumber=8
+T 200 1450 5 8 0 1 0 6 1
+pinseq=8
+T 200 1450 5 8 0 1 0 6 1
+pintype=in
+}
+P 1300 2500 1300 2200 1 0 0
+{
+T 1300 2150 9 10 1 1 90 7 1
+pinlabel=VCC
+T 1350 2250 5 8 1 1 0 0 1
+pinnumber=17
+T 1350 2250 5 8 0 1 0 0 1
+pinseq=17
+T 1350 2250 5 8 0 1 0 0 1
+pintype=pwr
+}
+P 1600 0 1600 300 1 0 0
+{
+T 1600 350 9 10 1 1 90 1 1
+pinlabel=GND
+T 1650 250 5 8 1 1 0 2 1
+pinnumber=18
+T 1650 250 5 8 0 1 0 2 1
+pinseq=18
+T 1650 250 5 8 0 1 0 2 1
+pintype=pwr
+}
+P 1900 2500 1900 2200 1 0 0
+{
+T 1900 2150 9 10 1 1 90 7 1
+pinlabel=AVCC
+T 1950 2250 5 8 1 1 0 0 1
+pinnumber=27
+T 1950 2250 5 8 0 1 0 0 1
+pinseq=27
+T 1950 2250 5 8 0 1 0 0 1
+pintype=pwr
+}
+P 1800 0 1800 300 1 0 0
+{
+T 1800 350 9 10 1 1 90 1 1
+pinlabel=GND
+T 1850 250 5 8 1 1 0 2 1
+pinnumber=28
+T 1850 250 5 8 0 1 0 2 1
+pinseq=28
+T 1850 250 5 8 0 1 0 2 1
+pintype=pwr
+}
+P 2300 2500 2300 2200 1 0 0
+{
+T 2300 2150 9 10 1 1 90 7 1
+pinlabel=AREF
+T 2350 2250 5 8 1 1 0 0 1
+pinnumber=29
+T 2350 2250 5 8 0 1 0 0 1
+pinseq=29
+T 2350 2250 5 8 0 1 0 0 1
+pintype=pwr
+}
+P 1500 2500 1500 2200 1 0 0
+{
+T 1500 2150 9 10 1 1 90 7 1
+pinlabel=VCC
+T 1550 2250 5 8 1 1 0 0 1
+pinnumber=38
+T 1550 2250 5 8 0 1 0 0 1
+pinseq=38
+T 1550 2250 5 8 0 1 0 0 1
+pintype=pwr
+}
+P 2000 0 2000 300 1 0 0
+{
+T 2000 350 9 10 1 1 90 1 1
+pinlabel=GND
+T 2050 250 5 8 1 1 0 2 1
+pinnumber=39
+T 2050 250 5 8 0 1 0 2 1
+pinseq=39
+T 2050 250 5 8 0 1 0 2 1
+pintype=pwr
+}

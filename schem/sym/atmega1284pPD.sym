@@ -1,0 +1,106 @@
+v 20100214 2
+B 0 0 1800 2800 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
+T 1800 2900 9 10 0 0 0 0 1
+description=Atmel ATmega1284P uC Port D
+T 1800 3100 9 10 0 0 0 0 1
+device=ATmega1284P
+T 1800 3300 9 10 0 0 0 0 1
+distlicense=GPL
+T 1800 3500 9 10 0 0 0 0 1
+uselicense=unlimited
+T 1800 3700 9 10 0 0 0 0 1
+author=Jonatan Åkerlind
+T 1800 3900 9 10 0 0 0 0 1
+copryright=2011 Jonatan Åkerlind
+T 900 300 9 10 1 1 0 3 1
+ATmega1284P
+T 900 100 9 10 1 1 0 3 1
+refdes=U?
+P 200 3100 200 2800 1 0 0
+{
+T 200 2750 9 10 1 1 90 7 1
+pinlabel=PD0/RXD0/PCINT24/T3
+T 250 2850 5 8 1 1 0 0 1
+pinnumber=9
+T 250 2850 5 8 0 1 0 0 1
+pinseq=9
+T 250 2850 5 8 0 1 0 0 1
+pintype=io
+}
+P 400 3100 400 2800 1 0 0
+{
+T 400 2750 9 10 1 1 90 7 1
+pinlabel=PD1/TXD0/PCINT25
+T 450 2850 5 8 1 1 0 0 1
+pinnumber=10
+T 450 2850 5 8 0 1 0 0 1
+pinseq=10
+T 450 2850 5 8 0 1 0 0 1
+pintype=io
+}
+P 600 3100 600 2800 1 0 0
+{
+T 600 2750 9 10 1 1 90 7 1
+pinlabel=PD2/INT0/RXD1/PCINT26
+T 650 2850 5 8 1 1 0 0 1
+pinnumber=11
+T 650 2850 5 8 0 1 0 0 1
+pinseq=11
+T 650 2850 5 8 0 1 0 0 1
+pintype=io
+}
+P 800 3100 800 2800 1 0 0
+{
+T 800 2750 9 10 1 1 90 7 1
+pinlabel=PD3/INT1/TXD1/PCINT27
+T 850 2850 5 8 1 1 0 0 1
+pinnumber=12
+T 850 2850 5 8 0 1 0 0 1
+pinseq=12
+T 850 2850 5 8 0 1 0 0 1
+pintype=io
+}
+P 1000 3100 1000 2800 1 0 0
+{
+T 1000 2750 9 10 1 1 90 7 1
+pinlabel=PD4/OC1B/XCK1/PCINT28
+T 1050 2850 5 8 1 1 0 0 1
+pinnumber=13
+T 1050 2850 5 8 0 1 0 0 1
+pinseq=13
+T 1050 2850 5 8 0 1 0 0 1
+pintype=io
+}
+P 1200 3100 1200 2800 1 0 0
+{
+T 1200 2750 9 10 1 1 90 7 1
+pinlabel=PD5/OC1A/PCINT29
+T 1250 2850 5 8 1 1 0 0 1
+pinnumber=14
+T 1250 2850 5 8 0 1 0 0 1
+pinseq=14
+T 1250 2850 5 8 0 1 0 0 1
+pintype=io
+}
+P 1400 3100 1400 2800 1 0 0
+{
+T 1400 2750 9 10 1 1 90 7 1
+pinlabel=PD6/ICP1/OC2B/PCINT30
+T 1450 2850 5 8 1 1 0 0 1
+pinnumber=15
+T 1450 2850 5 8 0 1 0 0 1
+pinseq=15
+T 1450 2850 5 8 0 1 0 0 1
+pintype=io
+}
+P 1600 3100 1600 2800 1 0 0
+{
+T 1600 2750 9 10 1 1 90 7 1
+pinlabel=PD7/OC2A/PCINT31
+T 1650 2850 5 8 1 1 0 0 1
+pinnumber=16
+T 1650 2850 5 8 0 1 0 0 1
+pinseq=16
+T 1650 2850 5 8 0 1 0 0 1
+pintype=io
+}

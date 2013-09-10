@@ -1,0 +1,54 @@
+# djboxsym generator definition
+# Texas Instruments TPS23757 PoE PD interface controller
+
+--vmode
+
+[labels]
+
+TPS23757
+refdes=U?
+! copryright=2011 Jonatan Åkerlind
+! author=Jonatan Åkerlind
+! uselicense=unlimited
+! distlicense=GPL
+device=TPS23757
+descriptio=TI TPS23757 PoE PD
+footprint=TSSOP20
+
+[left]
+
+13 DEN io
+14 PPD in
+15 CLS in
+
+10 Vss pwr
+17 APD in
+1 CTL in
+19 FRS in
+
+[right]
+
+20 APb out
+
+6 Vc io
+
+2 Vb out
+5 GATE out
+3 CS io
+7 GAT2 out
+
+[top]
+
+12 Vdd pwr
+
+11 Vdd1 pwr
+
+[bottom]
+
+9 RTN pwr
+4 COM pwr
+8 ARTN pwr
+
+16 DT in
+
+18 BLNK in

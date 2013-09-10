@@ -1,0 +1,59 @@
+# djboxsym generator definition
+# roomunit cpu schematic box
+
+--hidenr
+--compact
+
+[labels]
+CPU
+refdes=S?
+! copyright=2011 Jonatan Åkerlind
+! author=Jonatan Åkerlind
+! use-license=unlimited
+! dist-license=GPL
+! device=none
+
+[left]
+
+1 ! RESET in
+
+2 VTEMPERATURE in
+3 VHUMIDITY in
+
+4 SPISDI in
+
+5 EXTINT0 in
+6 EXTINT1 in
+7 EXTINT2 in
+8 EXTINT3 in
+
+9 USARTRXD in
+
+10 DCAPB in
+
+11 JTAGTDI in
+12 JTAGTMS in
+13 JTAGTC in
+
+[right]
+
+14 SPISCK out
+15 SPISDO out
+
+16 ETHCS out
+17 ETHRST out
+
+18 USARTTXD out
+
+19 JTAGTDO out
+
+20 TWISCL out
+21 TWISDA io
+
+[top]
+
+22 VDD3.3 pwr
+
+[bottom]
+
+23 GND pwr

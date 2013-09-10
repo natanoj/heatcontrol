@@ -1,0 +1,62 @@
+# djboxsym definition for Microchip ENC28J60 Ethernet controller
+# 
+
+--vmode
+--compact
+
+[labels]
+
+ENC28J60
+refdes=U?
+! copyright=2011 Jonatan Åkerlind
+! author=Jonatan Åkerlind
+! uselicense=unlimited
+! distlicense=GPL
+device=ENC28J60
+description=Microchip ENC28J60
+footprint=QFN28
+
+[left]
+5 ! CS in
+4 SCK in
+3 SI in
+2 SO out
+
+28 ! INT out
+
+27 CLKOUT out
+
+19 OSC1 in
+20 OSC2 out
+
+[right]
+13 TPOUT+ out
+12 TPOUT- out
+
+9 TPIN+ in
+8 TPIN- in
+
+23 LEDA out
+22 LEDB out
+
+[top]
+
+24 VDD pwr
+11 VDDTX pwr
+15 VDDRX pwr
+16 VDDPLL pwr
+21 VDDOSC pwr
+
+[bottom]
+25 VCAP pwr
+
+26 VSS pwr
+7 VSSRX pwr
+14 VSSTX pwr
+17 VSSPLL pwr
+18 VSSOSC pwr
+
+10 RBIAS in
+
+[nc]
+1 NC out

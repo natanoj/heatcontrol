@@ -1,0 +1,44 @@
+# djboxsym generator definition
+# ATtiny24A SOIC14
+
+--compact
+--vmode
+
+[labels]
+
+ATtiny24A
+refdes=U?
+! copryright=2013 Jonatan Åkerlind
+! author=Jonatan Åkerlind
+! uselicense=unlimited
+! distlicense=GPL
+! device=ATtiny24A/44A/84A
+! description=Atmel ATtiny24A uC
+! footprint=SO14
+
+
+[left]
+
+2 PB0/PCINT8/XTAL1/CLKI io
+3 PB1/PCINT9/XTAL2 io
+5 PB2/PCINT10/INT0/OC0A/CKOUT io
+4 PB3/PCINT11/\_RESET\_/dW io
+
+[right]
+
+13 PA0/ADC0/AREF/PCINT0 io
+12 PA1/ADC1/AIN0/PCINT1 io
+11 PA2/ADC2/AIN1/PCINT2 io
+10 PA3/ADC3/T0/PCINT3 io
+9 PA4/ADC4/USCK/SCL/T1/PCINT4 io
+8 PA5/ADC5/DO/MISO/OC1B/PCINT5 io
+7 PA6/ADC6/DI/MOSI/SDA/OC1A/PCINT6 io
+6 PA7/ADC7/OC0B/ICP/PCINT7 io
+
+[top]
+
+1 VCC pwr
+
+[bottom]
+
+14 GND pwr

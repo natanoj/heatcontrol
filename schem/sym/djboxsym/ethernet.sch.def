@@ -1,0 +1,26 @@
+# djboxsym generator definition
+# Ethernet schematic box
+
+[labels]
+Ethernet
+refdes=S?
+! copyright=2011 Jonatan Åkerlind
+! author=Jonatan Åkerlind
+! use-license=unlimited
+! dist-license=GPL
+! device=none
+
+[left]
+
+1 ! CSN in
+2 SCLK in
+3 SI in
+4 ! RSTN in
+
+[right]
+
+5 SO out
+6 ! INTRN out
+7 PME out
+8 POE+ pwr
+9 POE- pwr

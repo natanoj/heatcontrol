@@ -1,0 +1,47 @@
+# djboxsym generator definition
+# Tyco Electronics Ethernet connector with magnetics, leds and PoE diodes
+
+--compact
+
+[labels]
+
+MAG45 modular jack
+refdes=CONN?
+! copryright=2011 Jonatan Åkerlind
+! author=Jonatan Åkerlind
+! uselicense=unlimited
+! distlicense=GPL
+device=MAG45
+description=Ethernet conn w. magn, LEDs, PoE diodes
+footprint=MAG45
+
+[left]
+
+.bus
+1 RDP pas
+2 RDN pas
+3 RCT pas
+4 TCT pas
+5 TDP pas
+6 TDN pas
+
+9 +PWR pwr
+10 -PWR pwr
+
+[right]
+
+
+[top]
+
+D1 LED1_anode pas
+D2 LED1_cathode pas
+
+[bottom]
+
+D3 LED2_anode pas
+D4 LED2_cathode pas
+
+[nc]
+
+7
+8

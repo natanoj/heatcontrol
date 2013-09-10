@@ -1,0 +1,77 @@
+# djboxsym generator definition
+# Micrel KSZ8851SNL
+
+--vmode
+--compact
+
+[labels]
+
+KSZ8851SNL
+refdes=U?
+! copyright=2011 Jonatan Åkerlind
+! author=Jonatan Åkerlind
+! uselicense=unlimited
+! distlicense=GPL
+device=KSZ8851SNL
+description=Micrel KSZ8851SNL
+footprint=MLF32
+
+[left]
+3 ! INTRN out
+
+26 ! CSN in
+28 SCLK in
+31 SI in
+27 SO out
+
+20 X1 in
+21 X2 out
+
+6 EED_IO io
+7 EESK out
+10 EECS out
+
+[right]
+
+11 RXP io
+12 RXM io
+
+14 TXP io
+15 TXM io
+
+32 LED1 out
+1 LED0 out
+
+[top]
+
+2 PME out
+
+25 VDD_IO pwr
+30 VDD_IO pwr
+
+5 VDD_CO1.8 pwr
+9 VDD_A1.8 pwr
+23 VDD_D1.8 pwr
+
+16 VDD_A3.3 pwr
+
+[bottom]
+
+
+19 ! RSTN in
+
+
+4 DGND pwr
+22 DGND pwr
+24 DGND pwr
+29 DGND pwr
+
+
+8 AGND pwr
+13 AGND pwr
+18 AGND pwr
+
+
+17 ISET out
+
+[nc]

@@ -1,0 +1,23 @@
+# djboxsym generator definition
+# CPU power/clock schematic box
+
+--hidenr
+--compact
+
+[labels]
+CPU power/clock
+refdes=S?
+! copyright=2011 Jonatan Åkerlind
+! author=Jonatan Åkerlind
+! use-license=unlimited
+! dist-license=GPL
+! device=none
+
+[left]
+3 RESET in
+
+[top]
+1 VDD3.3 pwr
+
+[bottom]
+2 GND pwr

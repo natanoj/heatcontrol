@@ -1,0 +1,45 @@
+# djboxsym generator definition
+# NHD-C0220BIZ-FS(RGB)-FBW-3VM
+
+--vmode
+--compact
+
+[labels]
+
+NHD-C0220BIZ-FS(RGB)
+refdes=U?
+! copryright=2013 Jonatan Åkerlind
+! author=Jonatan Åkerlind
+! uselicense=unlimited
+! distlicense=GPL
+! device=NHD-C0220BIZ-FS(RGB)
+! description=NHD-C0220BIZ-FS(RGB)-FBW-3VM
+! footprint=NHD-C0220BIZ-FS(RGB)-FBW-3VM
+
+[left]
+
+1 ! RESET in
+
+2 SCL in
+3 SDA io
+
+[right]
+
+6 VOUT pwr
+
+7 C1+ pwr
+8 C1- pwr
+
+[top]
+
+5 VDD pwr
+
+9 A pwr
+
+[bottom]
+
+4 VSS pwr
+
+10 BK pwr
+11 GK pwr
+12 RK pwr

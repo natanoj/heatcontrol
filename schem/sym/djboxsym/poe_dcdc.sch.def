@@ -1,0 +1,38 @@
+# djboxsym generator definition
+# PoE DC/DC converter
+
+#--compact
+--hidenr
+
+[labels]
+
+PoE DC-DC converter
+refdes=S?
+! copryright=2011 Jonatan Åkerlind
+! author=Jonatan Åkerlind
+! uselicense=unlimited
+! distlicense=GPL
+! device=none
+
+[top]
+
+1 POEVDD pwr
+
+[bottom]
+
+2 POECOM pwr
+
+[left]
+
+4 Vc in
+
+3 Vb in
+5 GATE in
+6 CS out
+7 GATE2 in
+8 CTL out
+
+[right]
+
+9 VOUTVDD pwr
+10 VOUTGND pwr

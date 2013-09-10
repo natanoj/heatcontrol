@@ -1,0 +1,26 @@
+# djboxsym generator definition
+# POE power supply schematic box
+
+[labels]
+POE PSU
+refdes=S?
+! copyright=2011 Jonatan Åkerlind
+! author=Jonatan Åkerlind
+! use-license=unlimited
+! dist-license=GPL
+! device=none
+
+[left]
+
+1 POE+ pwr
+2 POE- pwr
+
+3 DC+ pwr
+4 DC- pwr
+
+[right]
+
+5 VOUT3.3 pwr
+6 VOUTGND pwr
+
+7 VAPB out

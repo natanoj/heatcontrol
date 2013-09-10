@@ -1,0 +1,81 @@
+# djboxsym generator definition
+# ATmega1284P TQFP44 package
+
+[labels]
+
+ATmega1284P
+refdes=U?
+! copryright=2011 Jonatan Åkerlind
+! author=Jonatan Åkerlind
+! uselicense=unlimited
+! distlicense=GPL
+! device=ATmega1284P
+! description=Atmel ATmega1284P uC
+! footprint=TQFP44
+
+[left]
+
+.bus
+37 PA0 io
+36 PA1 io
+35 PA2 io
+34 PA3 io
+33 PA4 io
+32 PA5 io
+31 PA6 io
+30 PA7 io
+
+.bus
+40 PB0 io
+41 PB1 io
+42 PB2 io
+43 PB3 io
+44 PB4 io
+1 PB5 io
+2 PB6 io
+3 PB7 io
+
+
+[right]
+
+.bus
+19 PC0 io
+20 PC1 io
+21 PC2 io
+22 PC3 io
+23 PC4 io
+24 PC5 io
+25 PC6 io
+26 PC7 io
+
+.bus
+9 PD0 io
+10 PD1 io
+11 PD2 io
+12 PD3 io
+13 PD4 io
+14 PD5 io
+15 PD6 io
+16 PD7 io
+
+
+[top]
+5 VCC pwr
+17 VCC pwr
+38 VCC pwr
+
+27 AVCC pwr
+
+29 AREF pwr
+ 
+8 XTAL1 in
+7 XTAL2 out
+
+[bottom]
+6 GND pwr
+18 GND pwr
+28 GND pwr
+39 GND pwr
+
+4 ! RESET in
+

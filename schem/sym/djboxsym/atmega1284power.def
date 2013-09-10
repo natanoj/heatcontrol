@@ -1,0 +1,34 @@
+# djboxsym generator definition
+# ATmega1284P TQFP44 package power
+
+--compact
+--vmode
+
+[labels]
+
+ATmega1284P
+refdes=U?
+! copryright=2011 Jonatan Åkerlind
+! author=Jonatan Åkerlind
+! uselicense=unlimited
+! distlicense=GPL
+! device=ATmega1284P
+! description=Atmel ATmega1284P uC Power
+! footprint=TQFP44
+
+
+[top]
+5 VCC pwr
+17 VCC pwr
+38 VCC pwr
+
+27 AVCC pwr
+
+29 AREF pwr
+
+[bottom]
+6 GND pwr
+18 GND pwr
+28 GND pwr
+39 GND pwr
+
