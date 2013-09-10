@@ -1,0 +1,201 @@
+% -*- Mode: latex; Mode: auto-fill -*-
+The system should regulate the temperature of rooms in a house to
+maintain a preset temperature and at the same time be conservative
+with available energy. Temperature preset should be adjustable for
+each room in a simple way from the rooms. Further the system should
+have a way to set different temperatures during different time ranges
+of one day, i.e. to lower the room temperature during night or when
+the room is unused.
+
+Another functionality of the system should be the ability of measuring
+warm water temperature and controlling warm water circulation. The
+temperature should be measured where the warm water circulation end
+point is located, i.e. in the house which warm water is delivered
+to. When this temperature drops below some preset value the warm water
+circulation pump should be activated and run until the temperature
+reaches the stored warm water temperature with heat losses calculated
+for. 
+
+\subsection{Regulating room temperature}
+Room temperature can be controlled by adjusting
+heat flow in a water based heating system. Each room will have either
+water radiator elements or water based floor heating. The temperature
+of the water system can be controlled in a number of ways:
+\begin{itemize}
+\item{Adjusting the temperature of water flowing in to the radiators
+  and floor heating. These two systems can have individual water
+  temperatures\footnote{The temperature of the floor heating water
+    cannot exceed the temperature of the water radiators since the
+    shunt for the floor heating takes warm water from the radiator
+    heat water forward pipe} controlled by motorized shunt
+  valves\footnote{The motorized shunt valves will have end limit
+    switches, normally open non-potential contacts, indicating max or
+    min setting}.}
+\item{Controlling water flow in the floor heating system for each
+  room. Water flow is controlled by electromagnetic valves which are
+  either on or off.}
+\item{Controlling water flow in the radiators for each room by turning
+  an electromagnetic valve on or off. For systems with thermostats already
+  installed there should be an option of indicating to the user if the
+  thermostat should be adjusted up or down, i.e. an indirect way of
+  controlling water flow in the radiators.}
+\item{Circulation pumps for the two different water flows can be
+  turned off when the system no longer needs to add heat and likewise
+  turned on again for supplying heat.}
+\end{itemize}
+
+Heat supply for the system is stored in water accumulators charged by
+a system outside the scope of this system, however it should not be
+assumed that heat is always available in the accumulators. To reliably
+regulate supplied temperature to the water circulation the temperature
+of water stored in the accumulators should be measured. 
+
+Input parameters for the regulation needs to be a number of
+parameters:
+\begin{itemize}
+\item{Room temperature for each room.}
+\item{Water radiator and floor heating forward and
+  return\footnote{The return water temperature can be used to
+    calculate total power dissipation for the system.} temperatures.}
+\item{Heat water accumulator top and bottom temperatures. This is for
+  measuring available energy.}
+\item{Outdoor temperature should be used to compensate for energy
+  leakage rising with lower outdoor temperatures.}
+\end{itemize}
+Additionally the system should measure relative air humidity both
+outdoor and for each room. This should then be used to both add a
+comfort factor, i.e. optionally raise the temperature if it is cold
+and humid outside, as well as protect cold rooms from being too
+humid. 
+
+
+\subsection{Heat system interaction}
+The interaction with a heater system is to be located at several
+different physical locations. One is where the water accumulators are
+located, i.e. the energy supply and storage which typically will be a
+furnace, solar heater or some kind of heat pump which charges water
+accumulators. Another interface is at one or several places where
+floor heat water flow is controlled. Both of these types should have
+the possibility to control electric shunting valves but only the
+latter needs to control regular electric valves.
+
+Regulating electric shunting valves includes checking that the valve
+has not reached its end limit in the direction it is being turned. It
+also includes measuring the temperature of the regulated water pipe,
+which should be measured closely to the shunting valve, as well as the
+return water temperature. The unit placed at the location of the water
+accumulators needs to be able to measure one outdoor temperature, four
+pipe temperatures (water radiator forward and return, accumulator top
+and bottom temperatures) and one outdoor air relative humidity. It
+also needs to be able to control two circulation pumps, one for warm
+water circulation and one for heat water circulation. This heat water
+circulation is to be considered a general purpose pump that can be
+either heat water circulation over to the house that is to be heated
+if the water accumulators are located at another location outside of
+the house, or it can be circulation for a separate heater system. In
+the first case it should be activated if either of the other
+circulation pumps (floor heating or water radiator) are running and in
+the second case it should be activated if a room unit for this
+separate system requires more heat. In either case it is to be
+considered optional.
+
+Floor heating control unit needs to be able to control floor heating
+electromagnetic valves for 12 rooms as well as two circulation pumps,
+one for the water radiator circulation and one for floor heat
+circulation. It should also be able to measure one air temperature and
+one air relative humidity as well as the warm water pipe temperature
+at the end point of the warm water circulation.
+
+The system should have a standby mode when it should not apply heat
+but keep the circulation pumps running for one hour each month. The
+shunt valves should also be turned one complete turn from low to high
+once each month. This is to keep the pumps and shunt valves from
+jamming when the system is unused for a long period of time. All
+electromagnetic valves should also be toggled once each month for the
+same reason.
+
+
+\subsection{System interfaces}
+Human interaction with the system should be possible in a number of
+different ways. In each room the system should display, without the
+need to press any buttons or other manual interaction, current room
+temperature, wanted room temperature, outdoor temperature and the
+current day/night setting. In each room it should also be possible to
+see the current room and outdoor relative humidity, however this may
+require some manual interaction from the user. The wanted room
+temperature as well as day/night setting for that room should be
+adjustable from each room in a simple way. Day versus night setting
+should be selectable as one of the following; follow the system time
+schedule, override as day or night until time schedule changes next
+time or override as day or night until user selects another
+setting. If using the option of controlling water radiators indirectly
+the system must indicate if water radiator thermostats should be
+adjusted up or down. The room units controlling floor heating should
+also indicate if heat is applied to the room or not.
+
+The unit placed at the location of the water accumulators (the main
+unit) should indicate if each output is on or off, if each shunt valve
+is regulated up, down or kept at its current setting and display each
+input value. It should also show current system day/night setting and
+be able to show the day/night time schedule. All system parameters
+except individual room temperatures should also be adjustable from
+this unit. These are the specified system parameters:
+\begin{itemize}
+\item{Parameters for the regulation of the forward heat water
+  temperatures, i.e. the dependency on outdoor and indoor
+  temperatures, outdoor and indoor relative air humidity or manually
+  raising or lowering the forward heat water temperature}
+\item{Circulation pumps on or off}
+\item{Current day or night setting}
+\item{Time schedule for day or night setting} 
+\item{Warm water circulation high and low temperatures}
+\item{System on or standby}
+\end{itemize}
+
+Time schedule for day or night setting should have a granularity of 15
+minutes, i.e. it should be possible to set a new day or night setting
+once every 15 minutes. A finer granularity than this should not be
+necessary since the system as a whole is slow; it takes some time to
+effectuate a new temperature in a house. 
+
+Floor heat controlling unit should indicate if each output is on or
+off, indicate if each shunt valve is regulated up, down or kept at its
+current setting and display each input value. It should also show
+current system day/night setting. 
+
+There should also be web access to the main unit, i.e. the main unit
+should serve HTTP
+%% FIXME: reference RFC for HTTP
+requests, which should display all system parameters and current input
+values. It should also be possible to change the system parameters by
+using this HTTP access. Parameters and input values should be
+presented in a way that will make it easy to read these parameters
+from some other computer system for logging purposes. Optionally the
+main unit should have an SNMP
+%% FIXME: reference RFC for SNMP
+server that will show all parameters and input values and also enable
+setting of parameters. Preferably the system should also have an
+option to log all or a selection of events to a syslog
+%% FIXME: reference RFC for syslog
+server.
+
+
+\subsection{Unit communication}
+Communication between the room units and the other units of the system
+is to be carried over Internet protocol version 6 (IPv6) or version 4
+(IPv4)
+%% FIXME: reference RFCs for IPv4 and IPv6
+, version should be configurable by the user. IP communication
+will be carried over Ethernet
+%% FIXME: reference IEEE802.3 for Ethernet
+and power supply for the room units
+should be Power over Ethernet (PoE)
+%% FIXME: reference IEEE802.3af for PoE
+. This will then enable the room
+units to use a pre-installed Ethernet network in the house that is to
+be regulated. Optionally the room units should have power input for
+external power supply in case PoE is not available.
+
+Main unit will naturally act as a common communication central for all
+other units. All parameters should be sent to the main unit and stored
+there in a way that will keep them even if power fails. 

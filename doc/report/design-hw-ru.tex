@@ -1,0 +1,263 @@
+% design process of the room unit
+
+\subsubsection{Component selection}
+The unit should present a few parameters to the user and also be able
+to react on user input. For this requirement a simple LCD and a few
+push buttons is sufficient. A simple two row LCD with integrated
+driver, the Newhaven Display NHD-C0220BIZ-FS(RGB) with integrated RGB
+backlight, is selected. For the push buttons debounce an MCU is
+used. This MCU will also be used to drive the RGB backlight diodes
+using PWM to control the color and brightness. The Atmel ATtiny24A is
+chosen since it has three PWM output channels and enough I/O to
+support the push buttons.
+
+Communications by Ethernet need connector, magnetic components for
+electrical isolation and an Ethernet interface circuit. The MAG45
+Ethernet jack with integrated magnetic, LED and PoE diode components
+is chosen to simplify design effort and minimize board size. For the
+driver circuit the Micrel KSZ8851 is selected due to price and simple
+SPI interface. For Power over Ethernet operations a DC-DC converter
+transformer with a PWM driver and a PoE driver circuit is needed. The
+Texas Instruments TPS23757 is selected as the driver circuit since it
+has both PoE and DC-DC PWM converter driving interfaces. Würth
+eletronics has several options for ready-made flyback DC-DC PWM
+transformers with PoE level input, auxilary output for driving the PWM
+circuit matching the TPS23757 and output options for wanted Vdd
+voltage.
+
+As environment sensors the Microchip TC1046 is chosen as the
+temperature sensor due to price as well as being pre-calibrated. The
+Honeywell HIH-5031 is chosen as the relative humidity sensor since it
+has a very simple linear voltage output which will simplify the sensor
+interface design process. An optional pyrolytic infrared (PIR) sensor
+can be used to detect human presence in the room that is
+regulated. The Zilog ZMOTION Detection Module II is chosen for
+simplicity since the module is ready to use with a simple serial
+interface and the relatively small form factor.
+
+The Atmel ATmega1284P is chosen as the MCU since it has I/O that will
+support SPI interface for the Ethernet controller and TWI interface
+for the display and ATtiny24A, AD converters for temperature and
+humidity sensors. Four interrupt inputs are used for pushbutton
+events, ethernet data events, ethernet power management events (Wake
+on LAN) and PIR signal events.
+
+\subsubsection{Power budget}
+Power budget for all components except the PSU components can be seen
+in \tabref{tab:powerbudget_roomunit}. All components can or need to be
+driven by 3.3 V which therefore is selected as the overall system
+voltage, $V_{DD}$. The total maximum power budget for the design is
+seen in the table as approximately 140 mA. For the power supply output
+stage a maximum current of 250 mA and a minimum of 100 mA is chosen.
+
+\begin{table}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Reference designator & Name        & Typical current & Max current\\
+\hline
+U100                 & TC1046      & 35 $\mu$A        & 60 $\mu$A\\
+U101                 & HIH-5031    & 200 $\mu$A       & 500 $\mu$A\\
+A100                 & ZDM II      & $<$ 8.9 mA          & 8.9 mA\\
+U200                 & NHD-C0220BIZ-FS & 1 mA         & 1 mA ? \\
+U200 (LED)           & NHD-C0220BIZ-FS(RGB) & $<$ 44 mA  & 44 mA \\
+U201                 & ATtiny24A   & 210 $\mu$A       & 210 $\mu$A ? \\
+U301                 & KSZ8851     & 85 mA            & 85 mA ? \\
+U400                 & ATMega1284P & 0.4 mA           & 0.4 mA ? \\
+D552                 & LGQ971      & 20 mA            & 20 mA \\
+\hline
+Total                &             & $<$ 160 mA            & 160 mA \\
+\hline
+\end{tabular}
+\caption{Power budget for room unit 3.3 V components}
+\label{tab:powerbudget_roomunit}
+\end{table}
+
+
+\subsubsection{PoE converter}
+According to the power budget summary
+in \tabref{tab:powerbudget_roomunit} and the previous section the
+maximum power drawn is approximately 330 mW. This is without the power
+consumed by the DC/DC converter itself (TPS23757). According to the
+PoE standard there are different classifications based upon maximum
+average power for a powered device. The lowest power class (Class 1)
+specifies a minimum power of 440 mW and a maximum power of 3.84 W. If
+the power consumption drops below the minimum the power source
+equipment may turn the PoE off and this needs to be verified
+carefully. The class is chosen by a classification resistor connected
+to the TPS23757 (R501 in the schematics) and should be 243 $\Omega$
+for Class 1.
+
+The optional DC adapter interface uses a resistor devider network
+(R505, R506) to get the proper voltage at the APD pin of the
+TPS23757. This will be designed to be used with a 48 V DC $\pm$10 \%
+adapter according to the examples given in Texas Instruments document
+SLVA306A. R506 is chosen as 6.8 k$\Omega$ and the minimum startup
+voltage is chosen 25 \% below 48 V
+
+\begin{equation}
+Vin_{MIN}=48 * 0.75 = 36 \text{ V}
+\end{equation}
+The ratio between $Vin_{MIN}$ and adapter priority pin typical voltage,
+$V_{APDEN}=1.5\text{V}$, is given by
+\begin{equation}
+DR_{APD}=\frac{Vin_{MIN}}{V_{APDEN}}=\frac{36 \text{ V}}{1.5 \text{ V}}=24
+\end{equation}
+From here the R505 can be calculated by
+\begin{equation}
+R505 = R506 * (DR_{APD} - 1) = 156.40 \text{ k$\Omega$}
+\end{equation}
+R505 is chosen as 158 k$\Omega$. Now the adapter turnon voltage
+becomes
+\begin{equation}
+Vin_{MIN}=\frac{R505+R506}{R506} * V_{APDEN}
+= \frac{164.8 \text{ k$\Omega$}}{6.8 \text{ k$\Omega$}} * 1.5 \text{ V}
+= 36.353 \text{ V}
+\end{equation}
+and the adapter turnoff voltage, $V_{ADPTR\_OFF}$, is given by the
+minimum adapter priority pin voltage ($V_{APDEN} - V_{APDH}$), where
+$V_{APDH}$ is the hysteresis for the APD pin which is 0.31 V
+typically. 
+\begin{equation}
+V_{ADPTR\_OFF}=\frac{R505+R506}{R506} * (V_{APDEN} - V_{APDH})
+= \frac{164.8 \text{ k$\Omega$}}{6.8 \text{ k$\Omega$}} * 1.2 \text{ V} =
+29.082 \text{ V}
+\end{equation}
+The maximum voltage at the APD pin is, using a 48 V adapter with 10 \% error
+\begin{equation}
+V_{APD} < \frac{Vin_{MAX}}{\frac{R505+R506}{R506}}
+= \frac{48*1.1 \text{ V}}{\frac{164.8 \text{ k$\Omega$}}{6.8 \text{ k$\Omega$}}}
+= 2.179 \text{ V}
+\end{equation}
+which is less than $V_B$ (5 V) and so within the recommended maximum
+voltage.
+
+The output stage consists of a PoE transformer (T550) with input (48 V),
+output (3.3 V) and auxilary (12 V) windings. The Würth Electronics
+part number 7491199331 is chosen, which is designed for 300 kHz
+switching frequency, has 127 $\mu$H input inductance, 3.5 $\mu$H
+leakage inductance and 1.5 $kV_{AC}$ breakdown between windings. To
+program the TPS23757 to run at 300 kHz a resistor is connected between
+the FRS and ARTN pins (R502) with a value given by
+\begin{equation}
+R502 = \frac{17250}{f_{SW} (kHz)} = \frac{17250}{300} \text{
+k$\Omega$} = 57.5 \text{ k$\Omega$}
+\end{equation}
+A resistor with 57.6 k$\Omega$ resistance is chosen. The transformer
+is specified for input voltages between 36 - 57 V DC and has a winding
+ratio (n) between input and output windings of 12.5.
+
+With an assumed converter efficiency ($\eta$) of 80 \% the switching
+transistor Q550 and the rectifying diode D551 will be exposed to
+voltage and current stresses according the following calculations.
+
+\begin{equation}
+V_{Imin}=36 \text{ V}, 
+\end{equation}
+\begin{equation}
+V_{Imax}=57 \text{ V}
+\end{equation}
+Minimum DC voltage transfer function
+\begin{equation}
+M_{V DCmin}=\frac{V_O}{V_{Imax}}=\frac{3.3}{57}=0.057895
+\end{equation}
+and maximum DC voltage transfer function
+\begin{equation}
+M_{V DCmax}=\frac{V_O}{V_{Imin}}=\frac{3.3}{36}=0.091667
+\end{equation}
+Minimum and maximum duty cycles
+\begin{equation}
+D_{min}=\frac{nM_{V DCmin}}{nM_{V DCmin}+\eta}=\frac{12.5*0.058}{12.5*0.058+0.8}=0.475
+\end{equation}
+\begin{equation}
+D_{max}=\frac{nM_{V DCmax}}{nM_{V DCmax}+\eta}=\frac{12.5*0.092}{12.5*0.092+0.8}=0.589
+\end{equation}
+Which is within the TPS23757 duty cycle range of 0 - 78 \%. The
+peak-to-peak ac current through the magnetizing inductance (input) is
+\begin{equation}
+\Delta i_{Lm(max)}=\frac{nV_O (1-D_{min})}{f_s L_m}
+= \frac{12.5*3.3*(1-0.475)}{3*10^5*127*10^{-6}} \text{ A} = 0.568 \text{ A}
+\end{equation}
+The maximum input DC current occurs at the maximum DC voltage transfer
+function (minimum DC input voltage)
+\begin{equation}
+I_{Imax}=M_{V DCmax}I_{Omax} = 0.0917 * 0.250 \text{ A} =
+0.0229 \text{ A}
+\end{equation}
+This gives the current and voltage stresses of the switching
+transistor and the rectifying diode
+\begin{equation}
+I_{SMmax} = I_{Imax} + \frac{I_{Omax}}{n} + \frac{\Delta
+i_{Lm(max)}}{2} = 0.0229 + \frac{0.250}{12.5} + \frac{0.568}{2} \text{
+A} = 
+0.327 \text{ A}
+\end{equation}
+\begin{equation}
+I_{DMmax} = nI_{Imax} + I_{Omax} + \frac{n\Delta i_{Lm(max)}}{2} = 
+12.5*0.0229 + 0.250 + \frac{12.5*0.568}{2} \text{ A} = 4.089 \text{ A}
+\end{equation}
+\begin{equation}
+V_{SMmax} = V_{Imax} +nV_O = 57 + 12.5*3.3 \text{ V} = 98.25 \text{ V}
+\end{equation}
+\begin{equation}
+V_{DMmax} = \frac{V_{Imax}}{n} + V_O = \frac{57}{12.5} + 3.3 \text{ V}
+= 7.86 \text{ V}
+\end{equation}
+The N-MOSFET IRFL4315PbF from International Rectifier can handle
+$V_{DSS}=150$ V and $I_D=2.6$ A with a maximum $R_{DS(on)}$ of 185
+m$\Omega$ at $V_{GS}=10$ V. Typical gate charge $Q_g=12$ nC (max 19
+nC) and output capacitance $C_O=98$ pF. NXP PMEG3050BEP Schottky diode
+has a maximum $I_{DM}=5$ A, maximum reverse voltage $V_{DM}=30$ V and
+forward voltage drop $V_F=0.3$ V at 0.3 A which gives an equivalent
+resistance $R_F$ of 1 $\Omega$. Output voltage ripple should be below
+1 \%
+\begin{equation}
+V_r=0.01V_O = 0.01*3.3 \text{ V} = 0.033 \text{ V}
+\end{equation}
+
+
+
+\subsubsection{Peripheral components}
+The display needs two capacitors to drive the internal boost converter
+for 5 V supply, these are 1 $\mu$F each. The backlight LEDs are
+specified according to \tabref{tab:backlightleds} and need serial
+resistors with values according to \ref{eq:rledred}, \ref{eq:rledgreen}
+and \ref{eq:rledblue}.
+\begin{equation}
+R_{Red} = \frac{3.3 - 1.9}{17} \text{ k$\Omega$} = 82 \text{ $\Omega$}
+\label{eq:rledred}
+\end{equation}
+\begin{equation}
+R_{Green} = \frac{3.3 - 3.0}{17} \text{ k$\Omega$} = 18 \text{ $\Omega$}
+\label{eq:rledgreen}
+\end{equation}
+\begin{equation}
+R_{Blue} = \frac{3.3 - 3.0}{10} \text{ k$\Omega$} = 30 \text{ $\Omega$}
+\label{eq:rledblue}
+\end{equation}
+
+A number of digital nets need pull-up or pull-down resistors, to
+minimize leakage currents a typical value of 100 k$\Omega$ is
+used. This will only draw 33 $\mu$A when the line is being driven. To
+keep external components around the microcontrollers at a minimum the
+internal pull-ups are enabled for unused pins and these are left
+unconnected. This has the drawback of higher power consumption during
+reset condition, but this only occurs either when programming the
+microcontroller program memories or when a user presses the reset
+button. The latter should however be seen as an exception and will
+probably only be used during software development or hardware
+verification.
+
+
+\begin{table}
+\begin{tabular}{|l|l|l|}
+\hline
+Colour & Voltage drop (V) & Current (mA)\\
+\hline
+Red & 1.9 & 17\\
+Green & 3.0 & 17\\
+Blue & 3.0 & 10\\
+\hline
+\end{tabular}
+\caption{LCD Backlight LED drive voltages and currents}
+\label{tab:backlightleds}
+\end{table}

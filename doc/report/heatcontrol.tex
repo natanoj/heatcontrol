@@ -1,0 +1,102 @@
+\documentclass[a4paper,11pt]{article}
+
+% language and character encoding
+\usepackage[english]{babel} \usepackage[utf8x]{inputenc}
+
+% nice looking urls
+\usepackage{url} \urlstyle{same}
+
+%include eps
+\usepackage{graphicx}
+
+% nice code formatting and file referencing
+\usepackage{moreverb}
+
+% many nice math functions
+\usepackage{amsmath}
+
+% clickable pdf links without borders
+\usepackage[pdfborder= 0 0 0]{hyperref}
+
+% needed to access footnote counter for working around 
+% problems with foontotes in table environments
+\usepackage{fmtcount}
+
+% easier referencing of figures, tables and appendices
+\newcommand{\figref}[1]{\figurename~\ref{#1}}
+\newcommand{\tabref}[1]{\tablename~\ref{#1}}
+\newcommand{\appref}[1]{Appendix~\ref{#1}}
+
+\title{Heatcontrol} \author{Jonatan Åkerlind}
+
+
+\begin{document}
+
+% insert title
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+\begin{abstract}
+\setcounter{page}{1}
+\noindent{This document describes the specification, planning,
+  designing, building and testing of an electronic domestic heat
+  control system. The system regulates the temperature in rooms in a
+  house by measuring room and outdoor temperature and regulating
+  temperature of water based convector heaters as well as water based
+  floor heating.}
+
+\end{abstract}
+
+%\thispagestyle{empty}
+\newpage
+
+% Table of contents
+\tableofcontents
+
+%\thispagestyle{empty}
+\newpage
+
+\section{Introduction}
+\input{introduction}
+
+\clearpage
+\newpage
+\section{Specification}
+\input{specification}
+
+\clearpage
+\newpage
+\section{Design}
+\input{design}
+
+\clearpage
+\newpage
+\section{Design verification}
+\input{design-verification}
+
+\clearpage
+\newpage
+\section{Manufacturing}
+\input{manufacturing}
+
+\clearpage
+\newpage
+\section{Product verification}
+\input{product-verification}
+
+\clearpage
+\newpage
+\section{Conclusions}
+\input{conclusions}
+
+\clearpage
+\newpage
+\input{references}
+
+\clearpage
+\newpage
+%\input{appendix}
+
+
+\end{document}
