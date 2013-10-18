@@ -1,12 +1,12 @@
 v 20110115 2
-C 40000 40000 0 0 0 title-bordered-A3-svn.sym
+C 40000 40000 0 0 0 title-bordered-A3-license.sym
 {
-T 49400 40600 15 10 1 1 0 0 1
-svnurl=$URL$
+T 49500 40600 15 10 1 1 0 0 1
+license=CC-BY-SA 3.0
 T 53300 40600 15 10 1 1 0 0 1
-svnrevision=$Rev$
+revision=1.0
 T 53300 40300 15 10 1 1 0 0 1
-svnauthor=$Author$
+copyright=Jonatan Åkerlind 2013
 }
 C 48300 50800 1 0 0 3.3V-plus-1.sym
 C 48400 48100 1 0 0 gnd-1.sym
