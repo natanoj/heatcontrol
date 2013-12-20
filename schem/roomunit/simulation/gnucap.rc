@@ -1,0 +1,7 @@
+get power_output_filter.net
+
+.model 1N4004 D
+
+print tran v(nodes)
+tran 0 100u 1n > power_output_filter_tran_0_100u.out
+exit

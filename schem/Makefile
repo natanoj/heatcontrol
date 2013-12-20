@@ -15,3 +15,11 @@ roomunit-drc2.net: $(ROOMUNITFILES)
 
 clean:
 	rm -f roomunit-drc2.net
+
+simulation: roomunit-simulation
+
+roomunit-simulation: roomunit/simulation/power_output_filter.net
+	$( cd roomunit/simulation; gnucap -i gnucap.rc )
+
+simulation/%.net: %.sch
+	gnetlist -g spice -o $@ $<
