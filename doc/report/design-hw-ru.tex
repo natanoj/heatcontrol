@@ -211,9 +211,28 @@ forward voltage drop $V_F=0.3$ V at 0.3 A which gives an equivalent
 resistance $R_F$ of 1 $\Omega$. Output voltage ripple should be below
 1 \%
 \begin{equation}
-V_r=0.01V_O = 0.01*3.3 \text{ V} = 0.033 \text{ V}
+V_r=0.01V_O = 0.01*3.3 \text{ V} = 33 \text{ mV}
 \end{equation}
 
+% with only one filter capacitor
+Equivalent minimum load resistance
+\begin{equation}
+R_{Lmin}=\frac{V_O}{I_{Omax}} = \frac{3.3}{0.25} \text{ $\Omega$} =
+13.2 \text{ $\Omega$}
+\end{equation}
+
+Assuming ripple voltage over filter capacitor ESR $V_{rcpp}=27$ mV and
+the rest over the filter capacitance $V_{Cpp}=6$ mV gives the maximum
+ESR of the filter capacitor
+\begin{equation}
+r_{Cmax} = \frac{V_{rcpp}}{I_{DMmax}} =
+\frac{27}{4.089} \text{ m$\Omega$} = 6.6 \text{ m$\Omega$}
+\end{equation}
+and the filter capacitance
+\begin{equation}
+C_{min} = \frac{D_{max}V_O}{f_sR_{Lmin}V_{Cpp}} \text{ F} =
+\frac{0.589*3.3}{3*10^5*13.2*6*10^{-3}} = 81.8 \text{ $\mu$F}
+\end{equation}
 
 
 \subsubsection{Peripheral components}
