@@ -1,2 +1,5 @@
+(reset-component-library)
 (component-library "./sym")
+(component-library "./sym/geda")
+(component-library "./sym/gedasymbols")
 (source-library "./roomunit")
