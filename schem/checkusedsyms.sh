@@ -27,7 +27,11 @@ for symbol in $USEDSYMS; do
     fi
 done
 
+if [ $unused -gt 0 ]; then
+    echo "WARNING: found ${unused} unused symbol files"
+fi
 if [ $missing -gt 0 ]; then
+    echo "ERROR: found ${missing} missing symbol files from local library"
     exit 1
 fi
 
