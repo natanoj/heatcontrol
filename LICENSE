@@ -1,0 +1,10 @@
+Different parts of this project are licensed under different
+licenses. The schematics under the schem dir, the pcb designs under
+the pcb dir and the documentation under the doc dir are licensed under
+the Creative Commons Attribution-ShareAlike 4.0 International
+License. To view a copy of this license, visit
+http://creativecommons.org/licenses/by-sa/4.0/deed.en_US.
+
+The schematic symbols and pcb footprints are licensed under various
+licenses depending on their origin, see the corresponding README and
+LICENSE file under each directory.
