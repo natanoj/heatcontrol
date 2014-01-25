@@ -2,7 +2,7 @@ v 20110115 2
 C 40100 40000 0 0 0 title-bordered-A3-license.sym
 {
 T 49600 40600 15 10 1 1 0 0 1
-license=CC-BY-SA 3.0
+license=CC-BY-SA 4.0
 T 53400 40600 15 10 1 1 0 0 1
 revision=1.0
 T 53400 40300 15 10 1 1 0 0 1
