@@ -7,7 +7,7 @@ description=Atmel ATtiny24A uC
 T 5900 3400 9 10 0 0 0 0 1
 device=ATtiny24A/44A/84A
 T 5900 3600 9 10 0 0 0 0 1
-distlicense=GPL
+distlicense=GPL3
 T 5900 3800 9 10 0 0 0 0 1
 uselicense=unlimited
 T 5900 4000 9 10 0 0 0 0 1

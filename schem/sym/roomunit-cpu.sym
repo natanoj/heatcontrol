@@ -3,7 +3,7 @@ B 300 300 3400 4200 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
 T 3700 4600 9 10 0 0 0 0 1
 device=none
 T 3700 4800 9 10 0 0 0 0 1
-dist-license=GPL
+dist-license=GPL3
 T 3700 5000 9 10 0 0 0 0 1
 use-license=unlimited
 T 3700 5200 9 10 0 0 0 0 1

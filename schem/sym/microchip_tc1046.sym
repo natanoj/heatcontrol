@@ -40,7 +40,7 @@ copyright=2011 Jonatan Åkerlind
 T 1100 1500 8 10 0 1 0 0 1
 use-license=unlimited
 T 1100 1700 8 10 0 1 0 0 1
-dist-license=GPL
+dist-license=GPL3
 T 1100 1900 8 10 0 1 0 0 1
 device=TC1046
 T 600 1200 8 10 1 1 0 0 1

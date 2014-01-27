@@ -11,7 +11,7 @@ refdes=U?
 ! copryright=2011 Jonatan Åkerlind
 ! author=Jonatan Åkerlind
 ! uselicense=unlimited
-! distlicense=GPL
+! distlicense=GPL3
 ! device=ATmega1284P
 ! description=Atmel ATmega1284P uC Port A
 

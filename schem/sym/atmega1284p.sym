@@ -7,7 +7,7 @@ description=Atmel ATmega1284P uC
 T 5500 5200 9 10 0 0 0 0 1
 device=ATmega1284P
 T 5500 5400 9 10 0 0 0 0 1
-distlicense=GPL
+distlicense=GPL3
 T 5500 5600 9 10 0 0 0 0 1
 uselicense=unlimited
 T 5500 5800 9 10 0 0 0 0 1

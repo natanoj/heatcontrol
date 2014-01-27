@@ -228,3 +228,11 @@ T 300 2200 8 10 0 0 0 0 1
 footprint=EADOGM
 T 3400 2000 8 10 1 1 0 0 1
 refdes=U?
+T 300 2600 9 10 0 0 0 0 1
+dist-license=GPL3
+T 300 2800 9 10 0 0 0 0 1
+use-license=unlimited
+T 300 3000 9 10 0 0 0 0 1
+author=Jonatan Åkerlind
+T 300 3200 9 10 0 0 0 0 1
+copyright=2011 Jonatan Åkerlind

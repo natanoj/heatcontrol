@@ -7,7 +7,7 @@ description=Zilog ZMOTION Detection Module II
 T 2800 2400 9 10 0 0 0 0 1
 device=ZDMII
 T 2800 2600 9 10 0 0 0 0 1
-distlicense=GPL
+distlicense=GPL3
 T 2800 2800 9 10 0 0 0 0 1
 uselicense=unlimited
 T 2800 3000 9 10 0 0 0 0 1

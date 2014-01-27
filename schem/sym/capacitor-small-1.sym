@@ -35,3 +35,11 @@ T 150 850 5 10 0 0 0 0 1
 numslots=0
 T 150 650 5 10 0 0 0 0 1
 symversion=0.1
+T 150 1250 9 10 0 0 0 0 1
+dist-license=GPL3
+T 150 1450 9 10 0 0 0 0 1
+use-license=unlimited
+T 150 1650 9 10 0 0 0 0 1
+author=Jonatan Åkerlind
+T 150 1850 9 10 0 0 0 0 1
+copyright=2013 Jonatan Åkerlind

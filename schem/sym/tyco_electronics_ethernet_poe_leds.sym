@@ -1,7 +1,7 @@
 v 20100214 2
 B 300 300 4100 2400 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
 T 4400 2700 9 10 0 0 0 0 1
-distlicense=GPL
+distlicense=GPL3
 T 4400 2900 9 10 0 0 0 0 1
 uselicense=unlimited
 T 4400 3100 9 10 0 0 0 0 1
