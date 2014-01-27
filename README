@@ -4,9 +4,23 @@ and testing of a system for home automation as well as software needed
 to run on the hardware. The primary goal for the system is home heat
 regulation, but it is not limited to that.
 
+The fundamental requirements for this project is for communication to
+be carried over IP, preferably IPv6, over Ethernet. See the
+./doc/report for details.
+
+System software will be based on the Contiki OS, see the submodule
+./software/contiki
+
+Design software used
+====================
+The goal is to only use open source software programs in this project.
+The hardware design is created using software from the gEDA project,
+see http://www.geda-project.org/ with electronic simulation using the
+Gnucap simulator, see http://www.gnucap.org . Schematics are created
+using gschem 1.6 and 1.8.
+
 Directory structure
 ===================
-
 ./doc/report a report for the system, including design calculations
 ./schem      schematics
 ./pcb        PCB layouts
