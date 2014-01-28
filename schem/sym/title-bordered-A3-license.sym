@@ -3,9 +3,11 @@ B 0 0 16500 11600 15 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
 T 16500 1800 5 10 0 0 0 0 1
 graphical=1
 T 16500 2000 9 10 0 0 0 0 1
-dist-license=GPL3
+dist-license=GPL2
 T 16500 2200 9 10 0 0 0 0 1
 use-license=unlimited
+T 16500 2400 9 10 0 0 0 0 1
+copyright=gEDA project
 L 12200 800 12200 200 15 0 0 0 -1 -1
 T 12300 600 15 8 1 0 0 0 1
 REVISION:
