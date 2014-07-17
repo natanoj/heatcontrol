@@ -1,4 +1,4 @@
-CONTIKI_PROJECT = heatcontrol-roomunit
+CONTIKI_PROJECT = roomunit
 all: $(CONTIKI_PROJECT)
 
 #UIP_CONF_IPV6=1
