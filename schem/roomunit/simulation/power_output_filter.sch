@@ -1,4 +1,4 @@
-v 20110115 2
+v 20130925 2
 C 40000 40000 0 0 0 title-bordered-A3-license.sym
 C 46900 47600 1 0 0 coil-1.sym
 {
@@ -20,7 +20,7 @@ refdes=C1
 T 46200 45300 5 10 0 0 270 0 1
 symversion=0.1
 T 45300 45500 5 10 1 0 0 0 1
-value=57n
+value=68n
 }
 C 48200 45600 1 270 0 capacitor-3.sym
 {
@@ -31,7 +31,7 @@ refdes=C2
 T 49100 45400 5 10 0 0 270 0 1
 symversion=0.1
 T 48200 45600 5 10 1 0 0 0 1
-value=2u
+value=22u
 }
 C 49900 46500 1 90 0 resistor-small-1.sym
 {
