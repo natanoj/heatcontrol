@@ -78,7 +78,7 @@ device=RESISTOR
 T 44550 45150 5 10 1 1 90 0 1
 refdes=R550
 T 45000 45100 5 10 1 1 90 0 1
-value=Rctl
+value=2k
 }
 C 45500 45000 1 90 0 capacitor-small-1.sym
 {
@@ -109,7 +109,7 @@ device=RESISTOR
 T 50750 45750 5 10 1 1 0 0 1
 refdes=R552
 T 50700 45300 5 10 1 1 0 0 1
-value=Rob
+value=475
 }
 C 51900 43100 1 90 0 resistor-small-1.sym
 {
@@ -118,7 +118,7 @@ device=RESISTOR
 T 51650 43250 5 10 1 1 90 0 1
 refdes=R554
 T 52100 43100 5 10 1 1 90 0 1
-value=Rfbl
+value=24.3k
 }
 C 51900 44400 1 90 0 resistor-small-1.sym
 {
@@ -127,7 +127,7 @@ device=RESISTOR
 T 51650 44550 5 10 1 1 90 0 1
 refdes=R553
 T 52100 44400 5 10 1 1 90 0 1
-value=Rfbu
+value=41.2k
 }
 C 50500 49800 1 90 1 capacitor-3.sym
 {
@@ -205,11 +205,13 @@ C 50000 42900 1 0 1 TLV431_SOT23-1.sym
 T 49200 43500 5 10 1 1 0 6 1
 refdes=U551
 T 50000 44100 5 10 0 0 0 6 1
-device=LM431
+device=TLV431BE5TA
 T 50000 44300 5 10 0 0 0 6 1
 footprint=SOT23
 T 49200 43200 5 10 1 1 0 6 1
 value=TLV431
+T 50000 42900 5 10 0 0 0 0 1
+farnell-no=1904052
 }
 N 49500 43800 49500 44400 4
 N 49500 44000 50600 44000 4
@@ -270,7 +272,7 @@ value=Cin
 }
 C 48700 49800 1 0 0 diode-1.sym
 {
-T 49100 50400 5 10 0 0 0 0 1
+T 49000 50500 5 10 1 1 0 0 1
 device=NXP PMEG3050BEP
 T 49000 50300 5 10 1 1 0 0 1
 refdes=D551
@@ -288,7 +290,9 @@ device=RESISTOR
 T 45850 45750 5 10 1 1 90 0 1
 refdes=R551
 T 46300 45700 5 10 1 1 90 0 1
-value=Rcs
+value=1.8
+T 46100 45600 5 10 0 0 0 0 1
+farnell-no=9236554
 }
 N 46000 45600 46000 42800 4
 C 49300 44300 1 0 0 optocoupler_FOD817DS_LED.sym
@@ -298,9 +302,11 @@ symversion=1.0
 T 49950 45000 5 10 1 1 0 0 1
 refdes=U550
 T 49950 44800 5 10 1 1 0 0 1
-value=FOD817DS
+value=FOD817A
 T 49950 44600 5 8 1 1 0 0 1
 footprint=FOD81x
+T 49300 44300 5 10 0 0 0 0 1
+farnell-no=2322515
 }
 C 44300 43300 1 0 0 optocoupler_FOD817DS_PT.sym
 {
@@ -309,7 +315,7 @@ symversion=1.0
 T 44750 43700 5 10 1 1 0 0 1
 refdes=U550
 T 44750 43500 5 10 1 1 0 0 1
-device=FOD817DS
+device=FOD817A
 }
 N 48100 48900 48400 48900 4
 N 48100 48100 48700 48100 4

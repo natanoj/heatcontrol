@@ -215,6 +215,21 @@ resistance $R_F$ of 1 $\Omega$. Output voltage ripple should be below
 V_r=0.01V_O = 0.01*3.3 \text{ V} = 33 \text{ mV}
 \end{equation}
 
+For the current sense input to the control circuit a resistor,
+$R_{CS}$ (R551), is chosen from the primary winding peak current and
+max input voltage on $V_{CS}$. According to the datasheet $V_{CSMAX}$
+= 0.55 V.
+
+\begin{equation}
+R_{cs_{MIN}} = \frac{V_{CSMAX}}{I_{SMmax}} = \frac{0.55}{0.327} =
+1.682 \text{\Omega}
+\end{equation}
+$R_{CS}$ is chosen as 1.8 $\Omega$. Maximum power dissipation for this
+would then be approx 0.19 W if the peak current was constant. This
+corner case is highly unlikely but dimensioning for this case will
+keep the design on the safe side. An SMD resistor rated for 250 mW is
+chosen.
+
 % with only one filter capacitor
 Equivalent minimum load resistance
 \begin{equation}
@@ -234,6 +249,66 @@ and the filter capacitance
 C_{min} = \frac{D_{max}V_O}{f_sR_{Lmin}V_{Cpp}} \text{ F} =
 \frac{0.589*3.3}{3*10^5*13.2*6*10^{-3}} = 81.8 \text{ $\mu$F}
 \end{equation}
+
+
+Output filter in a C-L-C configuration with values derived from the
+previous section and verified with simulation. Component values chosen
+are 68 nF for the first shunt capacitor (C552 toward the transformer), 50
+nH for the inductor (L550) and 22 \text{ $\mu$F} for the second shunt
+capacitor (C553 toward the regulated power output).
+% FIXME:  Add information and simulation graph
+
+
+Output voltage set point resistors are calculated using the estimated
+integrator zero location at approximately 1 kHz. Integrator zero
+capacitors range between 1 nF - 10 nF, 4.7 nF is assumed.
+\begin{equation}
+R_{IZE} \approx \frac{1}{2* \pi * 4.7 nF * 1 kHz} =
+33.9 \text{k$\Omega$}
+\end{equation}
+\begin{equation}
+R_{FBUE} \approx R_{IZE}
+\end{equation}
+$R_{FBU}$ (R553) chosen as 41.2 \text{k$\Omega$}. $V_{ref}$ = 1.24 V
+which then gives $R_{FBL}$ (R554)
+\begin{equation}
+R_{FBL} = \frac{V_{ref}*R_{FBU}}{V_{out_{NOM}} - V_{ref}}
+= \frac{1.24*41.2}{3.3-1.24} = 24.8 \text{k$\Omega$}
+\end{equation}
+$R_{FBL}$ chosen at 24.3 \text{k$\Omega$} which gives a slightly
+higher nominal output voltage. This will compensate a small voltage drop
+in the output circuit.
+
+Opto-Isolator, U550, should have a current-transfer-ratio of about
+80-160 \% at 5 mA. The Fairchild FOD817A is chosen. At 1-2 mA LED bias
+current it has an approximate current-transfer-ratio of 85 \%. Forward
+LED voltage $V_{led_{OPTO}}$ at 2 mA is approximately 1.1 V. Bias
+current limiting resistor, $R_{OB}$ (R552) calculated at zero duty
+cycle
+\begin{equation}
+V_{led{OPTO_K}} = V_{ref} + 150 mV
+\end{equation}
+\begin{equation}
+R_{OB} = \frac{V_{out_{NOM}} - V_{led_{OPTO}} -
+V_{led_{OPTO-K}}}{I_{led_{OPTO}}} = \frac{3.3 - 1.1 - 1.25}{2*10^{-3}}
+= 475 \Omega
+\end{equation}
+The opto-isolator transistor bias current calculated at zero duty
+cycle (values from the datasheet of TPS23757). $V_{zdc_{MAX}}$ = 1.7
+V, $V_{cs_{MAX}}$ = 0.55 V at $V_B$ = 5 V.
+\begin{equation}
+V_{ctl_{MAX}} = V_{zdc_{MAX}} + 2*V_{cs_{MAX}}
+\end{equation}
+\begin{equation}
+V_{ctl_{NOM}} = \frac{V_{zdc_{max}} + V_{ctl_{MAX}}}{2} = 2.25 V
+\end{equation}
+\begin{equation}
+R_{CTL} = \frac{V_b - V_{zdc_{MAX}}}{I_{led_{OPTO}}*CTR_{2mA}} =
+1.9412 \text{k$\Omega$}
+\end{equation}
+$R_{CTL}$ (R550) chosen as 2 \text{k$\Omega$}.
+
+% FIXME: do we need secondary side soft start according to SLVA305C 2.8.6 ?
 
 
 \subsubsection{Peripheral components}
