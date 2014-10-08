@@ -1,28 +1,74 @@
+clc
 clear
-% actual max duty cycle
-Dmax=0.589
-% Current sense resistor
-Rcs=1.8
-% Primary:secondary winding relationship
-Nps=12.5
-
-% Modulator Power Stage (MPS) gain (Kmps) is the ratio of modulator output current to CS
-% pin voltage
-Kmps = (1-Dmax)*Nps/Rcs
+% Input characteristics
+Vinmin=36
+Vinmax=57
 
 % Nominal and maximum output characteristics
 Voutnom=3.3
-Ioutmax=0.25
+% multiplied by 4, keeps the output high enough to keep the transformer size down... FIXME!
+Ioutmax=0.25*4
 Poutmax=Voutnom*Ioutmax
+% target efficiency
+etaFB=0.80
 
-% equivalent load resistance
-Rload=Voutnom^2/Poutmax
+%target PWM frequency
+freqnom=5e5
 
-% input winding inductance
-Lp=127e-6
+Iprimmax=Poutmax/(Vinmin*etaFB)
+Dmaxdesign=0.6
+Rlossprim=1
+%estimating primary voltage drop, assuming peak prim input current
+%as twice max average current
+Vdropprim=2*Iprimmax*Rlossprim
+% approx secondary Vdrop (rectifying diode)
+Vdropsec=0.4
+Npsmax=Dmaxdesign/(1-Dmaxdesign)*(Vinmin-Vdropprim)/(Voutnom+Vdropsec)
+
+Vbiasnom=12
+% approx bias voltage drop
+Vdropbias=0.75
+Npbmax=Dmaxdesign/(1-Dmaxdesign)*Vinmin/(Vbiasnom+Vdropbias)
+
+% Chosen primary:secondary winding relationship
+Nps=12.5
+
+% Target peak primary current
+Ipeak=4/3*(Ioutmax/Nps)*(1/(1-Dmaxdesign))
+
+Lprimmin=Dmaxdesign/freqnom*Vinmin/(0.5*Ipeak)
+% Chosen input winding inductance
+Lp=400e-6
+
+% actual max duty cycle
+Dmax=(Voutnom+Vdropsec)*Nps/(Vinmin+(Voutnom+Vdropsec)*Nps)
+% actual min duty cycle
+Dmin=(Voutnom+Vdropsec)*Nps/(Vinmax+(Voutnom+Vdropsec)*Nps)
+
+% Primary currents
+Idcfbmax=Poutmax/(Vinmin*etaFB)
+Ipristep=Idcfbmax/Dmax
+dILprim=Vinmin/Lp*Dmax/freqnom
+Iprimpeak=Ipristep+dILprim/2
+
+% Primary switching mosfet
+Vsnubbermax=25
+Vdsprim=Vinmax+Vsnubbermax+(Voutnom+Vdropsec)*Nps
+
+% Current sense resistor
+Vcsmax=0.55
+Rcs=Vcsmax=Iprimpeak
+
+% Modulator Power Stage (MPS) gain (Kmps) is the ratio of modulator output current to CS
+% pin voltage
+Kmps=(1-Dmax)*Nps/Rcs
+
+% equivalent load resistance at maximum output
+Rload=Voutnom/Ioutmax
+
 % Current mode control => Right Half Plane Zero
 RHPZ=Rload*(Nps*(1-Dmax))^2/(2*pi*Dmax*Lp)
-omegaRHPZ = 2*pi*RHPZ
+omegaRHPZ=2*pi*RHPZ
 
 % MPS Current
 function I = Imps(omega, Kmps, omegaRHPZ)
@@ -36,20 +82,41 @@ end
 %    C1         C2      RLoad
 %    |          |       |
 %  --+----------+-------+
+% function Z = Zout(omega, Rload)
+%     % filter components with parasitics
+%     ESRC1=20e-3;
+%     ESRC2=1.5;
+%     ESRL=20e-3;
+%     C1=68e-9;
+%     C2=22e-6;
+%     L=50e-9;
+
+%     % A=Rload//(ESRC2+C2)+L+ESRL
+%     A=(Rload+i.*omega.*C2.*Rload.*ESRC2)./(i.*omega.*C2.*Rload+i.*omega.*ESRC2+1)+i.*omega.*L+ESRL;
+
+%     % Z=A//(C1+ESRC1)
+%     Z=A.*(1./(i.*omega.*C1)+ESRC1)./(A+1./(i.*omega.*C1)+ESRC1);
+% end
+
+% Output filter and load frequency characteristics
+%  --+----------+-------+
+%    |          |       |
+%    ESRC1      ESRC2   |
+%    C1         C2      RLoad
+%    |          |       |
+%  --+----------+-------+
 function Z = Zout(omega, Rload)
     % filter components with parasitics
-    ESRC1=20e-3;
-    ESRC2=20e-3;
-    ESRL=20e-3;
-    C1=68e-9;
-    C2=22e-6;
-    L=50e-9;
+    ESRC1=6e-3;
+    ESRC2=6e-3;
+    C1=39e-6;
+    C2=82e-6;
 
-    % A=Rload//(ESRC2+C2)+L+ESRL
-    A=(Rload+i.*omega.*C2.*Rload.*ESRL)./(i.*omega.*C2.*Rload+i.*omega.*ESRL+1)+i.*omega.*L+ESRL;
+    % A=(ESRC1+C1)//(ESRC2+C2)
+    A=(ESRC1+1./(i.*omega.*C1)).*(ESRC2+1./(i.*omega.*C2))./(ESRC1+1./(i.*omega.*C1)+ESRC2+1./(ESRC2+1./(i.*omega.*C2)));
 
-    % Z=A//(C1+ESRC1)
-    Z=A.*(1./(i.*omega.*C1)+ESRC1)./(A+1./(i.*omega.*C1)+ESRC1);
+    % Z=A//Rload
+    Z=A.*Rload./(A+Rload);
 end
 
 f=logspace(0,6,500);
