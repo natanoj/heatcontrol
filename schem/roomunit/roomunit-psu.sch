@@ -1,4 +1,4 @@
-v 20110115 2
+v 20130925 2
 C 40000 40000 0 0 0 title-bordered-A3-license.sym
 {
 T 49500 40600 15 10 1 1 0 0 1
@@ -265,7 +265,7 @@ symversion=1.0
 T 48950 49300 5 10 1 1 0 0 1
 refdes=U501
 T 48950 49100 5 10 1 1 0 0 1
-value=FOD817DS
+value=FOD817A
 T 48950 48900 5 8 1 1 0 0 1
 footprint=FOD81x
 }
