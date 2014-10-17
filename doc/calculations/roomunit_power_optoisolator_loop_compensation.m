@@ -140,27 +140,10 @@ Rctl=(Vb-Vzdcmax)/(Iledopto*CTR2ma);
 % => 1941, choose Rctl=2k
 Rctl=2e3
 
-% Output filter and load frequency characteristics
-%  --+----------+
-%    |          |
-%    ESRC1      |
-%    C1         RLoad
-%    |          |
-%  --+----------+
-function Z = Zout(omega, Rload)
-    % filter components with parasitics
-    ESRC1=10e-3;
-    C1=10e-6;
-
-    A=ESRC1+1./(i.*omega.*C1);
-
-    Z=A.*Rload./(A+Rload);
-end
-
 f=logspace(0,6,500);
 
 % desired loop crossover frequency F0=5.5e3 Hz
-F0=3e3
+F0=5.5e3
 
 % TPS23757 internal CTL to PWM divider
 Kctl=2
@@ -195,15 +178,16 @@ function MPF=MPF(omega, Go, omegaz1, omegaz2, omegap1, omegap2)
     MPF=Go.*(1+i.*omega./omegaz1).*(1-i.*omega./omegaz2) ...
         ./((1+i.*omega./omegap1).*(1+i.*omega./omegap2));
 end
+
 mpfdata=MPF(2*pi.*f, Go, omegaz1, omegaz2, omegap1, omegap2);
 absfigh=figure
-hold all
-loglog(f, abs(mpfdata), ";Uncompensated MPF;")
+hold on
+loglog(f, abs(mpfdata), "b;Uncompensated MPF;")
 grid on
 title "Transfer function magnitude"
 argfigh=figure
-hold all
-semilogx(f, arg(mpfdata), ";Uncompensated MPF;")
+hold on
+semilogx(f, arg(mpfdata), "b;Uncompensated MPF;")
 grid on
 title "Transfer function phase"
 
@@ -215,9 +199,7 @@ function OPTO=OPTO(omega, Cctl, Rctl, Rzctl, Rob, CTR2ma, Kctl)
         (1+i.*omega.*(Rctl+Rzctl).*Cctl).*1/Kctl;
 end
 
-
 Rload=Rlmin
-
 
 % Cctl selected to be sufficiently below 1 at F0. Assuming simple
 % integrator with no midband gain (Riz=0). Target an initial
@@ -238,9 +220,9 @@ Cctl=decades(index)
 
 optodata=OPTO(2*pi.*f, Cctl, Rctl, 0, Rob, CTR2ma, Kctl);
 figure(absfigh)
-loglog(f, abs(optodata), ";Optocoupler (simple);")
+loglog(f, abs(optodata), "g;Optocoupler (simple);")
 figure(argfigh)
-semilogx(f, arg(optodata), ";Optocoupler (simple);")
+semilogx(f, arg(optodata), "g;Optocoupler (simple);")
 
 
 % For lower output power and voltage designs, a resistor in series
@@ -251,9 +233,9 @@ Rzctl=249
 
 optodata=OPTO(2*pi.*f, Cctl, Rctl, Rzctl, Rob, CTR2ma, Kctl);
 figure(absfigh)
-loglog(f, abs(optodata), ";Optocoupler (with Rzctl);")
+loglog(f, abs(optodata), "y;Optocoupler (with Rzctl);")
 figure(argfigh)
-semilogx(f, arg(optodata), ";Optocoupler (with Rzctl);")
+semilogx(f, arg(optodata), "y;Optocoupler (with Rzctl);")
 
 absGmoF0=abs(MPF(2*pi*F0, Go, omegaz1, omegaz2, omegap1, omegap2)) ...
          *abs(OPTO(2*pi.*F0, Cctl, Rctl, Rzctl, Rob, CTR2ma, Kctl))
@@ -273,9 +255,9 @@ end
 
 intdata=INT(2*pi.*f, Riz, Rfbu, Ciz, Cip);
 figure(absfigh)
-loglog(f, abs(intdata), ";Integrator;")
+loglog(f, abs(intdata), "k;Integrator;")
 figure(argfigh)
-semilogx(f, arg(intdata), ";Integrator;")
+semilogx(f, arg(intdata), "k;Integrator;")
 
 % overall flyback transfer function
 function FB=FB(omega, Rload, omegaz1, omegaz2, omegap1, omegap2, Cctl, Rctl, Rzctl, Rob, ...
@@ -295,6 +277,6 @@ phasemargin=arg(FBf0)*180/pi
 gainF0=20*log10(abs(FBf0))
 
 figure(absfigh)
-loglog(f, abs(fbdata), ";Overall compensated;")
+loglog(f, abs(fbdata), "r;Overall compensated;")
 figure(argfigh)
-semilogx(f, arg(fbdata), ";Overall compensated;")
+semilogx(f, arg(fbdata), "r;Overall compensated;")
