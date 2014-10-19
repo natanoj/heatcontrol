@@ -92,8 +92,9 @@ The optional DC adapter interface uses a resistor devider network
 (R505, R506) to get the proper voltage at the APD pin of the
 TPS23757. This will be designed to be used with a 48 V DC $\pm$10 \%
 adapter according to the examples given in Texas Instruments document
-SLVA306A. R506 is chosen as 6.8 k$\Omega$ and the minimum startup
+SLVA305A. R506 is chosen as 6.8 k$\Omega$ and the minimum startup
 voltage is chosen 25 \% below 48 V
+% FIXME: reference slva305a properly
 
 \begin{equation}
 Vin_{MIN}=48 * 0.75 = 36 \text{ V}
@@ -117,7 +118,7 @@ Vin_{MIN}=\frac{R505+R506}{R506} * V_{APDEN}
 and the adapter turnoff voltage, $V_{ADPTR\_OFF}$, is given by the
 minimum adapter priority pin voltage ($V_{APDEN} - V_{APDH}$), where
 $V_{APDH}$ is the hysteresis for the APD pin which is 0.31 V
-typically. 
+typically.
 \begin{equation}
 V_{ADPTR\_OFF}=\frac{R505+R506}{R506} * (V_{APDEN} - V_{APDH})
 = \frac{164.8 \text{ k$\Omega$}}{6.8 \text{ k$\Omega$}} * 1.2 \text{ V} =
@@ -132,27 +133,15 @@ V_{APD} < \frac{Vin_{MAX}}{\frac{R505+R506}{R506}}
 which is less than $V_B$ (5 V) and so within the recommended maximum
 voltage.
 
-The output stage consists of a PoE transformer (T550) with input (48 V),
-output (3.3 V) and auxilary (12 V) windings. The Würth Electronics
-part number 7491199331 is chosen, which is designed for 300 kHz
-switching frequency, has 127 $\mu$H input inductance, 3.5 $\mu$H
-leakage inductance and 1.5 $kV_{AC}$ breakdown between windings. To
-program the TPS23757 to run at 300 kHz a resistor is connected between
-the FRS and ARTN pins (R502) with a value given by
-\begin{equation}
-R502 = \frac{17250}{f_{SW} (kHz)} = \frac{17250}{300} \text{
-k$\Omega$} = 57.5 \text{ k$\Omega$}
-\end{equation}
-A resistor with 57.6 k$\Omega$ resistance is chosen. The transformer
-is specified for input voltages between 36 - 57 V DC and has a winding
-ratio (n) between input and output windings of 12.5.
-
-With an assumed converter efficiency ($\eta$) of 80 \% the switching
-transistor Q550 and the rectifying diode D551 will be exposed to
-voltage and current stresses according the following calculations.
+The flyback modulator power stage with feedback network is designed
+according to the example given in SLV305A.
+% FIXME: reference SLV305A
+To minimize the transformer size Discontinous Conduction Mode is
+used. With an assumed converter efficiency ($\eta$) of 85 \% and the
+given DC voltage transfer ratios according to
 
 \begin{equation}
-V_{Imin}=36 \text{ V}, 
+V_{Imin}=36 \text{ V},
 \end{equation}
 \begin{equation}
 V_{Imax}=57 \text{ V}
@@ -165,15 +154,51 @@ and maximum DC voltage transfer function
 \begin{equation}
 M_{V DCmax}=\frac{V_O}{V_{Imin}}=\frac{3.3}{36}=0.091667
 \end{equation}
+
+and assumed duty cycle at DCM/CCM boundary $D_{b max}$=0.3 the minimum
+input-output winding ratio of the transformer becomes
+
+\begin{equation}
+N_{ps min}=\eta \frac{D_{b max}}{(1-D_{b max})M_{V DCmax}}=3.97
+\end{equation}
+
+The PoE transformer (T550) with input (48 V), output (3.3 V) and
+auxilary (12 V) windings from Würth Electronics part number 750310019
+is chosen, which is designed for 200 kHz switching frequency, has 310
+$\mu$H input inductance, 5 $\mu$H leakage inductance and 1.5 $kV_{AC}$
+breakdown between windings. The transformer is specified for input
+voltages between 36 - 57 V DC and has a winding ratio (n) between
+input and output windings of 5.5. To program the TPS23757 to run at 200
+kHz a resistor is connected between the FRS and ARTN pins (R502) with
+a value given by
+\begin{equation}
+R502 = \frac{17250}{f_{SW} (kHz)} = \frac{17250}{200} \text{
+k$\Omega$} = 86.25 \text{ k$\Omega$}
+\end{equation}
+
+A resistor with 86.6 k$\Omega$ resistance is chosen.
+
+To keep the flyback in DCM the maximum magnetizing inductance is
+\begin{equation}
+L_{m max}=frac{N_{ps}^2 R_{l min} (1-D_{b max})^2}{2
+f_{s}}=489 \text{$\mu$ H}
+\end{equation}
+
+Which is above the chosen transformer rating.
+
+The switching transistor Q550 and the rectifying diode D551 will be
+exposed to voltage and current stresses according the following
+calculations.
+
 Minimum and maximum duty cycles
 \begin{equation}
-D_{min}=\frac{nM_{V DCmin}}{nM_{V DCmin}+\eta}=\frac{12.5*0.058}{12.5*0.058+0.8}=0.475
+D_{min}=M_{V DCmin} \sqrt{\frac{2 f_s L_m}{\eta R_{l min}}}=0.192
 \end{equation}
 \begin{equation}
-D_{max}=\frac{nM_{V DCmax}}{nM_{V DCmax}+\eta}=\frac{12.5*0.092}{12.5*0.092+0.8}=0.589
+D_{max}=M_{V DCmax} \sqrt{\frac{2 f_s L_m}{\eta R_{l min}}}=0.305
 \end{equation}
-Which is within the TPS23757 duty cycle range of 0 - 78 \%. The
-peak-to-peak ac current through the magnetizing inductance (input) is
+
+The peak-to-peak ac current through the magnetizing inductance (input) is
 \begin{equation}
 \Delta i_{Lm(max)}=\frac{nV_O (1-D_{min})}{f_s L_m}
 = \frac{12.5*3.3*(1-0.475)}{3*10^5*127*10^{-6}} \text{ A} = 0.568 \text{ A}
@@ -189,11 +214,11 @@ transistor and the rectifying diode
 \begin{equation}
 I_{SMmax} = I_{Imax} + \frac{I_{Omax}}{n} + \frac{\Delta
 i_{Lm(max)}}{2} = 0.0229 + \frac{0.250}{12.5} + \frac{0.568}{2} \text{
-A} = 
+A} =
 0.327 \text{ A}
 \end{equation}
 \begin{equation}
-I_{DMmax} = nI_{Imax} + I_{Omax} + \frac{n\Delta i_{Lm(max)}}{2} = 
+I_{DMmax} = nI_{Imax} + I_{Omax} + \frac{n\Delta i_{Lm(max)}}{2} =
 12.5*0.0229 + 0.250 + \frac{12.5*0.568}{2} \text{ A} = 4.089 \text{ A}
 \end{equation}
 \begin{equation}
@@ -249,14 +274,6 @@ and the filter capacitance
 C_{min} = \frac{D_{max}V_O}{f_sR_{Lmin}V_{Cpp}} \text{ F} =
 \frac{0.589*3.3}{3*10^5*13.2*6*10^{-3}} = 81.8 \text{ $\mu$F}
 \end{equation}
-
-
-Output filter in a C-L-C configuration with values derived from the
-previous section and verified with simulation. Component values chosen
-are 68 nF for the first shunt capacitor (C552 toward the transformer), 50
-nH for the inductor (L550) and 22 \text{ $\mu$F} for the second shunt
-capacitor (C553 toward the regulated power output).
-% FIXME:  Add information and simulation graph
 
 
 Output voltage set point resistors are calculated using the estimated

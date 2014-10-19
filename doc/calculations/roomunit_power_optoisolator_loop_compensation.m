@@ -32,14 +32,21 @@ etaFB=0.85
 Dbmax=0.3
 
 Npsmin=etaFB*Dbmax/((1-Dbmax)*Mvdcmax);
+% => 3.9740
 % Chosen primary:secondary winding relationship
 Nps=5.5
 
 %target PWM frequency
 freqnom=2e5
 
+% resistor for selecting frequency in control circuit
+Rfrs=17250/200;
+% => 86.25
+Rfrs=86.6e3
+
 % Maximum magnetizing inductance for DCM
-Lmmax=Nps^2*Rlmin*(1-Dbmax)^2/(2*freqnom);
+Lmmax=Nps^2*Rlmin*(1-Dbmax)^2/(2*freqnom)
+% => 4.8914e-04
 % matching PoE trafo: würth electronics 750310019
 % Chosen input winding inductance
 Lp=310e-6
@@ -49,11 +56,13 @@ Dmin=Mvdcmin*sqrt(2*freqnom*Lp/(etaFB*Rlmin))
 % actual max duty cycle
 Dmax=Mvdcmax*sqrt(2*freqnom*Lp/(etaFB*Rlmin))
 
+diLmmax=Nps*Voutnom*(1-Dmin)/(freqnom*Lp)
 % Maximum device stresses
 Ismmax=Dmin*Vinmax/(freqnom*Lp)
 Idmmax=Nps*Ismmax
 Vdmmax=Vinmax/Nps+Voutnom
-Vsmmax=Vinmax+Nps*Voutnom
+% Maximum switch voltage without leakage spike
+% Vsmmax=Vinmax+Nps*Voutnom
 
 % Voltage spike at transistor turnoff
 % trafo leakage inductance (max)
@@ -222,11 +231,11 @@ decades=[1.0 1.2 1.5 1.8 2.2 2.7 3.3 3.9 4.7 5.6 6.8 8.2 10 12 15 18 22 27 33 39
 printf("Chosen Cctl within decade boundaries: ")
 Cctl=decades(index)
 
-optodata=OPTO(2*pi.*f, Cctl, Rctl, 0, Rob, CTR, Kctl);
-figure(absfigh)
-loglog(f, abs(optodata), "g;Optocoupler (simple);")
-figure(argfigh)
-semilogx(f, arg(optodata), "g;Optocoupler (simple);")
+% optodata=OPTO(2*pi.*f, Cctl, Rctl, 0, Rob, CTR, Kctl);
+% figure(absfigh)
+% loglog(f, abs(optodata), "g;Optocoupler (simple);")
+% figure(argfigh)
+% semilogx(f, arg(optodata), "g;Optocoupler (simple);")
 
 
 % For lower output power and voltage designs, a resistor in series
@@ -243,12 +252,12 @@ figure(argfigh)
 semilogx(f, arg(optodata), "y;Optocoupler (with Rzctl);")
 
 
-gmodata=abs(MPF(2*pi*f, Go, omegaz1, omegaz2, omegap1, omegap2)).*...
-        OPTO(2*pi.*f, Cctl, Rctl, Rzctl, Rob, CTR, Kctl);
-figure(absfigh)
-loglog(f, abs(gmodata), "c;Gmo;")
-figure(argfigh)
-semilogx(f, arg(gmodata), "c;Gmo;")
+% gmodata=abs(MPF(2*pi*f, Go, omegaz1, omegaz2, omegap1, omegap2)).*...
+%         OPTO(2*pi.*f, Cctl, Rctl, Rzctl, Rob, CTR, Kctl);
+% figure(absfigh)
+% loglog(f, abs(gmodata), "c;Gmo;")
+% figure(argfigh)
+% semilogx(f, arg(gmodata), "c;Gmo;")
 
 absGmoF0=abs(MPF(2*pi*F0, Go, omegaz1, omegaz2, omegap1, omegap2)) ...
          *abs(OPTO(2*pi.*F0, Cctl, Rctl, Rzctl, Rob, CTR, Kctl))
