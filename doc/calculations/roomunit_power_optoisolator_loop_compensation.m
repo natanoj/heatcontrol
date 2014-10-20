@@ -56,13 +56,18 @@ Dmin=Mvdcmin*sqrt(2*freqnom*Lp/(etaFB*Rlmin))
 % actual max duty cycle
 Dmax=Mvdcmax*sqrt(2*freqnom*Lp/(etaFB*Rlmin))
 
+% diLmmax for DCM(?)
 diLmmax=Nps*Voutnom*(1-Dmin)/(freqnom*Lp)
+Idcfbmax=Poutmax/(Vinmin*etaFB)
+Ipristep=Idcfbmax/Dmax
+Iprimpeak=Ipristep*2
+
 % Maximum device stresses
 Ismmax=Dmin*Vinmax/(freqnom*Lp)
 Idmmax=Nps*Ismmax
 Vdmmax=Vinmax/Nps+Voutnom
 % Maximum switch voltage without leakage spike
-% Vsmmax=Vinmax+Nps*Voutnom
+%Vsmmax=Vinmax+Nps*Voutnom
 
 % Voltage spike at transistor turnoff
 % trafo leakage inductance (max)
@@ -75,13 +80,14 @@ Rs=0.045;
 Cp=10e-12;
 
 % transistor output capacitonce (Vgs=0, Vds=25)
-Coss=100e-12;
+Coss=27e-12;
 
 omegao=1/sqrt(Ll*(Coss+Cp));
 freqring=omegao/(2*pi)
 % characteristic impedance of ringing (input) circuit
 Zo=sqrt(Ll/(Coss+Cp));
-Vsmmax=Vinmax+Nps*Voutnom+Ismmax*Zo
+Vspike=Ismmax*Zo;
+Vsmmax=Vinmax+Nps*Voutnom+Vspike
 
 % ringing power loss
 Pring=freqnom*Ll*Ismmax^2/2;
@@ -95,15 +101,32 @@ Cmin=Dmax*Voutnom/(freqnom*Rlmin*Vcpp)
 
 
 % Power losses
-% PMEG3050BEP diode characteristics
-Vf=0.38; % @ 1A
+% PMEG2015EPK diode characteristics
+Vf=0.42;
 Pvf=Vf*Ioutmax;
 % conduction power loss (and Vf loss?)
 Pf=0.25; % approx @ 1A
 
-% IRFL4315PBF transistor characteristics
-Qg=12e-9;
-Rds=185e-3;
+% IRLML0100TRPBF transistor characteristics
+Qg=2.5e-9;
+Rds=235e-3; % max at Vgs=4.5 V
+
+
+% input RCD snubber network
+% limit Vspike to < 15 V
+Csn=(Vspike/15)^2*(Coss+Cp);
+% =>  6.9576e-10, choose Csn=820 pF
+Csn=820e-12
+% Rsn for timeconstant 200 times switching freq
+Rsn=200/(freqnom*Csn);
+% => 1.2195e+06, choose Rsn=1210
+Rsn=1210
+
+
+% input filter capacitance, target Vin ripple 1 V
+Vinripple=1;
+Cinmin=diLmmax*Dmax/(freqnom*Vinripple)
+% => 3.6020e-07, choose Cin=1 uF low ESR (X7R)
 
 % max transistor conduction loss
 Prdsmax=2*Rds*Dmax*Voutnom^2/(3*freqnom*Lp*Rlmin);
@@ -307,3 +330,14 @@ figure(absfigh)
 loglog(f, abs(fbdata), "r;Overall compensated;")
 figure(argfigh)
 semilogx(f, arg(fbdata), "r;Overall compensated;")
+
+
+
+%%%
+% adapter presence optocoupler
+Rapb=(12-1.2)/20e-3
+% => 540, choose Rapb=590
+Rapb_out=(3.3-0.1)/1e-3
+% => 3200, choose Rapb_out=3320
+
+%% FIXME: calculate final eta!

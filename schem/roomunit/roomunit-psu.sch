@@ -162,7 +162,9 @@ refdes=C501
 T 47500 45100 5 10 0 0 270 2 1
 symversion=0.1
 T 48500 45000 5 10 1 1 90 0 1
-value=0.1uF
+value=0.1u
+T 48400 45300 5 10 0 0 0 0 1
+comment=Vb bypass capacitor
 }
 C 49300 45300 1 90 1 capacitor-3.sym
 {
@@ -173,7 +175,9 @@ refdes=C502
 T 48400 45100 5 10 0 0 270 2 1
 symversion=0.1
 T 49400 45000 5 10 1 1 90 0 1
-value=Cvc > 0.47uF
+value=0.22u
+T 49300 45300 5 10 0 0 0 0 1
+comment=Vc bypass capacitor
 }
 N 48200 43100 48200 44400 4
 N 48200 45300 48200 47000 4
@@ -249,7 +253,9 @@ refdes=C503
 T 49300 45100 5 10 0 0 90 6 1
 symversion=0.1
 T 50300 45000 5 10 1 1 90 0 1
-value="large for power-up ~10 uF"
+value=10u
+T 50200 45300 5 10 0 0 0 0 1
+comment=Vc bulk capacitor
 }
 N 50000 45300 50000 47800 4
 N 50000 44400 50000 43100 4
@@ -280,7 +286,7 @@ symversion=1.0
 T 54550 46100 5 10 1 1 0 0 1
 refdes=U501
 T 54550 45900 5 10 1 1 0 0 1
-device=FOD817DS
+device=FOD817A
 }
 C 54600 46700 1 90 0 resistor-small-1.sym
 {
@@ -288,8 +294,10 @@ T 54200 46950 5 10 0 0 90 0 1
 device=RESISTOR
 T 54350 46850 5 10 1 1 90 0 1
 refdes=R507
-T 54800 46700 5 10 1 1 90 0 1
-value=Rapb_out
+T 54800 46800 5 10 1 1 90 0 1
+value=3320
+T 54600 46700 5 10 0 0 0 0 1
+comment=Rapb_out
 }
 C 50400 48500 1 90 0 resistor-small-1.sym
 {
@@ -297,8 +305,10 @@ T 50000 48750 5 10 0 0 90 0 1
 device=RESISTOR
 T 50150 48650 5 10 1 1 90 0 1
 refdes=R503
-T 50600 48500 5 10 1 1 90 0 1
-value=Rapb
+T 50600 48600 5 10 1 1 90 0 1
+value=590
+T 50400 48500 5 10 0 0 0 0 1
+comment=Rapb
 }
 N 48500 48600 47900 48600 4
 N 48500 48700 48500 48600 4
