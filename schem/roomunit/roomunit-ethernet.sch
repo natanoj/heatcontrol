@@ -414,3 +414,5 @@ device=DRC_Directive
 }
 N 43200 45800 43300 45800 4
 N 43300 45600 43100 45600 4
+T 48000 43000 8 12 1 0 0 0 1
+FIXME: new connector lacks bridge rectifier, need to add i.e. CDNBS04-B08200
