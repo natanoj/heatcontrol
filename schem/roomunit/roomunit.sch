@@ -345,6 +345,8 @@ T 56100 48500 5 10 0 0 0 6 1
 device=Atmel AVRISP Connector
 T 56100 47100 5 10 0 0 0 6 1
 footprint=CON_HDR-254P-3C-2R-6N__Molex_8624-Series
+T 56100 44900 5 10 0 0 0 0 1
+farnell-no=2293757
 }
 N 54900 46600 53900 46600 4
 {
@@ -497,6 +499,10 @@ T 42500 46600 5 8 0 1 0 6 1
 footprint=JMP_3PIN
 T 42400 48800 5 8 0 0 0 6 1
 symversion=1.0
+T 42600 46800 5 10 0 0 0 0 1
+farnell-no=1593423
+T 42600 46800 5 10 0 0 0 0 1
+comment=farnell-no is 20-way, can be cut. Jumper i.e.: 2396303
 }
 C 55000 49700 1 0 0 jumper_3pin.sym
 {
