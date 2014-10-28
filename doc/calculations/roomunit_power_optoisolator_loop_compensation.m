@@ -34,7 +34,9 @@ Dbmax=0.3
 Npsmin=etaFB*Dbmax/((1-Dbmax)*Mvdcmax);
 % => 3.9740
 % Chosen primary:secondary winding relationship
-Nps=5.5
+% (1-10):(2-9):(3-8):(5-4) 1:2.5:0.75:7.5
+%  5 V    AUX   3.3   In
+Nps=10
 
 %target PWM frequency
 freqnom=2e5
@@ -46,10 +48,10 @@ Rfrs=86.6e3
 
 % Maximum magnetizing inductance for DCM
 Lmmax=Nps^2*Rlmin*(1-Dbmax)^2/(2*freqnom)
-% => 4.8914e-04
-% matching PoE trafo: würth electronics 750310019
+% => 0.0016170
+% matching PoE trafo: Epcos EFD 15 B
 % Chosen input winding inductance
-Lp=310e-6
+Lp=100e-6
 
 % actual min duty cycle
 Dmin=Mvdcmin*sqrt(2*freqnom*Lp/(etaFB*Rlmin))
@@ -71,11 +73,11 @@ Vdmmax=Vinmax/Nps+Voutnom
 
 % Voltage spike at transistor turnoff
 % trafo leakage inductance (max)
-Ll=5e-6;
+Ll=3e-6;
 % trafo primary winding resistance (max)
-Rp=1.6;
+Rp=0.05;
 % trafo secondary winding resistance (max)
-Rs=0.045;
+Rs=0.43;
 % trafo stray input capacitance (estimated)
 Cp=10e-12;
 
@@ -86,7 +88,7 @@ omegao=1/sqrt(Ll*(Coss+Cp));
 freqring=omegao/(2*pi)
 % characteristic impedance of ringing (input) circuit
 Zo=sqrt(Ll/(Coss+Cp));
-Vspike=Ismmax*Zo;
+Vspike=Ismmax*Zo
 Vsmmax=Vinmax+Nps*Voutnom+Vspike
 
 % ringing power loss
@@ -114,19 +116,19 @@ Rds=235e-3; % max at Vgs=4.5 V
 
 % input RCD snubber network
 % limit Vspike to < 15 V
-Csn=(Vspike/15)^2*(Coss+Cp);
-% =>  6.9576e-10, choose Csn=820 pF
-Csn=820e-12
+Csn=(Vspike/5)^2*(Coss+Cp);
+% =>  1.1647e-08, choose Csn=15 nF
+Csn=15e-9
 % Rsn for timeconstant 200 times switching freq
 Rsn=200/(freqnom*Csn);
-% => 1.2195e+06, choose Rsn=1210
-Rsn=1210
+% => 6.6667e+04, choose Rsn=64.9 k
+Rsn=64.9e3
 
 
 % input filter capacitance, target Vin ripple 1 V
 Vinripple=1;
 Cinmin=diLmmax*Dmax/(freqnom*Vinripple)
-% => 3.6020e-07, choose Cin=1 uF low ESR (X7R)
+% => 1.2718e-06, choose Cin=2.2 uF low ESR (X7R)
 
 % max transistor conduction loss
 Prdsmax=2*Rds*Dmax*Voutnom^2/(3*freqnom*Lp*Rlmin);
@@ -143,20 +145,19 @@ Prt2=2*Nps*Rs*Voutnom^2/(3*Rlmin)*sqrt(2/(freqnom*Lp*Rlmin));
 % Current sense resistor
 Vcsmax=0.55;
 Rcs=Vcsmax/Ismmax;
-% =>  3.1083
-Rcs=3.16
+% =>  1.7654
+Rcs=1.8
 
 Cize=1e-9;
 % estimate Rize at 1kHz
 Rize=1/(2*pi*Cize*1e3)
-% Rfbu chosen to be close to Rize=33.9 kOhm
-%Rfbu=41.2e3
+% => 1.5915e+05
+% Rfbu chosen to be close to Rize
 Rfbu=162e3
 % TLV431 ref voltage
 Vref=1.24;
 Rfbl=Vref*Rfbu/(Voutnom-Vref)
-% => 24.8e3, chose to match standard series
-%Rfbl=24.3e3
+% => 9.7515e+04, choose to match standard series
 Rfbl=95.3e3
 
 % Op-amp CTR@2ma
@@ -319,8 +320,9 @@ fbdata=FB(2*pi.*f, Rload, omegaz1, omegaz2, omegap1, omegap2, Cctl, Rctl, Rzctl,
           Kctl, Riz, Rfbu, Ciz, Cip);
 
 
-% adjusted F0 = 4.2 kHz
-F0=3.3e3
+% adjusted F0
+[tmp index] = min(abs(20*log10(abs(fbdata))-1));
+F0=f(index)
 FBf0=FB(2*pi.*F0, Rload, omegaz1, omegaz2, omegap1, omegap2, Cctl, Rctl, Rzctl, Rob, CTR, ...
         Kctl, Riz, Rfbu, Ciz, Cip)
 phasemargin=arg(FBf0)*180/pi
