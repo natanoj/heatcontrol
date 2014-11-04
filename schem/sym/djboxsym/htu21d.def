@@ -1,0 +1,39 @@
+# djboxsym generator definition
+# HTU21D DFN6
+
+--compact
+--vmode
+
+[labels]
+
+HTU21D
+refdes=U?
+! copryright=2014 Jonatan Åkerlind
+! author=Jonatan Åkerlind
+! uselicense=unlimited
+! distlicense=GPL3
+! device=HTU21D
+! description=HTU21D RH/Temp sensor
+! footprint=DFN6
+
+
+[left]
+
+
+[right]
+
+1 DATA io
+6 SCK in
+
+[top]
+
+5 VDD pwr
+
+[bottom]
+
+2 GND pwr
+
+[nc]
+
+3 NC3 out
+4 NC4 out

@@ -12,16 +12,11 @@ refdes=S?
 ! dist-license=GPL3
 ! device=none
 
-[left]
-
-1 PIRRXD in
-
 [right]
 
-2 VTEMPERATURE out
-3 VHUMIDITY out
-4 ! PIRMD out
-5 PIRTXD out
+1 IICSDA io
+2 IICSLC in
+3 PIRMD out
 
 [top]
 
