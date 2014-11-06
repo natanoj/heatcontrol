@@ -8,6 +8,9 @@ all: drc check simulation
 
 drc: roomunit-drc2.net
 
+bom: attribs $(ROOMUNITFILES)
+	gnetlist -g bom2 -o roomunit.bom roomunit/roomunit.sch
+
 roomunit-drc2.net: $(ROOMUNITFILES)
 	gnetlist -g drc2 -o roomunit-drc2.net roomunit/roomunit.sch
 
@@ -18,6 +21,7 @@ clean:
 	rm -f roomunit-drc2.net
 	rm -f roomunit/simulation/*.net
 	rm -f roomunit/simulation/*.out
+	rm -f roomunit.bom
 
 simulation: roomunit-simulation
 
