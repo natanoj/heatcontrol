@@ -274,6 +274,12 @@ T 48400 42600 5 10 0 0 0 0 1
 device=PWRJACK
 T 48300 42600 5 10 1 1 0 0 1
 refdes=CONN1
+T 48300 42100 5 10 0 1 0 0 1
+footprint=lumberg1613-19
+T 48300 42100 5 10 0 1 0 0 1
+comment=matching plug: farnell-no: 2347808
+T 48300 42100 5 10 0 1 0 0 1
+farnell-no=1308872
 }
 N 49200 42200 49900 42200 4
 N 49200 42400 49500 42400 4
@@ -434,6 +440,10 @@ T 41800 45200 5 8 0 1 0 6 1
 footprint=JMP_3PIN
 T 41700 47400 5 8 0 0 0 6 1
 symversion=1.0
+T 41900 45400 5 10 0 1 0 0 1
+comment=farnell-no is 20-way, can be cut. Jumper i.e.: 2396303
+T 41900 45400 5 10 0 1 0 0 1
+farnell-no=1593423
 }
 C 42600 46800 1 0 1 jumper_3pin.sym
 {
@@ -460,6 +470,10 @@ T 55100 49500 5 8 0 1 0 0 1
 footprint=JMP_3PIN
 T 55200 51700 5 8 0 0 0 0 1
 symversion=1.0
+T 55000 49700 5 10 0 1 0 0 1
+comment=farnell-no is 20-way, can be cut. Jumper i.e.: 2396303
+T 55000 49700 5 10 0 1 0 0 1
+farnell-no=1593423
 }
 N 53500 50000 55000 50000 4
 N 55400 49800 55900 49800 4
