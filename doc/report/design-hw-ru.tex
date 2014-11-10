@@ -43,6 +43,8 @@ humidity sensors. Four interrupt inputs are used for pushbutton
 events, ethernet data events, ethernet power management events (Wake
 on LAN) and PIR signal events.
 
+All resistors are chosen from the E48 series.
+
 \subsubsection{Power budget}
 Power budget for all components except the PSU components can be seen
 in \tabref{tab:powerbudget_roomunit}. All components can or need to be
@@ -162,15 +164,15 @@ input-output winding ratio of the transformer becomes
 N_{ps min}=\eta \frac{D_{b max}}{(1-D_{b max})M_{V DCmax}}=3.97
 \end{equation}
 
-The PoE transformer (T550) with input (48 V), output (3.3 V) and
-auxilary (12 V) windings from Würth Electronics part number 750310019
-is chosen, which is designed for 200 kHz switching frequency, has 310
-$\mu$H input inductance, 5 $\mu$H leakage inductance and 1.5 $kV_{AC}$
+The PoE transformer (T550) with input (48 V), output (3.3 V and 5 V)
+and auxilary (12 V) windings. Prebuilt transformer from TDK part
+number EFD15 B82802A0012A315 is chosen, which has 100 $\mu$H input
+inductance, 3 $\mu$H leakage inductance at 100 kHz and 1.5 $kV_{AC}$
 breakdown between windings. The transformer is specified for input
-voltages between 36 - 57 V DC and has a winding ratio (n) between
-input and output windings of 5.5. To program the TPS23757 to run at 200
-kHz a resistor is connected between the FRS and ARTN pins (R502) with
-a value given by
+voltages between 36 - 60 V DC and has a winding ratio (n) between
+input and primary output windings of 10. Chosen switching frequency is
+200 kHz, to program the TPS23757 to run at 200 kHz a resistor is
+connected between the FRS and ARTN pins (R502) with a value given by
 \begin{equation}
 R502 = \frac{17250}{f_{SW} (kHz)} = \frac{17250}{200} \text{
 k$\Omega$} = 86.25 \text{ k$\Omega$}
@@ -192,53 +194,87 @@ calculations.
 
 Minimum and maximum duty cycles
 \begin{equation}
-D_{min}=M_{V DCmin} \sqrt{\frac{2 f_s L_m}{\eta R_{l min}}}=0.192
+D_{min}=M_{V DCmin} \sqrt{\frac{2 f_s L_m}{\eta R_{l min}}}=0.10931
 \end{equation}
 \begin{equation}
-D_{max}=M_{V DCmax} \sqrt{\frac{2 f_s L_m}{\eta R_{l min}}}=0.305
+D_{max}=M_{V DCmax} \sqrt{\frac{2 f_s L_m}{\eta R_{l min}}}=0.17308
 \end{equation}
 
+%% only for CCM(?)
 The peak-to-peak ac current through the magnetizing inductance (input) is
 \begin{equation}
 \Delta i_{Lm(max)}=\frac{nV_O (1-D_{min})}{f_s L_m}
-= \frac{12.5*3.3*(1-0.475)}{3*10^5*127*10^{-6}} \text{ A} = 0.568 \text{ A}
+= \frac{10*3.3*(1-0.10931)}{2*10^5*100*10^{-6}} \text{ A} = 1.4696 \text{ A}
 \end{equation}
-The maximum input DC current occurs at the maximum DC voltage transfer
-function (minimum DC input voltage)
+
+The current and voltage stresses of the switching transistor and the
+rectifying diode are given by
 \begin{equation}
-I_{Imax}=M_{V DCmax}I_{Omax} = 0.0917 * 0.250 \text{ A} =
-0.0229 \text{ A}
-\end{equation}
-This gives the current and voltage stresses of the switching
-transistor and the rectifying diode
-\begin{equation}
-I_{SMmax} = I_{Imax} + \frac{I_{Omax}}{n} + \frac{\Delta
-i_{Lm(max)}}{2} = 0.0229 + \frac{0.250}{12.5} + \frac{0.568}{2} \text{
-A} =
-0.327 \text{ A}
+I_{SMmax} = \frac{D_{min}V_{Imax}}{f_s L_m} = \frac{0.109*57}{200*10^3*100*10^{-6}} \text{
+A} = 0.31154 \text{ A}
 \end{equation}
 \begin{equation}
-I_{DMmax} = nI_{Imax} + I_{Omax} + \frac{n\Delta i_{Lm(max)}}{2} =
-12.5*0.0229 + 0.250 + \frac{12.5*0.568}{2} \text{ A} = 4.089 \text{ A}
+I_{DMmax} = nI_{SMmax} = 10*0.31154 \text{ A} = 3.1154 \text{ A}
 \end{equation}
 \begin{equation}
-V_{SMmax} = V_{Imax} +nV_O = 57 + 12.5*3.3 \text{ V} = 98.25 \text{ V}
+V_{SMmax} = V_{Imax} +nV_O = 57 + 10*3.3 \text{ V} = 90 \text{ V}
 \end{equation}
 \begin{equation}
-V_{DMmax} = \frac{V_{Imax}}{n} + V_O = \frac{57}{12.5} + 3.3 \text{ V}
-= 7.86 \text{ V}
+V_{DMmax} = \frac{V_{Imax}}{n} + V_O = \frac{57}{10} + 3.3 \text{ V}
+= 9 \text{ V}
 \end{equation}
-The N-MOSFET IRFL4315PbF from International Rectifier can handle
-$V_{DSS}=150$ V and $I_D=2.6$ A with a maximum $R_{DS(on)}$ of 185
-m$\Omega$ at $V_{GS}=10$ V. Typical gate charge $Q_g=12$ nC (max 19
-nC) and output capacitance $C_O=98$ pF. NXP PMEG3050BEP Schottky diode
-has a maximum $I_{DM}=5$ A, maximum reverse voltage $V_{DM}=30$ V and
-forward voltage drop $V_F=0.3$ V at 0.3 A which gives an equivalent
-resistance $R_F$ of 1 $\Omega$. Output voltage ripple should be below
-1 \%
+The N-MOSFET IRLM0100TRPbF from International Rectifier can handle
+$V_{DSS}=100$ V and $I_D=1.6$ A with a maximum $R_{DS(on)}$ of 220
+m$\Omega$ at $V_{GS}=10$ V. Typical gate charge $Q_g=2.5$ nC and
+output capacitance $C_O=27$ pF. Multicomp SS54 Schottky diode has a
+maximum $I_{DM}=5$ A, maximum reverse voltage $V_{DM}=40$ V and
+forward voltage drop $V_F=0.55$ V at 5 A which gives an equivalent
+resistance $R_F$ of 0.11 $\Omega$.
+
+Adjusted peak voltage at switching transistor due to transformer leakage
+inductance $L_l$, primary $R_p$ and secondary $R_s$ winding
+resistances, stray input capacitance $C_p$, and transistor output
+capacitance $C_O$. Ringing frequency
 \begin{equation}
-V_r=0.01V_O = 0.01*3.3 \text{ V} = 33 \text{ mV}
+f_{ring}=\frac{\omega_{ring}}{2\pi}=\frac{1}{\sqrt{L_l(C_O+C_p)}}
+\frac{1}{2\pi}=15.106 \text{ MHz}
 \end{equation}
+characteristic impedance of ringing circuit
+\begin{equation}
+Z_0=\sqrt{\frac{L_l}{C_O+C_p}}=284.75 \Omega
+\end{equation}
+ringing voltage spike
+\begin{equation}
+V_{spike}=I_{SMmax}Z_0=88.711 \text{ V}
+\end{equation}
+adjusted switching voltage stress
+\begin{equation}
+V_{SMmax adj}=V_{Imax}+nV_O+V_{spike}=178.71 \text{ V}
+\end{equation}
+This will be limited with snubber circuit $D_{sn}$ (D553), $R_{sn}$
+(R558), and $C_{sn}$ (C555) with $V_{spike new}$ as 5 V.
+\begin{equation}
+C_{sn(min)}=(\frac{V_{spike}}{V_{spike
+new}})^2(C_O+C_p)=11.647 \text{ nF}
+\end{equation}
+Choosing $C_{sn}$ as 15 nF. Choose $R_{sn}$ for time constant much
+larger than switching frequency
+\begin{equation}
+R_{sn}=\frac{200}{f_s C_{sn}}=66.667 \text{ k$\Omega$}
+\end{equation}
+Choosing $R_{sn}$ as 64.9 k$\Omega$.
+For $D_{sn}$ the MURA120 from ON Semiconductor is chosen, with peak
+reverse voltage $V_R$ 200 V and average forward current $I_F$ 1 A.
+
+Maximum input voltage ripple targeted below 1 V gives minimum filter
+capacitance
+\begin{equation}
+C_{in(min)}=\frac{\Delta i_{Lm(max)}D_{max}}{f_s V_{Iripple}}=
+1.2718 \mu F
+\end{equation}
+Choosing $C_{in}$ as one low ESR X7R MLCC 2.2 $\mu$F (C556) and one bulk aluminum
+electrolytic at 2.2 $\mu$F (C550).
+
 
 For the current sense input to the control circuit a resistor,
 $R_{CS}$ (R551), is chosen from the primary winding peak current and
@@ -247,13 +283,19 @@ max input voltage on $V_{CS}$. According to the datasheet $V_{CSMAX}$
 
 \begin{equation}
 R_{cs_{MIN}} = \frac{V_{CSMAX}}{I_{SMmax}} = \frac{0.55}{0.327} =
-1.682 \text{\Omega}
+1.682 \text{$\Omega$}
 \end{equation}
 $R_{CS}$ is chosen as 1.8 $\Omega$. Maximum power dissipation for this
 would then be approx 0.19 W if the peak current was constant. This
 corner case is highly unlikely but dimensioning for this case will
 keep the design on the safe side. An SMD resistor rated for 250 mW is
 chosen.
+
+
+Output voltage ripple should be below 2 \%
+\begin{equation}
+V_r=0.02V_O = 0.02*3.3 \text{ V} = 66 \text{ mV}
+\end{equation}
 
 % with only one filter capacitor
 Equivalent minimum load resistance

@@ -60,16 +60,16 @@ Dmax=Mvdcmax*sqrt(2*freqnom*Lp/(etaFB*Rlmin))
 
 % diLmmax for DCM(?)
 diLmmax=Nps*Voutnom*(1-Dmin)/(freqnom*Lp)
-Idcfbmax=Poutmax/(Vinmin*etaFB)
-Ipristep=Idcfbmax/Dmax
-Iprimpeak=Ipristep*2
+%Idcfbmax=Poutmax/(Vinmin*etaFB)
+%Ipristep=Idcfbmax/Dmax
+%Iprimpeak=Ipristep*2
 
 % Maximum device stresses
 Ismmax=Dmin*Vinmax/(freqnom*Lp)
 Idmmax=Nps*Ismmax
 Vdmmax=Vinmax/Nps+Voutnom
 % Maximum switch voltage without leakage spike
-%Vsmmax=Vinmax+Nps*Voutnom
+Vsmmax=Vinmax+Nps*Voutnom
 
 % Voltage spike at transistor turnoff
 % trafo leakage inductance (max)
@@ -87,19 +87,12 @@ Coss=27e-12;
 omegao=1/sqrt(Ll*(Coss+Cp));
 freqring=omegao/(2*pi)
 % characteristic impedance of ringing (input) circuit
-Zo=sqrt(Ll/(Coss+Cp));
+Zo=sqrt(Ll/(Coss+Cp))
 Vspike=Ismmax*Zo
 Vsmmax=Vinmax+Nps*Voutnom+Vspike
 
 % ringing power loss
 Pring=freqnom*Ll*Ismmax^2/2;
-
-% Output filter capacitors
-% assuming rc=20mOhm
-rc=20e-3;
-Vrcpp=rc*Idmmax;
-Vcpp=Vr-Vrcpp;
-Cmin=Dmax*Voutnom/(freqnom*Rlmin*Vcpp)
 
 
 % Power losses
@@ -129,6 +122,13 @@ Rsn=64.9e3
 Vinripple=1;
 Cinmin=diLmmax*Dmax/(freqnom*Vinripple)
 % => 1.2718e-06, choose Cin=2.2 uF low ESR (X7R)
+
+% Output filter capacitors
+% assuming rc=20mOhm
+rc=20e-3;
+Vrcpp=rc*Idmmax;
+Vcpp=Vr-Vrcpp;
+Coutmin=Dmax*Voutnom/(freqnom*Rlmin*Vcpp)
 
 % max transistor conduction loss
 Prdsmax=2*Rds*Dmax*Voutnom^2/(3*freqnom*Lp*Rlmin);

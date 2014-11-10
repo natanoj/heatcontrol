@@ -15,9 +15,6 @@ refdes=S?
 1 POE+ pwr
 2 POE- pwr
 
-3 DC+ pwr
-4 DC- pwr
-
 [right]
 
 5 VOUT3.3 pwr
