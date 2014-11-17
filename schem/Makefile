@@ -16,6 +16,7 @@ roomunit-drc2.net: $(ROOMUNITFILES)
 
 check:
 	./checkusedsyms.sh
+	./checkusedfootprints.sh
 
 clean:
 	rm -f roomunit-drc2.net
