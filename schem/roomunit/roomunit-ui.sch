@@ -143,7 +143,7 @@ C 45600 46900 1 0 0 gnd-1.sym
 C 44600 41900 1 0 0 attiny24a.sym
 {
 T 50500 44900 5 10 0 0 0 0 1
-footprint=SOIC14
+footprint=SO14
 T 50500 45300 5 10 0 0 0 0 1
 device=ATtiny24A/44A/84A
 T 47600 44000 5 10 1 1 0 3 1

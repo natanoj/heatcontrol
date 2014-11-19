@@ -11,7 +11,7 @@ copyright=Jonatan Åkerlind 2013
 C 50900 45600 1 0 0 atmega1284ppower.sym
 {
 T 53900 47900 5 10 0 0 0 0 1
-footprint=TQFP44
+footprint=TQFP44_10
 T 53900 48300 5 10 0 0 0 0 1
 device=ATmega1284P
 T 52600 46600 5 10 1 1 0 3 1
@@ -35,7 +35,7 @@ symversion=0.1
 T 51700 49300 5 10 1 1 0 0 1
 value=10uH
 T 51500 49500 5 10 0 1 0 0 1
-footprint=ELLYFJ100M
+footprint=Panasonic-ELLYFJ
 T 51500 49500 5 10 0 1 0 0 1
 farnell-no=2145714
 }
@@ -87,7 +87,7 @@ device=EVQQ2W02W
 T 47500 44900 5 10 0 1 0 0 1
 farnell-no=1821256
 T 47500 44900 5 10 0 0 0 0 1
-footprint=EVQQ2
+footprint=Panasonic-EVQQ2
 }
 N 42500 47000 47500 47000 4
 C 41900 46900 1 0 0 in-1.sym
@@ -175,7 +175,7 @@ symversion=0.1
 T 49900 46700 5 10 1 1 90 0 1
 value=20MHz
 T 49700 46700 5 10 0 1 0 0 1
-footprint=HC49
+footprint=HC49smt
 T 49700 46700 5 10 0 1 0 0 1
 farnell-no=1842302
 }

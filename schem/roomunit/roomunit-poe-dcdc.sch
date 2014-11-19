@@ -197,7 +197,7 @@ value=BAS16
 T 44400 48300 5 10 0 0 0 0 1
 comment=Dvc1
 T 44400 48300 5 10 0 1 0 0 1
-footprint=SOT-23
+footprint=SOT23
 T 44400 48300 5 10 0 1 0 0 1
 farnell-no=1081180
 }
@@ -254,7 +254,7 @@ refdes=Q550
 T 45500 47200 5 10 0 0 0 0 1
 farnell-no=1783928
 T 45500 47200 5 10 0 0 0 0 1
-footprint=SOT-23
+footprint=SOT23
 }
 N 45500 49200 46600 49200 4
 N 46000 49200 46000 48000 4
@@ -286,7 +286,7 @@ refdes=D551
 T 48700 49800 5 10 0 0 0 0 1
 farnell-no=1861427
 T 48700 49800 5 10 0 0 0 0 1
-footprint=SMC
+footprint=DO214AB
 T 48700 49800 5 10 0 1 0 0 1
 comment=DS
 }
@@ -388,7 +388,7 @@ comment=Dsn
 T 44700 47900 5 10 0 1 0 0 1
 farnell-no=1459147
 T 44700 47900 5 10 0 0 0 0 1
-footprint=DO-214AC
+footprint=DO214AC
 }
 N 44900 49900 44900 50000 4
 N 44900 49100 44900 48800 4
@@ -499,7 +499,7 @@ farnell-no=2114074
 T 46600 48000 5 10 0 0 0 0 1
 comment=Turns ratio prim:sec3.3V:aux12V:sec5V 10:1:3.33:1.33
 T 46600 48000 5 10 0 1 0 0 1
-footprint=epcos_efd15b
+footprint=EFD15
 }
 C 48900 48200 1 90 0 resistor-small-1.sym
 {

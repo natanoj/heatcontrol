@@ -17,7 +17,7 @@ refdes=U400
 T 42700 46300 5 10 0 1 0 0 1
 farnell-no=1715480
 T 42700 46300 5 10 0 1 0 0 1
-footprint=TQFP44
+footprint=TQFP44_10
 }
 C 42400 40500 1 0 0 atmega1284pPB.sym
 {
@@ -28,7 +28,7 @@ refdes=U400
 T 42400 40500 5 10 0 1 0 0 1
 farnell-no=1715480
 T 42400 40500 5 10 0 1 0 0 1
-footprint=TQFP44
+footprint=TQFP44_10
 }
 C 46900 46100 1 0 0 atmega1284pPC.sym
 {
@@ -39,7 +39,7 @@ refdes=U400
 T 46900 46100 5 10 0 1 0 0 1
 farnell-no=1715480
 T 46900 46100 5 10 0 1 0 0 1
-footprint=TQFP44
+footprint=TQFP44_10
 }
 C 53500 45700 1 0 0 atmega1284pPD.sym
 {
@@ -50,7 +50,7 @@ refdes=U400
 T 53500 45700 5 10 0 1 0 0 1
 farnell-no=1715480
 T 53500 45700 5 10 0 1 0 0 1
-footprint=TQFP44
+footprint=TQFP44_10
 }
 C 41800 49000 1 0 0 in-1.sym
 {

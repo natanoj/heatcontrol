@@ -66,15 +66,13 @@ farnell-no=2072529RL
 C 47000 43500 1 0 0 panasonic_papir_ekmc.sym
 {
 T 47300 43900 5 10 0 0 0 0 1
-footprint=TO5
+footprint=Panasonic-EKMC160311x-TO-5
 T 48100 45500 5 10 0 1 0 0 1
 device=EKMC-1603113
 T 47600 44700 5 10 1 1 0 0 1
 refdes=U101
 T 47000 43500 5 10 0 0 0 0 1
 farnell-no=2095733
-T 47000 43500 5 10 0 0 0 0 1
-footprint=TO5
 }
 N 47200 43500 47200 42300 4
 N 49000 43600 49000 44200 4
@@ -90,7 +88,7 @@ refdes=IICSCL
 C 47300 48300 1 0 0 htu21d.sym
 {
 T 49500 50100 5 10 0 0 0 0 1
-footprint=DFN6
+footprint=DFN-6-EP
 T 49500 50500 5 10 0 0 0 0 1
 device=HTU21D
 T 47700 50100 5 10 1 1 0 3 1
