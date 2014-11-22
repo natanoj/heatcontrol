@@ -31,3 +31,8 @@ roomunit-simulation: roomunit/simulation/power_output_filter.net
 
 %.net: %.sch
 	gnetlist -g spice -o $@ $<
+
+roomunit-pcb: $(ROOMUNITFILES)
+	gsch2pcb --elements-dir ../pcb/pkg/newlib/ \
+	    --skip-m4 \
+	    --output-name ../pcb/roomunit roomunit/roomunit.sch
