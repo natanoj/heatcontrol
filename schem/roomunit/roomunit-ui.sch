@@ -18,6 +18,8 @@ T 55500 44500 5 10 0 0 0 0 1
 farnell-no=9471634
 T 55500 44500 5 10 0 0 0 0 1
 comment=Switchcap: 9561544
+T 55500 44500 5 10 0 0 0 0 1
+footprint=MCDTS2
 }
 C 55500 43900 1 0 1 switch-pushbutton-no-1.sym
 {
@@ -29,6 +31,8 @@ T 55500 43900 5 10 0 0 0 0 1
 farnell-no=9471634
 T 55500 43900 5 10 0 0 0 0 1
 comment=Switchcap: 9561544
+T 55500 43900 5 10 0 0 0 0 1
+footprint=MCDTS2
 }
 C 55500 43300 1 0 1 switch-pushbutton-no-1.sym
 {
@@ -40,6 +44,8 @@ T 55500 43300 5 10 0 0 0 0 1
 farnell-no=9471634
 T 55500 43300 5 10 0 0 0 0 1
 comment=Switchcap: 9561544
+T 55500 43300 5 10 0 0 0 0 1
+footprint=MCDTS2
 }
 C 55500 42700 1 0 1 switch-pushbutton-no-1.sym
 {
@@ -51,6 +57,8 @@ T 55500 42700 5 10 0 0 0 0 1
 farnell-no=9471634
 T 55500 42700 5 10 0 0 0 0 1
 comment=Switchcap: 9561544
+T 55500 42700 5 10 0 0 0 0 1
+footprint=MCDTS2
 }
 C 56100 41900 1 0 1 gnd-1.sym
 N 56000 42200 56000 44500 4
