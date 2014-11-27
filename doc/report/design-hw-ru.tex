@@ -415,3 +415,54 @@ Blue & 3.0 & 10\\
 \caption{LCD Backlight LED drive voltages and currents}
 \label{tab:backlightleds}
 \end{table}
+
+
+\subsubsection{Mechanical aspects}
+The PCBs need to fit in the housing with display, buttons, and PIR
+sensor at the proper height. The chosen buttons, Multicomp MCDTS2-4N
+12 mm, are 4.3 mm from bottom edge (mounted to PCB) to the button
+level. Switch caps, Multicomp KTSC-22, are in total 7.7 mm in height
+with a stop surface at 3.5 mm from the bottom. This means that the
+casing front inner plane should be at least $4.3+3.5=7.8$ mm from the
+top layer of the PCB. The caps have a rounded outer edge at the top
+with 1 mm radius and travelling length of 0.5 mm. Assuming a casing
+thickness of 2 mm, the casing front inner plane can be at most
+$4.3+7.7-1-0.5-2=8.5$ mm from the top layer of the PCB.
+
+The PIR sensor, Panasonic PaPIR EKMC1603113, is in total 20.2 mm from
+bottom edge (mounted to PCB) to the top of the lens. The lens is
+approximately a half sphere with diameter 22 mm, but edges cut down to
+a cylindar with 20.7 mm diameter for mounting in casing. The height
+from top of the sphere to the cut edge is given by the circle segment
+\begin{equation}
+h(2r-h)=\left(\frac{x}{2}\right)^2
+\end{equation}
+where h is the wanted height, r the radius of the sphere, and x the
+segment length. The resulting height is
+\begin{equation}
+h=\frac{2r}{2}\pm\sqrt{\left(-\frac{2r}{2}\right)^2-\left(\frac{x}{2}\right)^2}=
+\begin{cases}
+14.725 & >r ~\text{not wanted solution},\\
+7.2747 & <r ~\text{wanted solution}.
+\end{cases}
+\end{equation}
+
+The PIR sensor casing has an edge at 7.3+2 mm from the bottom, which
+represents the lowest possible height from top of PCB to inner edge of
+casing front.
+
+Combining these dimensions the PIR sensor and the push buttons can be
+directly mounted to the PCB with a 2 mm thick casing front at 9.3 mm
+from the PCB to inner edge of casing. With the push buttons mounted
+closely to the PCB the caps will only protrude $\approx 0.7$ mm,
+however the push buttons have 3.5 mm long leads and can therefore be
+mounted with a $\approx 1$ mm distance to the PCB surface placing the
+switch cap tops at $\approx 1.7$ mm above the casing outer surface.
+
+The EA DOG-M display is 2 mm thick with 7.5 mm long leads at the
+bottom for a total length of 9.5 mm from the top surface to the lead
+ends. This means that the display needs to be mounted with some
+special care. A separate board to mount the display and related
+passives and cutting the display leads down to 2.5 mm would leave
+approximately $9.3-2-2.5=4.8$ mm between top of PCB to display lead
+ends.
