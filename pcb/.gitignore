@@ -1,2 +1,5 @@
 *.cmd
 *.net
+*.new.pcb
+*.pcb.bak
+*.pcb.bak?
