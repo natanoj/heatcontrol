@@ -17,9 +17,6 @@ refdes=S?
 
 1 ! RESET in
 
-2 VTEMPERATURE in
-3 VHUMIDITY in
-
 4 SPISDI in
 
 5 EXTINT0 in
