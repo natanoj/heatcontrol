@@ -110,3 +110,12 @@ T 43500 44000 5 10 0 0 0 6 1
 device=DRC_Directive
 }
 N 42700 43300 43000 43300 4
+C 41000 45900 1 0 0 accessory.sym
+{
+T 41000 46500 5 10 1 1 0 0 1
+refdes=A250
+T 41100 46100 5 8 1 1 0 0 1
+device=receptacle
+T 41000 45900 5 10 0 0 0 0 1
+farnell-no=673160
+}

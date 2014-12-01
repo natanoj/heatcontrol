@@ -246,3 +246,57 @@ T 47100 47900 5 10 0 0 180 0 1
 device=DRC_Directive
 }
 N 46600 48600 46500 48600 4
+C 43600 49800 1 0 0 accessory.sym
+{
+T 43600 50400 5 10 1 1 0 0 1
+refdes=A200
+T 43700 50000 5 8 1 1 0 0 1
+device=receptacle
+T 43600 49800 5 10 0 0 0 0 1
+farnell-no=673160
+}
+C 50200 46100 1 0 0 accessory.sym
+{
+T 50200 46700 5 10 1 1 0 0 1
+refdes=A201
+T 50300 46300 5 8 1 1 0 0 1
+device=jumper
+T 50200 46100 5 10 0 0 0 0 1
+farnell-no=2396303
+}
+C 52500 41800 1 0 0 accessory.sym
+{
+T 52500 42400 5 10 1 1 0 0 1
+refdes=A202
+T 52600 42000 5 8 1 1 0 0 1
+device=switchcap
+T 52500 41800 5 10 0 0 0 0 1
+farnell-no=9561544
+}
+C 53700 41800 1 0 0 accessory.sym
+{
+T 53700 42400 5 10 1 1 0 0 1
+refdes=A204
+T 53800 42000 5 8 1 1 0 0 1
+device=switchcap
+T 53700 41800 5 10 0 0 0 0 1
+farnell-no=9561544
+}
+C 52500 41000 1 0 0 accessory.sym
+{
+T 52500 41600 5 10 1 1 0 0 1
+refdes=A203
+T 52600 41200 5 8 1 1 0 0 1
+device=switchcap
+T 52500 41000 5 10 0 0 0 0 1
+farnell-no=9561544
+}
+C 53700 41000 1 0 0 accessory.sym
+{
+T 53700 41600 5 10 1 1 0 0 1
+refdes=A205
+T 53800 41200 5 8 1 1 0 0 1
+device=switchcap
+T 53700 41000 5 10 0 0 0 0 1
+farnell-no=9561544
+}

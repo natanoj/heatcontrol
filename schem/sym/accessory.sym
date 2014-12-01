@@ -1,0 +1,18 @@
+v 20130925 2
+B 0 0 900 500 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
+T 0 600 8 10 1 1 0 0 1
+refdes=A?
+T 0 800 5 8 0 0 0 0 1
+author=Jonatan Åkerlind
+T 100 200 5 8 1 1 0 0 1
+device=accessory
+T 0 1000 5 8 0 0 0 0 1
+copyright=Jonatan Åkerlind 2014
+T 0 1200 5 8 0 0 0 0 1
+dist-license=GPL3
+T 0 1400 5 8 0 0 0 0 1
+use-license=unlimited
+T 0 1600 5 8 0 0 0 0 1
+comment=An accessory to another part on the schematic. No footprint, only for BOM.
+T 0 1800 5 8 0 0 0 0 1
+description=Add to schematic to add item to BOB
