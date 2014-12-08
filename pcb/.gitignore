@@ -3,3 +3,5 @@
 *.new.pcb
 *.pcb.bak
 *.pcb.bak?
+*.gbr
+*.cnc
