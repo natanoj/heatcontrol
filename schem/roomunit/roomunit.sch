@@ -671,7 +671,7 @@ N 51000 42000 51000 41700 4
 C 45800 40400 1 0 0 accessory.sym
 {
 T 45800 41000 5 10 1 1 0 0 1
-refdes=A?
+refdes=A5
 T 45900 40600 5 8 1 1 0 0 1
 device=crimp contact
 T 45800 40400 5 10 0 0 0 0 1
@@ -682,7 +682,7 @@ comment=TE/AMP 1445336-1
 C 46900 40400 1 0 0 accessory.sym
 {
 T 46900 41000 5 10 1 1 0 0 1
-refdes=A?
+refdes=A6
 T 47000 40600 5 8 1 1 0 0 1
 device=crimp contact
 T 46900 40400 5 10 0 0 0 0 1
