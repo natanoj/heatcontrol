@@ -565,6 +565,6 @@ symversion=0.1
 T 43300 49800 5 10 1 1 0 0 1
 value=10u
 T 43200 50000 5 10 0 0 0 0 1
-footprint=Panasonic-ELLYFJ
+footprint=inductor4532_black
 }
 N 42300 50000 43200 50000 4
