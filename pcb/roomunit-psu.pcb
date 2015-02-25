@@ -5,11 +5,11 @@ FileVersion[20091103]
 
 PCB["" 61.0000mm 61.0000mm]
 
-Grid[393.700787 0.0000 0.0000 1]
+Grid[393.700787 0.0000 0.0000 0]
 PolyArea[200000000.000000]
 Thermal[0.500000]
 DRC[0.2000mm 0.1000mm 0.2000mm 0.1800mm 0.3000mm 0.2000mm]
-Flags("showdrc,nameonpcb,clearnew,snappin")
+Flags("showdrc,nameonpcb,snappin")
 Groups("1,c:2,s:3")
 Styles["Signal,0.2000mm,0.8000mm,0.4000mm,0.2000mm:Power,0.6000mm,1.6000mm,0.8000mm,0.6000mm:Fat,1.5000mm,1.6000mm,0.8000mm,0.2000mm:Skinny,6.00mil,24.02mil,11.81mil,6.00mil"]
 
@@ -1007,7 +1007,7 @@ Element["" "SOT23" "U551" "TLV431" 20.5000mm 41.0000mm -1.8000mm -4.2000mm 0 100
 
 	)
 
-Element["" "SOT23" "D550" "BAS16" 28.0000mm 27.0000mm -1.5000mm 2.5000mm 0 100 ""]
+Element["" "SOT23" "D550" "BAS16" 28.0000mm 27.0000mm 0.3000mm 2.3000mm 0 100 ""]
 (
 	Pad[-1.5250mm -0.9500mm -1.0750mm -0.9500mm 0.6500mm 1.2000mm 0.8500mm "1" "1" "square"]
 	Pad[-1.5250mm 0.9500mm -1.0750mm 0.9500mm 0.6500mm 0.4000mm 0.8500mm "2" "2" "square"]
@@ -1310,7 +1310,7 @@ Element["" "elyt_smd_E_6_3mm" "C557" "150u" 14.4000mm 25.8750mm -3.4000mm 3.8000
 
 	)
 
-Element["" "3528m" "C552" "150u" 19.9000mm 24.1000mm -1.5000mm 5.5000mm 0 100 ""]
+Element["" "3528m" "C552" "150u" 19.9000mm 24.1000mm -1.8000mm 5.4000mm 0 100 ""]
 (
 	Pad[-0.5475mm 0.0000 0.5475mm 0.0000 1.7050mm 0.4000mm 75.00mil "1" "1" "square"]
 	Pad[-0.5475mm 3.9685mm 0.5475mm 3.9685mm 1.7050mm 0.4000mm 75.00mil "2" "2" "square"]
@@ -1394,6 +1394,30 @@ Element["" "inductor4532_black" "L550" "10u" 45.1000mm 39.8000mm -2.8000mm 2.400
 	Pad[-62.99mil -0.8500mm -62.99mil 41.34mil 59.05mil 1.2000mm 79.05mil "1" "1" "square"]
 	ElementLine [-19.68mil 68.90mil 0.5000mm 1.7500mm 8.00mil]
 	ElementLine [-19.68mil -61.02mil 0.5000mm -1.5500mm 8.00mil]
+
+	)
+
+Element["onsolder" "3216m" "C504" "330n" 38.4000mm 39.0000mm -2.7000mm 1.4000mm 2 100 "auto"]
+(
+	Pad[0.0000 -0.0156mm 0.0000 0.0156mm 1.5688mm 0.6000mm 1.7688mm "1" "1" "onsolder,square"]
+	Pad[-3.5548mm -0.0156mm -3.5548mm 0.0156mm 1.5688mm 0.6000mm 1.7688mm "2" "2" "onsolder,square"]
+	ElementLine [0.9844mm -0.8000mm 0.9844mm 1.0000mm 0.2000mm]
+	ElementLine [0.9844mm -0.8000mm 0.7844mm -1.0000mm 0.2000mm]
+	ElementLine [-4.5392mm -1.0000mm 0.7844mm -1.0000mm 0.2000mm]
+	ElementLine [-4.5392mm -1.0000mm -4.5392mm 1.0000mm 0.2000mm]
+	ElementLine [-4.5392mm 1.0000mm 0.9844mm 1.0000mm 0.2000mm]
+
+	)
+
+Element["" "3216m" "C558" "330n" 22.9000mm 30.6000mm -0.9000mm -2.7000mm 0 100 ""]
+(
+	Pad[0.0000 -0.0156mm 0.0000 0.0156mm 1.5688mm 0.6000mm 1.7688mm "1" "1" "square"]
+	Pad[3.5548mm -0.0156mm 3.5548mm 0.0156mm 1.5688mm 0.6000mm 1.7688mm "2" "2" "square"]
+	ElementLine [-0.9844mm -0.8000mm -0.9844mm 1.0000mm 0.2000mm]
+	ElementLine [-0.9844mm -0.8000mm -0.7844mm -1.0000mm 0.2000mm]
+	ElementLine [-0.7844mm -1.0000mm 4.5392mm -1.0000mm 0.2000mm]
+	ElementLine [4.5392mm -1.0000mm 4.5392mm 1.0000mm 0.2000mm]
+	ElementLine [4.5392mm 1.0000mm -0.9844mm 1.0000mm 0.2000mm]
 
 	)
 Layer(1 "top")
@@ -1576,6 +1600,8 @@ Layer(1 "top")
 	Line[43.5000mm 38.9750mm 44.6750mm 37.8000mm 0.6000mm 1.2000mm "clearline"]
 	Line[45.9751mm 35.0000mm 48.4000mm 35.0000mm 0.2000mm 0.4000mm "clearline"]
 	Line[48.4000mm 35.0000mm 48.7000mm 34.7000mm 0.2000mm 0.4000mm "clearline"]
+	Line[22.9000mm 30.6000mm 21.6000mm 30.6000mm 0.6000mm 1.2000mm ""]
+	Line[26.4548mm 30.6000mm 27.9000mm 30.6000mm 0.6000mm 1.2000mm ""]
 	Arc[30.5000mm 30.5000mm 26.0000mm 26.0000mm 0.2000mm 0.4000mm -90 90 "clearline"]
 	Arc[30.5000mm 30.5000mm 26.0000mm 26.0000mm 0.2000mm 0.4000mm -180 90 "clearline"]
 	Arc[30.5000mm 30.5000mm 26.0000mm 26.0000mm 0.2000mm 0.4000mm 90 90 "clearline"]
@@ -1661,6 +1687,8 @@ Layer(2 "bottom")
 	Line[43.2000mm 46.1000mm 43.2000mm 44.4000mm 0.6000mm 1.2000mm ""]
 	Line[41.1000mm 41.1000mm 42.7000mm 39.5000mm 0.6000mm 1.2000mm "clearline"]
 	Line[51.5000mm 39.5000mm 42.7000mm 39.5000mm 0.6000mm 1.2000mm "clearline"]
+	Line[38.4000mm 39.0000mm 39.8000mm 39.0000mm 0.6000mm 1.2000mm ""]
+	Line[34.8452mm 39.0000mm 32.9000mm 39.0000mm 0.6000mm 1.2000mm ""]
 	Arc[30.5000mm 30.5000mm 26.0000mm 26.0000mm 0.2000mm 0.4000mm -90 90 "clearline"]
 	Arc[30.5000mm 30.5000mm 26.0000mm 26.0000mm 0.2000mm 0.4000mm -180 90 "clearline"]
 	Arc[30.5000mm 30.5000mm 26.0000mm 26.0000mm 0.2000mm 0.4000mm 90 90 "clearline"]
@@ -1704,8 +1732,10 @@ NetList()
 		Connect("C501-2")
 		Connect("C502-2")
 		Connect("C503-2")
+		Connect("C504-2")
 		Connect("C550-2")
 		Connect("C556-2")
+		Connect("C558-2")
 		Connect("CONN501-7")
 		Connect("CONN501-8")
 		Connect("R502-1")
@@ -1720,6 +1750,7 @@ NetList()
 	Net("POENEG" "(unknown)")
 	(
 		Connect("C500-2")
+		Connect("C504-1")
 		Connect("CONN501-3")
 		Connect("CONN501-4")
 		Connect("CONN501-5")
@@ -1907,6 +1938,7 @@ NetList()
 	(
 		Connect("C552-2")
 		Connect("C557-2")
+		Connect("C558-1")
 		Connect("CONN502-6")
 		Connect("CONN502-7")
 		Connect("CONN502-8")
