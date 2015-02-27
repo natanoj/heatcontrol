@@ -1,0 +1,43 @@
+# djboxsym generator definition
+# MCCOG21605B6W-FPTLWI
+
+--vmode
+--compact
+
+[labels]
+
+MCCOG21605B6W-FPTLWI
+refdes=U?
+! copryright=2015 Jonatan Åkerlind
+! author=Jonatan Åkerlind
+! uselicense=unlimited
+! distlicense=GPL3
+! device=MCCOG21605B6W-FPTLWI
+! description=MCCOG21605B6W-FPTLWI
+! footprint=MIDAS_MCCOG21605_BACKLIGHT
+
+[left]
+
+8 ! RESET in
+
+7 SCL in
+6 SDA io
+
+[right]
+
+1 VOUT pwr
+
+2 CAP1N pwr
+3 CAP1P pwr
+
+[top]
+
+4 VDD pwr
+
+A A pwr
+
+[bottom]
+
+5 VSS pwr
+
+K K pwr
