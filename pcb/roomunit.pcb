@@ -2945,24 +2945,6 @@ Layer(9 "silk")
 )
 Layer(10 "silk")
 (
-	Line[23.0000mm 63.0000mm 23.0000mm 37.0000mm 0.5000mm 2.0000mm "clearline"]
-	Line[77.0000mm 63.0000mm 77.0000mm 37.0000mm 0.5000mm 2.0000mm "clearline"]
-	Line[26.5000mm 32.5000mm 80.5000mm 32.5000mm 0.3540mm 20.00mil "clearline"]
-	Line[26.5000mm 2500.00mil 26.5000mm 32.5000mm 10.00mil 20.00mil "clearline"]
-	Line[80.5000mm 2500.00mil 26.5000mm 2500.00mil 10.00mil 20.00mil "clearline"]
-	Line[80.5000mm 32.5000mm 80.5000mm 2500.00mil 10.00mil 20.00mil "clearline"]
-	Line[28.5000mm 20.0000mm 21.5000mm 27.0000mm 10.00mil 20.00mil "clearline"]
-	Line[78.5000mm 20.0000mm 28.5000mm 20.0000mm 10.00mil 20.00mil "clearline"]
-	Line[78.5000mm 60.0000mm 78.5000mm 20.0000mm 10.00mil 20.00mil "clearline"]
-	Line[21.5000mm 60.0000mm 78.5000mm 60.0000mm 10.00mil 20.00mil "clearline"]
-	Line[21.5000mm 27.0000mm 21.5000mm 60.0000mm 10.00mil 20.00mil "clearline"]
-	Line[73.0000mm 20.0000mm 73.0000mm 28.0000mm 10.00mil 20.00mil "clearline"]
-	Line[73.0000mm 28.0000mm 57.5000mm 28.0000mm 10.00mil 20.00mil "clearline"]
-	Line[57.5000mm 28.0000mm 57.5000mm 20.0000mm 10.00mil 20.00mil "clearline"]
-	Arc[50.0000mm 50.0000mm 30.0000mm 30.0000mm 0.5000mm 2.0000mm 0 -90 "clearline"]
-	Arc[50.0000mm 50.0000mm 30.0000mm 30.0000mm 0.5000mm 2.0000mm -90 -90 "clearline"]
-	Arc[50.0000mm 50.0000mm 30.0000mm 30.0000mm 0.5000mm 2.0000mm 180 -90 "clearline"]
-	Arc[50.0000mm 50.0000mm 30.0000mm 30.0000mm 0.5000mm 2.0000mm 90 -90 "clearline"]
 )
 NetList()
 (
