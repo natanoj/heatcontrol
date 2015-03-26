@@ -2934,8 +2934,6 @@ Layer(6 "bottom")
 )
 Layer(7 "outline")
 (
-	Line[0.0000 100.0000mm 100.0000mm 100.0000mm 10.00mil 20.00mil "clearline"]
-	Line[100.0000mm 100.0000mm 100.0000mm 0.0000 10.00mil 20.00mil "clearline"]
 )
 Layer(8 "spare")
 (
