@@ -871,6 +871,10 @@ Via[41.0500mm 85.3000mm 0.7500mm 0.4000mm 0.0000 0.3500mm "" ""]
 Via[46.1000mm 87.6000mm 0.7500mm 0.4000mm 0.0000 0.3500mm "" ""]
 Via[46.9000mm 96.5000mm 0.7500mm 0.4000mm 0.0000 0.3500mm "" ""]
 Via[39.7000mm 94.8000mm 0.7500mm 0.4000mm 0.0000 0.3500mm "" ""]
+Via[92.3000mm 93.8000mm 1.6000mm 0.3600mm 0.7524mm 0.6000mm "" "hole"]
+Via[92.3000mm 98.5000mm 1.6000mm 0.3600mm 0.7524mm 0.6000mm "" "hole"]
+Via[94.0000mm 91.0000mm 1.6000mm 0.3600mm 0.7524mm 0.6000mm "" "hole"]
+Via[98.5000mm 91.0000mm 1.6000mm 0.3600mm 0.7524mm 0.6000mm "" "hole"]
 
 Element["" "1005m" "R450" "4.7K" 91.2000mm 8.0000mm 0.0000 0.5500mm 0 100 ""]
 (
@@ -1140,7 +1144,7 @@ Element["" "MCDTS2" "S200" "unknown" 80.0000mm 73.0000mm -1.0000mm 6.5000mm 0 10
 
 	)
 
-Element["" "DFN-6-EP" "U100" "unknown" 96.5000mm 95.0000mm -1.2900mm -3.9400mm 0 100 ""]
+Element["" "DFN-6-EP" "U100" "unknown" 96.5000mm 95.0000mm -1.2000mm -3.4000mm 0 100 ""]
 (
 	Pad[0.0000 -0.4500mm 0.0000 0.4500mm 1.5000mm 12.00mil 1.5762mm "7" "7" "square"]
 	Pad[-0.3750mm -0.7591mm -0.3750mm -0.4409mm 0.5303mm 12.00mil 0.6065mm "7" "7" "square"]
@@ -2601,6 +2605,10 @@ Layer(1 "top")
 Layer(2 "ground")
 (
 	Line[88.9998mm 1457.00mil 89.0000mm 1457.00mil 0.4000mm 0.4000mm "clearline"]
+	Line[0.0000 0.0000 0.0000 100.0000mm 0.0500mm 0.5950mm "clearline"]
+	Line[0.0000 100.0000mm 100.0000mm 100.0000mm 0.0500mm 0.5950mm "clearline"]
+	Line[100.0000mm 100.0000mm 100.0000mm 0.0000 0.0500mm 0.5950mm "clearline"]
+	Line[100.0000mm 0.0000 0.0000 0.0000 0.0500mm 0.5950mm "clearline"]
 	Polygon("clearpoly")
 	(
 		[37.9000mm 49.4500mm] [62.4500mm 49.4500mm] [62.4500mm 1.3500mm] [37.9000mm 1.3500mm] 
@@ -2934,6 +2942,12 @@ Layer(6 "bottom")
 )
 Layer(7 "outline")
 (
+	Line[0.0000 0.0000 0.0000 100.0000mm 0.2000mm 0.4000mm "clearline"]
+	Line[0.0000 100.0000mm 100.0000mm 100.0000mm 0.2000mm 0.4000mm "clearline"]
+	Line[100.0000mm 100.0000mm 100.0000mm 0.0000 0.2000mm 0.4000mm "clearline"]
+	Line[100.0000mm 0.0000 0.0000 0.0000 0.2000mm 0.4000mm "clearline"]
+	Line[94.0000mm 91.0000mm 98.5000mm 91.0000mm 0.6000mm 1.2000mm "clearline"]
+	Line[92.3000mm 98.5000mm 92.3000mm 93.8000mm 0.6000mm 1.2000mm "clearline"]
 )
 Layer(8 "spare")
 (
