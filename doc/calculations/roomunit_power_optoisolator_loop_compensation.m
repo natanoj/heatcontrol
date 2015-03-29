@@ -14,6 +14,8 @@ Ioutmax=0.25
 % maximum output ripple 2 %
 Vr=Voutnom*0.02
 
+% Bias voltage
+Vc=12
 % Controller bias power
 Pbiasmax=12*1.2e-3;
 
@@ -333,8 +335,6 @@ loglog(f, abs(fbdata), "r;Overall compensated;")
 figure(argfigh)
 semilogx(f, arg(fbdata), "r;Overall compensated;")
 
-
-
 %%%
 % adapter presence optocoupler
 Rapb=(12-1.2)/20e-3
@@ -343,3 +343,20 @@ Rapb_out=(3.3-0.1)/1e-3
 % => 3200, choose Rapb_out=3320
 
 %% FIXME: calculate final eta!
+
+Qgate=6e-9;
+Pgate=Vc*freqnom*Qgate;
+Pdrive=Pgate;
+Idrive=Pdrive/Vc
+Itotal=Idrive+0.92e-3
+Tstartup=4e-3;
+Vcuvh=6.5;
+Cvcmin=Tstartup*Itotal/Vcuvh
+Cvc=10e-6+0.22e-6
+Vcuv=15;
+Ivcbootstrap=4e-3;
+Tbootstrap=Cvc*Vcuv/Ivcbootstrap
+Trecharge=Cvc*Vcuvh/Ivcbootstrap
+Tdischarge=Cvc*Vcuvh/Itotal
+Dfaulty=Tdischarge/(Tdischarge+Trecharge)
+Fhiccup=1/(Tdischarge+Trecharge)
