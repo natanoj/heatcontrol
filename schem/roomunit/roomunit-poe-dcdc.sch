@@ -89,7 +89,7 @@ farnell-no=2074018
 C 45500 45600 1 90 1 capacitor-small-1.sym
 {
 T 45050 45450 5 10 0 0 90 6 1
-device=MULTICOMP  MC0402F153Z160CT
+device=MULTICOMP MC0402B153K160CT
 T 45250 45450 5 10 1 1 90 6 1
 refdes=C551
 T 44850 45450 5 10 0 0 90 6 1
@@ -101,7 +101,7 @@ comment=Cctl
 T 45500 45600 5 10 0 1 0 2 1
 footprint=1005m
 T 45500 45600 5 10 0 1 0 2 1
-farnell-no=1758888
+farnell-no=1758887
 }
 C 50600 43900 1 0 0 capacitor-small-1.sym
 {
@@ -263,7 +263,7 @@ N 46400 46200 46400 47200 4
 C 44500 49800 1 90 1 capacitor-small-1.sym
 {
 T 43800 50000 5 10 0 0 90 0 1
-device=MURATA
+device=AVX
 T 44200 49300 5 10 1 1 90 0 1
 refdes=C550
 T 43600 50000 5 10 0 0 90 0 1
@@ -275,7 +275,7 @@ comment=Cin
 T 44500 49800 5 10 0 1 0 2 1
 footprint=3216m
 T 44500 49800 5 10 0 1 0 2 1
-farnell-no=2426966
+farnell-no=2043047
 }
 C 48700 49800 1 0 0 diode-2.sym
 {
