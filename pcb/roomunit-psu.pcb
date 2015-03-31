@@ -1088,14 +1088,14 @@ Element["onsolder" "1608m" "R501" "243" 49.5000mm 32.2000mm -1.0000mm 0.8000mm 3
 
 Element["onsolder" "SIP8" "CONN502" "unknown" 9.5000mm 39.5000mm 5.0000mm 2.0000mm 2 100 "auto"]
 (
-	Pin[0.0000 0.0000 60.00mil 1.0620mm 1.7400mm 28.00mil "1" "1" "square"]
-	Pin[-0.2214mm -2.5303mm 60.00mil 1.0620mm 1.7400mm 28.00mil "2" "2" ""]
-	Pin[-0.4428mm -5.0607mm 60.00mil 1.0620mm 1.7400mm 28.00mil "3" "3" ""]
-	Pin[-0.6641mm -7.5910mm 60.00mil 1.0620mm 1.7400mm 28.00mil "4" "4" ""]
-	Pin[-0.8855mm -10.1213mm 60.00mil 1.0620mm 1.7400mm 28.00mil "5" "5" ""]
-	Pin[-1.1069mm -12.6517mm 60.00mil 30.00mil 1.7400mm 28.00mil "6" "6" "thermal(0X,1X)"]
-	Pin[-1.3283mm -15.1820mm 60.00mil 30.00mil 1.7400mm 28.00mil "7" "7" "thermal(0X,1X)"]
-	Pin[-1.5496mm -17.7123mm 60.00mil 30.00mil 1.7400mm 28.00mil "8" "8" "thermal(0X,1X)"]
+	Pin[0.0000 0.0000 60.00mil 1.0620mm 1.7400mm 0.7000mm "1" "1" "square"]
+	Pin[-0.2214mm -2.5303mm 60.00mil 1.0620mm 1.7400mm 0.7000mm "2" "2" ""]
+	Pin[-0.4428mm -5.0607mm 60.00mil 1.0620mm 1.7400mm 0.7000mm "3" "3" ""]
+	Pin[-0.6641mm -7.5910mm 60.00mil 1.0620mm 1.7400mm 0.7000mm "4" "4" ""]
+	Pin[-0.8855mm -10.1213mm 60.00mil 1.0620mm 1.7400mm 0.7000mm "5" "5" ""]
+	Pin[-1.1069mm -12.6517mm 60.00mil 30.00mil 1.7400mm 0.7000mm "6" "6" "thermal(0X,1X)"]
+	Pin[-1.3283mm -15.1820mm 60.00mil 30.00mil 1.7400mm 0.7000mm "7" "7" "thermal(0X,1X)"]
+	Pin[-1.5496mm -17.7123mm 60.00mil 30.00mil 1.7400mm 0.7000mm "8" "8" "thermal(0X,1X)"]
 	ElementLine [-1.2652mm 0.1107mm -2.8148mm -692.98mil 20.00mil]
 	ElementLine [1.2652mm -4.36mil -0.2845mm -17.8230mm 20.00mil]
 	ElementLine [-1.3759mm -45.45mil 1.1545mm -1.3759mm 10.00mil]
@@ -1255,14 +1255,14 @@ Element["" "3528m" "C552" "150u" 19.9000mm 24.1000mm -0.9000mm 8.5000mm 1 100 ""
 
 Element["onsolder" "SIP8" "CONN501" "unknown" 51.5000mm 39.5000mm 0.5000mm 2.0000mm 2 100 "auto"]
 (
-	Pin[0.0000 0.0000 60.00mil 1.0620mm 1.7400mm 28.00mil "1" "1" "square"]
-	Pin[0.2214mm -2.5303mm 60.00mil 1.0620mm 1.7400mm 28.00mil "2" "2" ""]
-	Pin[0.4428mm -5.0607mm 60.00mil 1.0620mm 1.7400mm 28.00mil "3" "3" "thermal(1X)"]
-	Pin[0.6641mm -7.5910mm 60.00mil 1.0620mm 1.7400mm 28.00mil "4" "4" "thermal(1X)"]
-	Pin[0.8855mm -10.1213mm 60.00mil 1.0620mm 1.7400mm 28.00mil "5" "5" "thermal(1X)"]
-	Pin[1.1069mm -12.6517mm 60.00mil 1.0620mm 1.7400mm 28.00mil "6" "6" ""]
-	Pin[1.3283mm -15.1820mm 60.00mil 30.00mil 1.7400mm 28.00mil "7" "7" "thermal(0X,1X)"]
-	Pin[61.01mil -17.7123mm 60.00mil 30.00mil 1.7400mm 28.00mil "8" "8" "thermal(0X,1X)"]
+	Pin[0.0000 0.0000 60.00mil 1.0620mm 1.7400mm 0.7000mm "1" "1" "square"]
+	Pin[0.2214mm -2.5303mm 60.00mil 1.0620mm 1.7400mm 0.7000mm "2" "2" ""]
+	Pin[0.4428mm -5.0607mm 60.00mil 1.0620mm 1.7400mm 0.7000mm "3" "3" "thermal(1X)"]
+	Pin[0.6641mm -7.5910mm 60.00mil 1.0620mm 1.7400mm 0.7000mm "4" "4" "thermal(1X)"]
+	Pin[0.8855mm -10.1213mm 60.00mil 1.0620mm 1.7400mm 0.7000mm "5" "5" "thermal(1X)"]
+	Pin[1.1069mm -12.6517mm 60.00mil 1.0620mm 1.7400mm 0.7000mm "6" "6" ""]
+	Pin[1.3283mm -15.1820mm 60.00mil 30.00mil 1.7400mm 0.7000mm "7" "7" "thermal(0X,1X)"]
+	Pin[61.01mil -17.7123mm 60.00mil 30.00mil 1.7400mm 0.7000mm "8" "8" "thermal(0X,1X)"]
 	ElementLine [-1.2652mm -4.36mil 0.2845mm -17.8230mm 20.00mil]
 	ElementLine [1.2652mm 0.1107mm 2.8148mm -692.98mil 20.00mil]
 	ElementLine [-45.45mil -1.3759mm 1.3759mm -45.45mil 10.00mil]
@@ -1618,7 +1618,7 @@ Layer(1 "top")
 	Line[29.8000mm 31.1000mm 30.4000mm 30.5000mm 0.2000mm 0.4000mm "clearline"]
 	Line[30.4000mm 30.5000mm 33.8500mm 30.5000mm 0.2000mm 0.4000mm "clearline"]
 	Line[40.7102mm 36.9500mm 41.6000mm 36.9500mm 0.2000mm 0.4000mm "clearline"]
-	Line[1712.60mil 38.9500mm 1737.30mil 38.9500mm 0.6000mm 1.2000mm "clearline"]
+	Line[43.5000mm 38.9500mm 1737.30mil 38.9500mm 0.6000mm 1.2000mm "clearline"]
 	Line[1737.30mil 38.9500mm 44.9499mm 38.1275mm 0.6000mm 1.2000mm "clearline"]
 	Line[45.0500mm 38.0000mm 45.9500mm 37.1000mm 0.2000mm 0.4000mm "clearline"]
 	Line[45.9500mm 37.1000mm 45.9500mm 37.0000mm 0.2000mm 0.4000mm "clearline"]
@@ -1739,7 +1739,6 @@ Layer(2 "bottom")
 	Arc[30.5000mm 30.5000mm 26.0000mm 26.0000mm 0.2000mm 0.4000mm -180 90 "clearline"]
 	Arc[30.5000mm 30.5000mm 26.0000mm 26.0000mm 0.2000mm 0.4000mm 124 56 "clearline"]
 	Arc[30.5000mm 30.5000mm 26.0000mm 26.0000mm 0.2000mm 0.4000mm 0 56 "clearline"]
-	Text[44.4000mm 50.2000mm 2 100 "ROOMUNIT PSU 1.0 2015" "clearline,onsolder"]
 	Polygon("clearpoly")
 	(
 		[17.5000mm 8.3000mm] [3.7000mm 8.3000mm] [3.7000mm 52.8000mm] [17.5000mm 52.8000mm] 
@@ -1764,6 +1763,8 @@ Layer(3 "outline")
 )
 Layer(4 "silk")
 (
+	Text[44.4000mm 50.2000mm 2 100 "ROOMUNIT PSU 1.0 CC-BY-SA 4.0" "clearline,onsolder"]
+	Text[44.4000mm 48.6000mm 2 100 "Jonatan Akerlind 2015" "clearline,onsolder"]
 )
 Layer(5 "silk")
 (

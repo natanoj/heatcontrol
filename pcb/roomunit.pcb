@@ -3,7 +3,7 @@
 # To read pcb files, the pcb version (or the git source date) must be >= the file version
 FileVersion[20091103]
 
-PCB["" 100.0000mm 100.0000mm]
+PCB["roomunit" 100.0000mm 100.0000mm]
 
 Grid[196.850394 0.0000 0.0000 1]
 PolyArea[200000000.000000]
@@ -2649,7 +2649,7 @@ Layer(2 "ground")
 (
 	Line[88.9998mm 1457.00mil 89.0000mm 1457.00mil 0.4000mm 0.4000mm "clearline"]
 	Line[0.0000 0.0000 0.0000 100.0000mm 0.2000mm 0.4000mm "clearline"]
-	Line[0.0000 100.0000mm 100.0000mm 100.0000mm 0.2000mm 0.4000mm "clearline"]
+	Line[0.0000 100.0000mm 100.0000mm 100.0000mm 0.2000mm 0.4000mm "clearline,selected"]
 	Line[100.0000mm 100.0000mm 100.0000mm 0.0000 0.2000mm 0.4000mm "clearline"]
 	Line[100.0000mm 0.0000 0.0000 0.0000 0.2000mm 0.4000mm "clearline"]
 	Polygon("clearpoly")
@@ -3036,6 +3036,8 @@ Layer(6 "silk")
 )
 Layer(7 "silk")
 (
+	Text[65.4000mm 96.7500mm 0 100 "Jonatan Akerlind 2015" "clearline"]
+	Text[65.4000mm 98.2500mm 0 100 "ROOMUNIT 1.0 CC-BY-SA 4.0" "clearline"]
 )
 NetList()
 (
