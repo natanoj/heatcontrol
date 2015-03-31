@@ -952,6 +952,8 @@ Layer(8 "spare")
 )
 Layer(9 "silk")
 (
+	Text[4.6090mm 5.8790mm 0 100 "Jonatan Akerlind 2015" "clearline,onsolder"]
+	Text[4.6090mm 3.9790mm 0 100 "ROOMUNIT DISPLAY MIDAS 1.0 CC-BY-SA 4.0" "clearline,onsolder"]
 )
 Layer(10 "silk")
 (
