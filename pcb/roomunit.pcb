@@ -9,7 +9,7 @@ Grid[196.850394 0.0000 0.0000 1]
 PolyArea[200000000.000000]
 Thermal[0.500000]
 DRC[0.1800mm 0.1000mm 0.1800mm 0.1500mm 0.3000mm 0.1800mm]
-Flags("showdrc,nameonpcb,autodrc,uniquename,clearnew")
+Flags("showdrc,nameonpcb,autodrc,uniquename,clearnew,showmask")
 Groups("1,2,c:3,4,s:5")
 Styles["Signal,0.2000mm,0.7500mm,0.3500mm,0.2000mm:Power,0.4000mm,1.6000mm,0.8000mm,0.2000mm:Fat,0.6000mm,1.6000mm,0.8000mm,0.6000mm:Skinny,6.00mil,24.02mil,0.3000mm,6.00mil"]
 
@@ -863,10 +863,6 @@ Via[87.5500mm 58.1000mm 0.7500mm 0.4000mm 0.0000 0.3500mm "" ""]
 Via[87.5500mm 61.2000mm 0.7500mm 0.4000mm 0.0000 0.3500mm "" ""]
 Via[64.9500mm 39.6000mm 0.7500mm 0.4000mm 0.0000 0.3500mm "" ""]
 Via[73.7500mm 83.8000mm 0.7500mm 0.4000mm 0.0000 0.3500mm "" ""]
-Via[92.3000mm 93.8000mm 1.6000mm 0.3600mm 0.7524mm 0.6000mm "" "hole"]
-Via[92.3000mm 98.5000mm 1.6000mm 0.3600mm 0.7524mm 0.6000mm "" "hole"]
-Via[94.0000mm 91.0000mm 1.6000mm 0.3600mm 0.7524mm 0.6000mm "" "hole"]
-Via[98.5000mm 91.0000mm 1.6000mm 0.3600mm 0.7524mm 0.6000mm "" "hole"]
 Via[33.6000mm 93.1000mm 0.7500mm 0.4000mm 0.0000 0.3500mm "" ""]
 Via[40.8000mm 94.8000mm 0.7500mm 0.4000mm 0.0000 0.3500mm "" ""]
 Via[40.0000mm 85.9000mm 0.7500mm 0.4000mm 0.0000 0.3500mm "" ""]
@@ -2079,6 +2075,30 @@ Element["" "SO14" "U201" "unknown" 34.9000mm 88.3000mm -1.4580mm 4.5760mm 0 100 
 	ElementArc [170.00mil 0.0000 25.00mil 25.00mil 270 180 10.00mil]
 
 	)
+
+Element["" "" "" "" 94.0000mm 91.0000mm 0.0000 0.0000 0 100 ""]
+(
+	Pad[0.0000 0.0000 4.5000mm 0.0000 0.2000mm 0.8000mm 1.0000mm "1" "1" ""]
+
+	)
+
+Element["" "" "" "" 92.3000mm 94.0000mm 0.0000 0.0000 3 100 ""]
+(
+	Pad[0.0000 0.0000 0.0000 4.5000mm 0.2000mm 0.8000mm 1.0000mm "1" "1" ""]
+
+	)
+
+Element["onsolder" "" "" "" 94.0000mm 91.0000mm 0.0000 0.0000 0 100 "auto"]
+(
+	Pad[0.0000 0.0000 4.5000mm 0.0000 0.2000mm 0.8000mm 1.0000mm "1" "1" "onsolder"]
+
+	)
+
+Element["onsolder" "" "" "" 92.3000mm 94.0000mm 0.0000 0.0000 1 100 "auto"]
+(
+	Pad[0.0000 0.0000 0.0000 4.5000mm 0.2000mm 0.8000mm 1.0000mm "1" "1" "onsolder"]
+
+	)
 Layer(1 "top")
 (
 	Line[54.1100mm 16.1000mm 51.3000mm 16.1000mm 0.2000mm 0.4000mm "clearline"]
@@ -2632,8 +2652,6 @@ Layer(2 "ground")
 	Line[0.0000 100.0000mm 100.0000mm 100.0000mm 0.2000mm 0.4000mm "clearline"]
 	Line[100.0000mm 100.0000mm 100.0000mm 0.0000 0.2000mm 0.4000mm "clearline"]
 	Line[100.0000mm 0.0000 0.0000 0.0000 0.2000mm 0.4000mm "clearline"]
-	Line[92.3000mm 93.8000mm 92.3000mm 98.5000mm 0.2000mm 0.8000mm "clearline"]
-	Line[94.0000mm 91.0000mm 98.5000mm 91.0000mm 0.2000mm 0.8000mm "clearline"]
 	Polygon("clearpoly")
 	(
 		[37.9000mm 39.3000mm] [52.7500mm 39.3000mm] [52.7500mm 9.4000mm] [37.9000mm 9.4000mm] 
@@ -2754,7 +2772,10 @@ Layer(2 "ground")
 Layer(3 "gnd2")
 (
 	Line[98.5000mm 91.0000mm 94.0000mm 91.0000mm 0.2000mm 0.8000mm "clearline"]
-	Line[92.3000mm 93.8000mm 92.3000mm 98.5000mm 0.2000mm 0.8000mm "clearline"]
+	Line[100.0000mm 100.0000mm 100.0000mm 0.0000 0.2000mm 0.4000mm "clearline"]
+	Line[100.0000mm 0.0000 0.0000 0.0000 0.2000mm 0.4000mm "clearline"]
+	Line[0.0000 0.0000 0.0000 100.0000mm 0.2000mm 0.4000mm "clearline"]
+	Line[0.0000 100.0000mm 100.0000mm 100.0000mm 0.2000mm 0.4000mm "clearline"]
 	Polygon("clearpoly")
 	(
 		[37.9000mm 49.4500mm] [62.4500mm 49.4500mm] [62.4500mm 1.2500mm] [37.9000mm 1.2500mm] 
@@ -3008,7 +3029,7 @@ Layer(5 "outline")
 	Line[100.0000mm 100.0000mm 100.0000mm 0.0000 0.2000mm 0.4000mm "clearline"]
 	Line[100.0000mm 0.0000 0.0000 0.0000 0.2000mm 0.4000mm "clearline"]
 	Line[94.0000mm 91.0000mm 98.5000mm 91.0000mm 0.6000mm 1.2000mm "clearline"]
-	Line[92.3000mm 98.5000mm 92.3000mm 93.8000mm 0.6000mm 1.2000mm "clearline"]
+	Line[92.3000mm 98.5000mm 92.3000mm 94.0000mm 0.6000mm 1.2000mm "clearline"]
 )
 Layer(6 "silk")
 (
