@@ -9,7 +9,7 @@ Grid[196.850394 0.0000 0.0000 1]
 PolyArea[200000000.000000]
 Thermal[0.500000]
 DRC[0.1800mm 0.1000mm 0.1800mm 0.1500mm 0.3000mm 0.1800mm]
-Flags("showdrc,nameonpcb,autodrc,uniquename,clearnew")
+Flags("showdrc,nameonpcb,autodrc,uniquename,clearnew,showmask")
 Groups("1,2,c:3,4,s:5")
 Styles["Signal,0.2000mm,0.7500mm,0.3500mm,0.2000mm:Power,0.4000mm,1.6000mm,0.8000mm,0.2000mm:Fat,0.6000mm,1.6000mm,0.8000mm,0.6000mm:Skinny,6.00mil,24.02mil,0.3000mm,6.00mil"]
 
@@ -876,6 +876,10 @@ Via[35.4500mm 93.6500mm 0.7500mm 0.4000mm 0.0000 0.3500mm "" "thermal(1S,2S)"]
 Via[73.9500mm 61.5000mm 0.7500mm 0.4000mm 0.0000 0.3500mm "" "thermal(1S,2S)"]
 Via[76.2500mm 61.5000mm 0.7500mm 0.4000mm 0.0000 0.3500mm "" "thermal(1S,2S)"]
 Via[87.3000mm 34.7500mm 0.7500mm 0.4000mm 0.0000 0.3500mm "" "thermal(1S,2S)"]
+Via[94.0000mm 91.0000mm 0.7500mm 0.4000mm 0.7524mm 0.6000mm "" "hole"]
+Via[92.3000mm 94.0000mm 0.7500mm 0.4000mm 0.7524mm 0.6000mm "" "hole"]
+Via[92.3000mm 98.5000mm 0.7500mm 0.4000mm 0.7524mm 0.6000mm "" "hole"]
+Via[98.5000mm 91.0000mm 0.7500mm 0.4000mm 0.7524mm 0.6000mm "" "hole"]
 
 Element["" "1005m" "R450" "4.7K" 91.2000mm 8.0000mm 0.0000 0.5500mm 0 100 ""]
 (
@@ -1146,12 +1150,12 @@ Element["" "BOURNS-CDNBS04-B08x00" "U302" "unknown" 9.2000mm 47.4000mm -1.2000mm
 
 Element["" "CON_HDR-254P-3C-2R-6N__Molex_8624-Series" "CONN3" "unknown" 81.2000mm 87.6000mm -2.2400mm 4.6300mm 0 100 ""]
 (
-	Pin[100.00mil -50.00mil 60.00mil 20.00mil 80.00mil 0.9000mm "MISO" "1" "square,edge2"]
-	Pin[0.0000 -50.00mil 60.00mil 20.00mil 80.00mil 0.9000mm "SCK" "3" "edge2"]
-	Pin[-100.00mil -50.00mil 60.00mil 20.00mil 80.00mil 0.9000mm "RST" "5" "edge2"]
-	Pin[100.00mil 50.00mil 60.00mil 20.00mil 80.00mil 0.9000mm "VTG" "2" "edge2"]
-	Pin[0.0000 50.00mil 60.00mil 20.00mil 80.00mil 0.9000mm "MOSI" "4" "edge2"]
-	Pin[-100.00mil 50.00mil 60.00mil 20.00mil 80.00mil 0.9000mm "GND" "6" "edge2,thermal(1X,2X)"]
+	Pin[100.00mil -50.00mil 60.00mil 20.00mil 1.7600mm 0.9000mm "MISO" "1" "square,edge2"]
+	Pin[0.0000 -50.00mil 60.00mil 20.00mil 1.7600mm 0.9000mm "SCK" "3" "edge2"]
+	Pin[-100.00mil -50.00mil 60.00mil 20.00mil 1.7600mm 0.9000mm "RST" "5" "edge2"]
+	Pin[100.00mil 50.00mil 60.00mil 20.00mil 1.7600mm 0.9000mm "VTG" "2" "edge2"]
+	Pin[0.0000 50.00mil 60.00mil 20.00mil 1.7600mm 0.9000mm "MOSI" "4" "edge2"]
+	Pin[-100.00mil 50.00mil 60.00mil 20.00mil 1.7600mm 0.9000mm "GND" "6" "edge2,thermal(1X,2X)"]
 	ElementLine [300.00mil -160.00mil 82.50mil -160.00mil 10.00mil]
 	ElementLine [-300.00mil -160.00mil -82.50mil -160.00mil 10.00mil]
 	ElementLine [-300.00mil -160.00mil -300.00mil 160.00mil 10.00mil]
@@ -1345,8 +1349,8 @@ Element["" "1005m" "R303" "56.2" 52.5000mm 20.6000mm 2.2000mm -0.2000mm 0 100 ""
 
 Element["" "HC49smt" "U300" "25MHz" 63.7000mm 9.1000mm 2.9000mm 1.2000mm 1 100 ""]
 (
-	Pad[0.0000 117.00mil 0.0000 257.00mil 80.00mil 20.00mil 100.00mil "1" "1" "square,edge2"]
-	Pad[0.0000 -257.00mil 0.0000 -117.00mil 80.00mil 0.6080mm 100.00mil "2" "2" "square"]
+	Pad[0.0000 117.00mil 0.0000 257.00mil 80.00mil 20.00mil 2.3200mm "1" "1" "square,edge2"]
+	Pad[0.0000 -257.00mil 0.0000 -117.00mil 80.00mil 0.6080mm 2.3200mm "2" "2" "square"]
 	ElementLine [50.00mil 250.00mil 100.00mil 250.00mil 10.00mil]
 	ElementLine [100.00mil -250.00mil 100.00mil 250.00mil 10.00mil]
 	ElementLine [50.00mil -250.00mil 100.00mil -250.00mil 10.00mil]
@@ -1909,8 +1913,8 @@ Element["" "1005m" "C313" "0.1u" 44.5000mm 12.8000mm -2.0500mm 1.7000mm 1 100 ""
 
 Element["" "HC49smt" "U450" "20MHz" 91.5000mm 19.2500mm -1.2500mm -4.4000mm 0 100 ""]
 (
-	Pad[-257.00mil 0.0000 -117.00mil 0.0000 80.00mil 20.00mil 100.00mil "1" "1" "square"]
-	Pad[117.00mil 0.0000 257.00mil 0.0000 80.00mil 20.00mil 100.00mil "2" "2" "square,edge2"]
+	Pad[-257.00mil 0.0000 -117.00mil 0.0000 80.00mil 20.00mil 2.3200mm "1" "1" "square"]
+	Pad[117.00mil 0.0000 257.00mil 0.0000 80.00mil 20.00mil 2.3200mm "2" "2" "square,edge2"]
 	ElementLine [-250.00mil 50.00mil -250.00mil 100.00mil 10.00mil]
 	ElementLine [-250.00mil 100.00mil 250.00mil 100.00mil 10.00mil]
 	ElementLine [250.00mil 50.00mil 250.00mil 100.00mil 10.00mil]
@@ -1962,10 +1966,10 @@ Element["" "1005m" "R400" "100k" 70.7500mm 17.8000mm 0.8000mm 1.6000mm 1 100 ""]
 
 Element["" "keystone_7764" "CONN7" "unknown" 50.0000mm 94.4000mm -1.2000mm -1.8500mm 0 100 ""]
 (
-	Pin[3.7500mm 0.0500mm 2.6500mm 0.4000mm 3.0500mm 1.8500mm "1" "1" ""]
-	Pin[3.7500mm -4.9500mm 2.6500mm 0.4000mm 3.0500mm 1.8500mm "1" "1" ""]
-	Pin[-3.7500mm 0.0500mm 2.6500mm 0.4000mm 3.0500mm 1.8500mm "1" "1" ""]
-	Pin[-3.7500mm -4.9500mm 2.6500mm 0.4000mm 3.0500mm 1.8500mm "1" "1" ""]
+	Pin[3.7500mm 0.0500mm 2.6500mm 0.4000mm 2.8500mm 1.8500mm "1" "1" ""]
+	Pin[3.7500mm -4.9500mm 2.6500mm 0.4000mm 2.8500mm 1.8500mm "1" "1" ""]
+	Pin[-3.7500mm 0.0500mm 2.6500mm 0.4000mm 2.8500mm 1.8500mm "1" "1" ""]
+	Pin[-3.7500mm -4.9500mm 2.6500mm 0.4000mm 2.8500mm 1.8500mm "1" "1" ""]
 	ElementLine [-4.1500mm 5.1500mm 4.1500mm 5.1500mm 0.2000mm]
 	ElementLine [4.1500mm 1.6500mm 4.1500mm 5.1500mm 0.2000mm]
 	ElementLine [4.1500mm -3.3500mm 4.1500mm -1.5500mm 0.2000mm]
@@ -2081,13 +2085,13 @@ Element["" "SO14" "U201" "unknown" 34.9000mm 88.3000mm -1.4580mm 4.5760mm 0 100 
 
 Element["" "" "" "" 94.0000mm 91.0000mm 0.0000 0.0000 0 100 ""]
 (
-	Pad[0.0000 0.0000 4.5000mm 0.0000 0.2000mm 0.8000mm 1.0000mm "1" "1" ""]
+	Pad[0.0000 0.0000 4.5000mm 0.0000 0.2000mm 0.8000mm 0.7000mm "1" "1" ""]
 
 	)
 
 Element["" "" "" "" 92.3000mm 94.0000mm 0.0000 0.0000 3 100 ""]
 (
-	Pad[0.0000 0.0000 0.0000 4.5000mm 0.2000mm 0.8000mm 1.0000mm "1" "1" ""]
+	Pad[0.0000 0.0000 0.0000 4.5000mm 0.2000mm 0.8000mm 0.7000mm "1" "1" ""]
 
 	)
 
