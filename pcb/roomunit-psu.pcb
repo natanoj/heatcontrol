@@ -984,27 +984,6 @@ Element["" "SOT23" "Q550" "unknown" 45.0000mm 26.0000mm 2.5000mm -0.2000mm 0 100
 
 	)
 
-Element["" "SOT23" "U551" "TLV431" 20.5000mm 41.0000mm -1.8000mm -4.2000mm 0 100 ""]
-(
-	Pad[-0.9500mm 1.0750mm -0.9500mm 1.5250mm 0.6500mm 0.3000mm 0.8500mm "Ref" "1" "square,edge2"]
-	Pad[0.9500mm 1.0750mm 0.9500mm 1.5250mm 0.6500mm 0.3000mm 0.8500mm "C" "2" "square,edge2"]
-	Pad[0.0000 -1.5250mm 0.0000 -1.0750mm 0.6500mm 0.3000mm 0.8500mm "A" "3" "square"]
-	ElementLine [-1.4700mm -0.4500mm -1.4700mm 0.4500mm 0.2000mm]
-	ElementLine [-1.4700mm 0.4500mm 1.4700mm 0.4500mm 0.2000mm]
-	ElementLine [1.4700mm 0.4500mm 1.4700mm -0.4500mm 0.2000mm]
-	ElementLine [1.4700mm -0.4500mm -1.4700mm -0.4500mm 0.2000mm]
-	ElementLine [2.0000mm 2.5000mm 1.3500mm 2.5000mm 0.2000mm]
-	ElementLine [2.0000mm 2.5000mm 2.0000mm 1.8500mm 0.2000mm]
-	ElementLine [2.0000mm -2.5000mm 1.3500mm -2.5000mm 0.2000mm]
-	ElementLine [2.0000mm -2.5000mm 2.0000mm -1.8500mm 0.2000mm]
-	ElementLine [-2.0000mm 2.5000mm -1.3500mm 2.5000mm 0.2000mm]
-	ElementLine [-2.0000mm 2.5000mm -2.0000mm 1.8500mm 0.2000mm]
-	ElementLine [-2.0000mm -2.5000mm -1.3500mm -2.5000mm 0.2000mm]
-	ElementLine [-2.0000mm -2.5000mm -2.0000mm -1.8500mm 0.2000mm]
-	ElementLine [-1.6250mm 0.9150mm -1.6250mm 1.6850mm 0.2000mm]
-
-	)
-
 Element["" "SOT23" "D550" "BAS16" 26.9500mm 27.0000mm -4.5000mm 1.5000mm 1 100 ""]
 (
 	Pad[-1.5250mm -0.9500mm -1.0750mm -0.9500mm 0.6500mm 1.2000mm 0.8500mm "1" "1" "square"]
@@ -1447,6 +1426,20 @@ Element["" "TSSOP20_PAD" "U500" "unknown" 43.0500mm 34.0000mm -0.6500mm -5.1000m
 	ElementArc [0.0000 -131.65mil 25.00mil 25.00mil 0 180 10.00mil]
 
 	)
+
+Element["" "SOT23-5" "U551" "TLV431" 20.5500mm 40.4500mm -1.5000mm 2.5000mm 0 100 ""]
+(
+	Pad[-37.40mil 29.00mil -37.40mil 67.00mil 20.00mil 12.00mil 26.00mil "1" "1" "square,edge2"]
+	Pad[0.0000 29.00mil 0.0000 67.00mil 20.00mil 12.00mil 26.00mil "2" "2" "square,edge2"]
+	Pad[37.40mil 29.00mil 37.40mil 67.00mil 20.00mil 12.00mil 26.00mil "C" "3" "square,edge2"]
+	Pad[37.40mil -67.00mil 37.40mil -29.00mil 20.00mil 12.00mil 26.00mil "Ref" "4" "square"]
+	Pad[-37.40mil -67.00mil -37.40mil -29.00mil 20.00mil 12.00mil 26.00mil "A" "5" "square"]
+	ElementLine [59.00mil -87.00mil 59.00mil 87.00mil 10.00mil]
+	ElementLine [-59.00mil 87.00mil 59.00mil 87.00mil 10.00mil]
+	ElementLine [-59.00mil -87.00mil -59.00mil 87.00mil 10.00mil]
+	ElementLine [-59.00mil -87.00mil 59.00mil -87.00mil 10.00mil]
+
+	)
 Layer(1 "top")
 (
 	Line[50.0000mm 36.1000mm 50.9000mm 17.3000mm 0.6000mm 1.2000mm "clearline"]
@@ -1526,8 +1519,6 @@ Layer(1 "top")
 	Line[9.5000mm 44.0000mm 9.5000mm 39.5000mm 0.2000mm 0.4000mm "clearline"]
 	Line[15.3450mm 45.0000mm 15.3000mm 44.9550mm 0.2000mm 0.4000mm "clearline"]
 	Line[15.3000mm 44.9550mm 15.3000mm 40.0000mm 0.2000mm 0.4000mm "clearline"]
-	Line[15.2650mm 41.4000mm 18.8000mm 41.4000mm 0.2000mm 0.4000mm "clearline"]
-	Line[18.8000mm 41.4000mm 19.6000mm 42.2000mm 0.2000mm 0.4000mm "clearline"]
 	Line[14.0750mm 41.4000mm 12.0000mm 39.3250mm 0.2000mm 0.4000mm "clearline"]
 	Line[12.0000mm 39.3250mm 12.0000mm 37.1900mm 0.2000mm 0.4000mm "clearline"]
 	Line[12.0000mm 37.1900mm 9.5900mm 37.1900mm 0.2000mm 0.4000mm "clearline"]
@@ -1540,7 +1531,6 @@ Layer(1 "top")
 	Line[16.3500mm 28.3500mm 14.7000mm 28.3500mm 1.5000mm 0.4000mm ""]
 	Line[12.0000mm 32.5000mm 13.3000mm 32.5000mm 0.2000mm 0.4000mm ""]
 	Line[16.6000mm 38.8000mm 16.6000mm 40.0000mm 0.2000mm 0.4000mm ""]
-	Line[16.6000mm 40.0000mm 20.5000mm 40.0000mm 0.2000mm 0.4000mm ""]
 	Line[14.6300mm 33.7300mm 14.6000mm 33.7000mm 0.2000mm 0.4000mm ""]
 	Line[9.5000mm 39.6000mm 9.2786mm 1455.50mil 0.6000mm 1.2000mm "clearline"]
 	Line[9.2786mm 1455.50mil 9.0572mm 34.4393mm 0.6000mm 1.2000mm "clearline"]
@@ -1624,6 +1614,12 @@ Layer(1 "top")
 	Line[45.9500mm 37.1000mm 45.9500mm 37.0000mm 0.2000mm 0.4000mm "clearline"]
 	Line[46.5849mm 31.7252mm 47.2748mm 31.7252mm 0.2000mm 0.4000mm "clearline"]
 	Line[47.2748mm 31.7252mm 48.0500mm 30.9500mm 0.2000mm 0.4000mm "clearline"]
+	Line[15.2650mm 40.0000mm 15.2650mm 38.4850mm 0.2000mm 0.4000mm "clearline"]
+	Line[15.2650mm 38.4850mm 16.2000mm 37.5500mm 0.2000mm 0.4000mm "clearline"]
+	Line[16.2000mm 37.5500mm 20.4000mm 37.5500mm 0.2000mm 0.4000mm "clearline"]
+	Line[20.4000mm 37.5500mm 21.5000mm 38.6500mm 0.2000mm 0.4000mm "clearline"]
+	Line[19.6000mm 38.7482mm 19.6000mm 38.7482mm 0.2000mm 0.4000mm "clearline"]
+	Line[19.6000mm 38.7482mm 19.6000mm 1500.00mil 0.2000mm 0.4000mm ""]
 	Arc[30.5000mm 30.5000mm 26.0000mm 26.0000mm 0.2000mm 0.4000mm -90 90 "clearline"]
 	Arc[30.5000mm 30.5000mm 26.0000mm 26.0000mm 0.2000mm 0.4000mm -180 90 "clearline"]
 	Arc[30.5000mm 30.5000mm 26.0000mm 26.0000mm 0.2000mm 0.4000mm 124 56 "clearline"]
@@ -1837,7 +1833,7 @@ NetList()
 		Connect("C554-2")
 		Connect("R553-1")
 		Connect("R554-2")
-		Connect("U551-1")
+		Connect("U551-4")
 	)
 	Net("S500/unnamed_net24" "(unknown)")
 	(
@@ -1859,7 +1855,7 @@ NetList()
 		Connect("C553-1")
 		Connect("R557-1")
 		Connect("U550-1")
-		Connect("U551-2")
+		Connect("U551-3")
 	)
 	Net("S500/unnamed_net28" "(unknown)")
 	(
@@ -2001,6 +1997,6 @@ NetList()
 		Connect("R554-1")
 		Connect("T550-3")
 		Connect("U501-3")
-		Connect("U551-3")
+		Connect("U551-5")
 	)
 )
