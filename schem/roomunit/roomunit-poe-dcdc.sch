@@ -182,7 +182,7 @@ farnell-no=2408427
 T 51300 49700 5 10 0 0 0 2 1
 device=AVX  TCJB157M006R0045
 T 51300 49700 5 10 0 1 0 2 1
-footprint=3528m
+footprint=3528m_cap
 T 51300 49700 5 10 0 1 0 2 1
 comment=Cout
 }
@@ -468,7 +468,7 @@ farnell-no=1856508
 C 45100 49200 1 90 0 resistor-small-1.sym
 {
 T 44700 49150 5 10 0 0 90 0 1
-device=VISHAY
+device=Panasonic ERJP08F1211V
 T 44850 49350 5 10 1 1 90 0 1
 refdes=R558
 T 45100 49200 5 10 0 0 0 0 1
@@ -478,7 +478,7 @@ value=1210
 T 45100 49200 5 10 0 1 0 0 1
 footprint=3216m
 T 45100 49200 5 10 0 1 0 0 1
-farnell-no=2139573
+farnell-no=2312326
 }
 N 45000 49200 45000 49100 4
 N 45000 49100 45800 49100 4

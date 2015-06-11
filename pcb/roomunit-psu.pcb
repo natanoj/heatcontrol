@@ -5,7 +5,7 @@ FileVersion[20091103]
 
 PCB["roomunit-psu" 61.0000mm 61.0000mm]
 
-Grid[196.850394 0.0000 0.0000 1]
+Grid[196.850394 0.0000 0.0000 0]
 PolyArea[200000000.000000]
 Thermal[0.500000]
 DRC[0.2000mm 0.1000mm 0.2000mm 0.1800mm 0.3000mm 0.2000mm]
@@ -1220,18 +1220,6 @@ Element["" "elyt_smd_E_6_3mm" "C557" "150u" 14.4000mm 25.8750mm -3.4000mm 3.8000
 
 	)
 
-Element["" "3528m" "C552" "150u" 19.9000mm 24.1000mm -0.9000mm 8.5000mm 1 100 ""]
-(
-	Pad[-0.5475mm 0.0000 0.5475mm 0.0000 1.7050mm 0.4000mm 75.00mil "1" "1" "square"]
-	Pad[-0.5475mm 3.9685mm 0.5475mm 3.9685mm 1.7050mm 0.4000mm 75.00mil "2" "2" "square"]
-	ElementLine [-1.6000mm -1.0525mm 1.4000mm -1.0525mm 0.2000mm]
-	ElementLine [1.4000mm -1.0525mm 1.6000mm -0.8525mm 0.2000mm]
-	ElementLine [1.6000mm -0.8525mm 1.6000mm 5.0210mm 0.2000mm]
-	ElementLine [-1.6000mm 5.0210mm 1.6000mm 5.0210mm 0.2000mm]
-	ElementLine [-1.6000mm -1.0525mm -1.6000mm 5.0210mm 0.2000mm]
-
-	)
-
 Element["onsolder" "SIP8" "CONN501" "unknown" 51.5000mm 39.5000mm 0.5000mm 2.0000mm 2 100 "auto"]
 (
 	Pin[0.0000 0.0000 60.00mil 1.0620mm 1.7400mm 0.7000mm "1" "1" "square"]
@@ -1440,6 +1428,18 @@ Element["" "SOT23-5" "U551" "TLV431" 20.5500mm 40.4500mm -1.5000mm 2.5000mm 0 10
 	ElementLine [-59.00mil -87.00mil 59.00mil -87.00mil 10.00mil]
 
 	)
+
+Element["" "3528m_cap" "C552" "150u" 20.1000mm 24.1000mm -0.9000mm 7.7500mm 1 100 ""]
+(
+	Pad[-0.2475mm 0.0000 0.2475mm 0.0000 1.7050mm 0.4000mm 75.00mil "1" "1" "square"]
+	Pad[-0.2475mm 3.1000mm 0.2475mm 3.1000mm 1.7050mm 0.4000mm 75.00mil "2" "2" "square"]
+	ElementLine [-1.6000mm -1.0525mm 1.4000mm -1.0525mm 0.2000mm]
+	ElementLine [1.4000mm -1.0525mm 1.6000mm -0.8525mm 0.2000mm]
+	ElementLine [1.6000mm -0.8525mm 1.6000mm 4.1400mm 0.2000mm]
+	ElementLine [-1.6000mm 4.1400mm 1.6000mm 4.1400mm 0.2000mm]
+	ElementLine [-1.6000mm -1.0525mm -1.6000mm 4.1400mm 0.2000mm]
+
+	)
 Layer(1 "top")
 (
 	Line[50.0000mm 36.1000mm 50.9000mm 17.3000mm 0.6000mm 1.2000mm "clearline"]
@@ -1527,7 +1527,6 @@ Layer(1 "top")
 	Line[23.0000mm 36.2700mm 22.9700mm 36.3000mm 0.2000mm 0.4000mm "clearline"]
 	Line[30.5000mm 14.5000mm 38.8000mm 14.5000mm 1.5000mm 1.2000mm "clearline"]
 	Line[16.4000mm 28.3000mm 16.6315mm 28.0685mm 1.5000mm 0.4000mm ""]
-	Line[16.6315mm 28.0685mm 19.9000mm 28.0685mm 1.5000mm 0.4000mm ""]
 	Line[16.3500mm 28.3500mm 14.7000mm 28.3500mm 1.5000mm 0.4000mm ""]
 	Line[12.0000mm 32.5000mm 13.3000mm 32.5000mm 0.2000mm 0.4000mm ""]
 	Line[16.6000mm 38.8000mm 16.6000mm 40.0000mm 0.2000mm 0.4000mm ""]
@@ -1620,6 +1619,7 @@ Layer(1 "top")
 	Line[20.4000mm 37.5500mm 21.5000mm 38.6500mm 0.2000mm 0.4000mm "clearline"]
 	Line[19.6000mm 38.7482mm 19.6000mm 38.7482mm 0.2000mm 0.4000mm "clearline"]
 	Line[19.6000mm 38.7482mm 19.6000mm 1500.00mil 0.2000mm 0.4000mm ""]
+	Line[16.8815mm 27.2185mm 20.1500mm 27.2185mm 1.5000mm 0.4000mm ""]
 	Arc[30.5000mm 30.5000mm 26.0000mm 26.0000mm 0.2000mm 0.4000mm -90 90 "clearline"]
 	Arc[30.5000mm 30.5000mm 26.0000mm 26.0000mm 0.2000mm 0.4000mm -180 90 "clearline"]
 	Arc[30.5000mm 30.5000mm 26.0000mm 26.0000mm 0.2000mm 0.4000mm 124 56 "clearline"]
