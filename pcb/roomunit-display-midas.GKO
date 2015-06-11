@@ -1,0 +1,20 @@
+G04 start of page 4 for group 2 idx 6 *
+G04 Title: roomunit-display, outline *
+G04 Creator: pcb 1.99z *
+G04 CreationDate: mån  6 apr 2015 08:42:04 UTC *
+G04 For: jonatan *
+G04 Format: Gerber/RS-274X *
+G04 PCB-Dimensions (mm): 60.00 42.00 *
+G04 PCB-Coordinate-Origin: lower left *
+%MOMM*%
+%FSLAX43Y43*%
+%LNOUTLINE*%
+%ADD29C,0.850*%
+%ADD28C,0.381*%
+G54D28*X55610Y9980D02*X55587Y40984D01*
+X2667D01*
+Y9996D01*
+X2794Y9980D02*X55610Y9980D01*
+G54D29*X53109Y28571D02*Y26571D01*
+Y18571D02*Y16571D01*
+M02*
