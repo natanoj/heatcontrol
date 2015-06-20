@@ -1,3 +1,7 @@
+# author: Jonatan Åkerlind
+# email: jonatan@akerlind.nu
+# dist-license: GPL3
+# use-license: unlimited
 Element["" "EFD15" "" "" 1000 1000 0nm -1000000nm 0 100 ""]
 (
 	ElementLine [-7750000nm -8250000nm -8250000nm -7750000nm 155000nm]

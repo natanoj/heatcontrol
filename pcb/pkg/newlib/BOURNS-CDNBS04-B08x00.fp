@@ -1,3 +1,7 @@
+# author: Jonatan Åkerlind
+# email: jonatan@akerlind.nu
+# dist-license: GPL3
+# use-license: unlimited
 Element["" "BOURNS-CDNBS04-B08x00" "" "" 1000 1000 0nm -1000000nm 0 100 ""]
 (
 	ElementLine [-1200000nm -2450000nm -1700000nm -1950000nm 155000nm]

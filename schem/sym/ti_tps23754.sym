@@ -5,7 +5,7 @@ distlicense=GPL3
 T 3600 4800 9 10 0 0 0 0 1
 uselicense=unlimited
 T 3600 5000 9 10 0 0 0 0 1
-author=Jonatan Åkerlind
+author=Jonatan Åkerlind <jonatan@akerlind.nu>
 T 3600 5200 9 10 0 0 0 0 1
 copryright=2011 Jonatan Åkerlind
 T 2000 3400 9 10 1 1 0 3 1

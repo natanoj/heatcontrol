@@ -167,7 +167,7 @@ L 1300 300 1300 150 3 0 0 0 -1 -1
 L 1400 900 1300 900 3 0 0 0 -1 -1
 L 1250 975 1200 975 3 0 0 0 -1 -1
 T 1400 1500 5 8 0 0 0 0 1
-author=Jonatan Åkerlind
+author=Jonatan Åkerlind <jonatan@akerlind.nu>
 T 1400 1700 5 8 0 0 0 0 1
 copyright=Jonatan Åkerlind 2014
 T 1400 1900 5 8 0 0 0 0 1

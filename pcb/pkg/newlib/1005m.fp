@@ -1,3 +1,7 @@
+# author: Jonatan Åkerlind
+# email: jonatan@akerlind.nu
+# dist-license: GPL3
+# use-license: unlimited
 Element["" "" "" "" 0.2500mm 0.2500mm 0.0000mm 0.5500mm 0 100 ""]
 (
 	Pad[-0.0350mm 0.0000mm 0.0350mm 0.0000mm 0.5000mm 0.6500mm 0.7000mm "1" "1" "square"]

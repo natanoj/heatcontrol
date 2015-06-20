@@ -38,7 +38,7 @@ HIH-5031
 T 300 400 8 10 1 1 0 0 1
 footprint=HIH5031
 T 1100 1200 8 10 0 1 0 0 1
-author=Jonatan Åkerlind
+author=Jonatan Åkerlind <jonatan@akerlind.nu>
 T 1100 1400 8 10 0 1 0 0 1
 copyright=2011 Jonatan Åkerlind
 T 1100 1600 8 10 0 1 0 0 1

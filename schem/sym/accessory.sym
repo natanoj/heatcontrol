@@ -3,7 +3,7 @@ B 0 0 900 500 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
 T 0 600 8 10 1 1 0 0 1
 refdes=A?
 T 0 800 5 8 0 0 0 0 1
-author=Jonatan Åkerlind
+author=Jonatan Åkerlind <jonatan@akerlind.nu>
 T 100 200 5 8 1 1 0 0 1
 device=accessory
 T 0 1000 5 8 0 0 0 0 1

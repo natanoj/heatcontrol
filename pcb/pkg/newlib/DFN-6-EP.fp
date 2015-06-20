@@ -1,3 +1,7 @@
+# author: Jonatan Åkerlind
+# email: jonatan@akerlind.nu
+# dist-license: GPL3
+# use-license: unlimited
 Element["" "DFN-6-EP" "" "" 1000 1000 0nm -1000000nm 0 100 ""]
 (
 	Pad[0nm -450000nm 0nm 450000nm 1500000nm 304800nm 1576200nm "7" "7" "square, nopaste"]

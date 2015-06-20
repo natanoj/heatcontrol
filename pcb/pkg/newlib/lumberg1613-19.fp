@@ -1,3 +1,7 @@
+# author: Jonatan Åkerlind
+# email: jonatan@akerlind.nu
+# dist-license: GPL3
+# use-license: unlimited
 
 Element["" "" "" "" 63.2000mm 54.9000mm 0.0000 0.0000 0 100 ""]
 (

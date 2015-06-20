@@ -1,3 +1,7 @@
+# author: Jonatan Åkerlind
+# email: jonatan@akerlind.nu
+# dist-license: GPL3
+# use-license: unlimited
 Element["" "EADOGM" "" "" 1000 1000 0nm -1000000nm 0 100 ""]
 (
 	Pin[ -13970000nm -24130000nm 1150000nm 304800nm 1226200nm 650000nm "1" "1" "square"]

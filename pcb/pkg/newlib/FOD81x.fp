@@ -1,3 +1,7 @@
+# author: Jonatan Åkerlind
+# email: jonatan@akerlind.nu
+# dist-license: GPL3
+# use-license: unlimited
 Element["" "FOD81X" "" "" 1000 1000 -3mm 2.7mm 0 100 ""]
 (
 	ElementLine [-3000000nm -2550000nm -3500000nm -2050000nm 200000nm]

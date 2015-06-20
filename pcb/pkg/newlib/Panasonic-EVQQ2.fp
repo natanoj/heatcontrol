@@ -1,3 +1,7 @@
+# author: Jonatan Åkerlind
+# email: jonatan@akerlind.nu
+# dist-license: GPL3
+# use-license: unlimited
 Element["" "Panasonic-EVQQ2" "" "" 1000 1000 -2mm 3.1mm 0 100 ""]
 (
 	ElementLine [-3300000nm -3050000nm -3300000nm -2700000nm 155000nm]

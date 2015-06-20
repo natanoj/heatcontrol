@@ -1,3 +1,7 @@
+# author: Jonatan Åkerlind
+# email: jonatan@akerlind.nu
+# dist-license: GPL3
+# use-license: unlimited
 Element["" "Panasonic-ELLYFJ" "" "" 1000 1000 -1mm 1200000nm 0 100 ""]
 (
 	Pad[-825000nm -575000nm -825000nm 575000nm 850000nm 304800nm 926200nm "1" "1" "square"]

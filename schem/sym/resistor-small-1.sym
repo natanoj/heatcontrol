@@ -39,6 +39,6 @@ dist-license=GPL3
 T -50 1000 9 10 0 0 0 0 1
 use-license=unlimited
 T -50 1200 9 10 0 0 0 0 1
-author=Jonatan Åkerlind
+author=Jonatan Åkerlind <jonatan@akerlind.nu>
 T -50 1400 9 10 0 0 0 0 1
 copyright=2013 Jonatan Åkerlind

@@ -1,3 +1,4 @@
+# Modified version of TSSOP20.fp distributed with PCB
 	# number of pads
 	# pad width in 1/1000 mil
 	# pad length in 1/1000 mil

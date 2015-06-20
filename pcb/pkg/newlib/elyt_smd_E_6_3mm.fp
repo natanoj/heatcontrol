@@ -1,3 +1,7 @@
+# author: Jonatan Åkerlind
+# email: jonatan@akerlind.nu
+# dist-license: GPL3
+# use-license: unlimited
 # Element [SFlags "Desc" "Name" "Value" MX MY TX TY TDir TScale TSFlags]
 Element[ "" "" "" "" 0 0 -3.4mm 3.8mm 0 100 ""]
 (

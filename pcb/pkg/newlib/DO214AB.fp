@@ -1,3 +1,7 @@
+# author: Jonatan Åkerlind
+# email: jonatan@akerlind.nu
+# dist-license: GPL3
+# use-license: unlimited
 Element[0x00000000 "" "" "" 0 0 0 0 0 100 0x00000000]
 (
 	Pad[-14173 -1968 -14173 1968 11024 4000 11824 "1" "1" 0x00000100]

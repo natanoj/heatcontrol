@@ -1,3 +1,7 @@
+# author: Jonatan Åkerlind
+# email: jonatan@akerlind.nu
+# dist-license: GPL3
+# use-license: unlimited
 
 Element["" "" "SI-52008-F" "" 1600.00mil 2100.00mil -135.00mil -645.00mil 0 100 ""]
 (
