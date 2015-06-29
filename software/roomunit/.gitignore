@@ -1,1 +1,6 @@
 obj_native
+obj_roomunit
+roomunit.native
+roomunit.roomunit
+symbols.c
+symbols.h

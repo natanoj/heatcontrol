@@ -25,19 +25,14 @@
  */
 
 #include "contiki.h"
+#include <stdio.h>
 
 PROCESS(roomunit_process, "Roomunit process");
 AUTOSTART_PROCESSES(&roomunit_process);
 
 PROCESS_THREAD(roomunit_process, ev, data)
 {
-    float temperature;
-    int humidity;
-
     PROCESS_BEGIN();
-
-    temperature = 18.5;
-    humidity = 56;
-
+    printf("Hello World");
     PROCESS_END();
 }
